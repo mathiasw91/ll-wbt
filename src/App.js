@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Sidebar from './components/Sidebar'
 import Content from './components/Content'
 import PageOne from './pages/Pageone'
+import PageTwo from './pages/Pagetwo'
 
 const chapters = [
   {name:'Kapitel 1', themes: [
-    {name: 'Thema 1', page: PageOne},
-    {name: 'Thema 2', page: PageOne},
+    {name: 'Thema 1', path: '/pageone',component: PageOne},
+    {name: 'Thema 2', path: '/pagetwo',component: PageTwo},
   ]},
   {name:'Kapitel 2', themes: [
-    {name: 'Thema 1', page: PageOne},
+    {name: 'Thema 1', path: '/pageone',component: PageOne},
   ]}
 ]
 
@@ -26,6 +26,7 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className="App">
         <Sidebar

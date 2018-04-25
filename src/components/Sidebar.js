@@ -1,16 +1,18 @@
 import React from "react"
-
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 class Sidebar extends React.Component {
 
 
   render() {
     return (<aside id="sidebar">
+      <Router>
     	<div id="sidebar-navigation">
         {this.props.chapters.map(chapter =>
-          <Chapter data={chapter}/>
+          <Chapter data={chapter} />
         )}
-        </div>
+      </div>
+      </Router>
     </aside>)
   }
 }
@@ -25,7 +27,7 @@ function Chapter(props) {
 }
 
 function Theme(props) {
-  return (<span className="sidebar-theme">{props.data.name}</span>)
+  return (<Link to={props.data.path} className="sidebar-theme">{props.data.name}</Link>)
 }
 
 export default Sidebar

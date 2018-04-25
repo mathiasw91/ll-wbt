@@ -35,10 +35,10 @@ div#content-wrapper {
   border: solid 0.5px rgba(0,0,0,0.6);
 }
 
-#sidebar-navigation span {
+#sidebar-navigation a {
   display: block;
 }
 
-span.sidebar-theme {
+a.sidebar-theme {
   padding-left: 1em;
 }
