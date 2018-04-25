@@ -6,13 +6,11 @@ class Sidebar extends React.Component {
 
   render() {
     return (<aside id="sidebar">
-      <Router>
     	<div id="sidebar-navigation">
         {this.props.chapters.map(chapter =>
           <Chapter data={chapter} />
         )}
       </div>
-      </Router>
     </aside>)
   }
 }

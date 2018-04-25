@@ -12,7 +12,7 @@ const chapters = [
     {name: 'Thema 2', path: '/pagetwo',component: PageTwo},
   ]},
   {name:'Kapitel 2', themes: [
-    {name: 'Thema 1', path: '/pageone',component: PageOne},
+    {name: 'Thema 1', path: '/pagethree',component: PageOne},
   ]}
 ]
 
@@ -28,6 +28,7 @@ class App extends Component {
   render() {
 
     return (
+      <Router>
       <div className="App">
         <Sidebar
           chapters={chapters}
@@ -38,6 +39,7 @@ class App extends Component {
           activeTheme={this.state.activeTheme}
         />
       </div>
+      </Router>
     );
   }
 }

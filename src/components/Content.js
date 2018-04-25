@@ -8,11 +8,11 @@ class Content extends React.Component {
     let activeTheme = this.props.chapters[this.props.activeChapter].themes[this.props.activeTheme]
     const SpecificPage = activeTheme.page
 
-    return (<Router><div id="content-wrapper">
+    return (<div id="content-wrapper">
       {this.props.chapters.map(chapter =>
         <Chapter data={chapter} />
       )}
-    </div></Router>)
+    </div>)
   }
 }
 
@@ -27,7 +27,6 @@ function Chapter(props) {
 }
 
 function Theme(props) {
-  console.log(props.data.path)
   return (<Route exact path={props.data.path} component={props.data.component} />)
 }
 
