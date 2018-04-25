@@ -51,6 +51,14 @@ div#content-wrapper {
 
 #sidebar-navigation a {
   display: block;
+  color: black;
+  text-decoration: none; /* no underline */
+
+}
+
+
+#sidebar-navigation span {
+  cursor: pointer;
 }
 
 a.sidebar-theme {

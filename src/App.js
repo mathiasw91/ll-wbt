@@ -32,6 +32,7 @@ class App extends Component {
       <div className="App">
         <Sidebar
           chapters={this.state.chapters}
+          chapterClicked={this.toggleChapter.bind(this)}
         />
         <Content
           chapters={this.state.chapters}
@@ -45,7 +46,7 @@ class App extends Component {
 
   toggleChapter(id){
     let chapters = this.state.chapters
-    chapters[id].open = !chapters[id].open
+    chapters[id].closed = !chapters[id].closed
     this.setState({...this.state, chapters: chapters})
   }
 }

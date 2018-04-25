@@ -6,8 +6,8 @@ class Sidebar extends React.Component {
   render() {
     return (<aside id="sidebar">
     	<div id="sidebar-navigation">
-        {this.props.chapters.map(chapter =>
-          <Chapter data={chapter} />
+        {this.props.chapters.map((chapter, index) =>
+          <Chapter data={chapter} clickhandler={this.props.chapterClicked} index={index}/>
         )}
       </div>
     </aside>)
@@ -16,10 +16,10 @@ class Sidebar extends React.Component {
 
 function Chapter(props) {
   return (<div>
-      <span className="sidebar-chapter {props.data.open? 'open' : ''}">{props.data.name}</span>
-      {props.data.themes.map(theme =>
+      <span className={"sidebar-chapter "+(!props.data.closed?'open':'')} onClick={()=>{props.clickhandler(props.index)}}>{props.data.name}</span>
+      {(!props.data.closed) && (props.data.themes.map(theme =>
         <Theme data={theme} />
-      )}
+      ))}
   </div>)
 }
 
