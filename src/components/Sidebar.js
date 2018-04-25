@@ -17,7 +17,7 @@ class Sidebar extends React.Component {
 
 function Chapter(props) {
   return (<div>
-      <span className="sidebar-chapter">{props.data.name}</span>
+      <span className="sidebar-chapter open">{props.data.name}</span>
       {props.data.themes.map(theme =>
         <Theme data={theme} />
       )}

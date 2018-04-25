@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Open+Sans+Condensed:300');
+
 html {
   height: 100%;
 }
@@ -9,30 +11,42 @@ body {
   height: 100%;
   background-image: url(assets/bg_salad.jpg);
   background-size: cover;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .App {
   display: flex;
   padding: 1em;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
 }
 
 aside#sidebar {
   flex-basis: 250px;
   flex-grow: 0;
-  margin: 1em;
+  margin: 0 1em;
   padding: 1em;
   border-radius: 1em;
   background-color: rgba(255,255,255,0.75);
   border: solid 0.5px rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  height: 100%;
 }
 
 div#content-wrapper {
   flex-grow: 1;
-  margin: 1em;
+  margin: 0 1em;
   padding: 1em;
   border-radius: 1em;
   background-color: rgba(255,255,255,0.75);
   border: solid 0.5px rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  overflow-y: auto;
+  height: 100%;
 }
 
 #sidebar-navigation a {
@@ -41,4 +55,27 @@ div#content-wrapper {
 
 a.sidebar-theme {
   padding-left: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Amatic SC', cursive;
+}
+
+/* arrows for sidebar */
+.sidebar-chapter:before,
+.sidebar-theme:before {
+    content: "";
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+.sidebar-chapter.open:before,
+.sidebar-theme.open:before {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
