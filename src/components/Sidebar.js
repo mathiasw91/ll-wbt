@@ -5,17 +5,19 @@ class Sidebar extends React.Component {
 
 
   render() {
-    return (<aside>
+    return (<aside id="sidebar">
+    	<div id="sidebar-navigation">
         {this.props.chapters.map(chapter =>
           <Chapter data={chapter}/>
         )}
+        </div>
     </aside>)
   }
 }
 
 function Chapter(props) {
   return (<div>
-      <span>-{props.data.name}</span>
+      <span className="sidebar-chapter">{props.data.name}</span>
       {props.data.themes.map(theme =>
         <Theme data={theme} />
       )}
@@ -23,7 +25,7 @@ function Chapter(props) {
 }
 
 function Theme(props) {
-  return (<span>--{props.data.name}</span>)
+  return (<span className="sidebar-theme">{props.data.name}</span>)
 }
 
 export default Sidebar

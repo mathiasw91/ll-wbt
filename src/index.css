@@ -1,5 +1,44 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  height: 100%;
+  background-image: url(assets/bg_salad.jpg);
+  background-size: cover;
+}
+
+.App {
+  display: flex;
+  padding: 1em;
+}
+
+aside#sidebar {
+  flex-basis: 250px;
+  flex-grow: 0;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: rgba(255,255,255,0.75);
+  border: solid 0.5px rgba(0,0,0,0.6);
+}
+
+div#content-wrapper {
+  flex-grow: 1;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: rgba(255,255,255,0.75);
+  border: solid 0.5px rgba(0,0,0,0.6);
+}
+
+#sidebar-navigation span {
+  display: block;
+}
+
+span.sidebar-theme {
+  padding-left: 1em;
 }
