@@ -5,7 +5,7 @@ class PageOne extends React.Component {
 
 
   render() {
-    return (<div>Content von Page One</div>)
+    return (<div><h2>Headline</h2><p>Content von Page One</p></div>)
   }
 }
 
