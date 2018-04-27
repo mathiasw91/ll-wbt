@@ -8,11 +8,11 @@ import PageTwo from './pages/Pagetwo'
 
 
 class App extends Component {
+
+
   constructor(props){
     super(props)
     this.state = {
-      activeChapter: 0,
-      activeTheme: 0,
       chapters: [
         {name:'Kapitel 1', themes: [
           {name: 'Thema 1', path: '/pageone',component: PageOne},
@@ -21,7 +21,8 @@ class App extends Component {
         {name:'Kapitel 2', themes: [
           {name: 'Thema 1', path: '/pagethree',component: PageOne},
         ]}
-      ]
+      ],
+      latest: []
     }
   }
 
@@ -38,6 +39,8 @@ class App extends Component {
           chapters={this.state.chapters}
           activeChapter={this.state.activeChapter}
           activeTheme={this.state.activeTheme}
+          latest={this.state.latest}
+          onChapterSelect={this.updateLatest.bind(this)}
         />
       </div>
       </Router>
@@ -49,6 +52,15 @@ class App extends Component {
     chapters[id].closed = !chapters[id].closed
     this.setState({...this.state, chapters: chapters})
   }
+
+  updateLatest(chapter){
+    let newLatest = this.state.latest
+    let vorhanden = newLatest.indexOf(chapter)
+    if(vorhanden != -1) newLatest.splice(vorhanden,1)
+    newLatest.unshift(chapter)
+    this.setState({...this.state, latest:newLatest})
+  }
+
 }
 
 export default App;

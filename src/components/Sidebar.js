@@ -5,6 +5,7 @@ class Sidebar extends React.Component {
 
   render() {
     return (<aside id="sidebar">
+      <Link to="/home">Zur Übersicht</Link>
     	<div id="sidebar-navigation">
         {this.props.chapters.map((chapter, index) =>
           <Chapter data={chapter} clickhandler={this.props.chapterClicked} index={index}/>

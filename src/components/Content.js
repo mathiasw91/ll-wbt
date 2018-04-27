@@ -1,19 +1,48 @@
 import React from "react"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-
+import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom"
+import Quiz from './quiz/Quiz'
+import Home from './Home'
 
 class Content extends React.Component {
 
   render() {
-    let activeTheme = this.props.chapters[this.props.activeChapter].themes[this.props.activeTheme]
-    const SpecificPage = activeTheme.page
+    if(this.props.location.pathname.endsWith('home')){
+      return (<div id="content-wrapper" className="home-wrapper">
+        <Home latest={this.props.latest}/>
+      </div>)
+    }else if(this.props.location.pathname.endsWith('quiz')){
+      return (<div id="content-wrapper" className="quiz-wrapper">
+        <Quiz />
+      </div>)
+    }else{
+      return (<div id="content-wrapper">
+        {this.props.chapters.map(chapter =>
+          <Chapter data={chapter} />
+        )}
+        <Link to={this.props.location.pathname+'/quiz'}>zum Quiz</Link>
+      </div>)
+    }
 
-    return (<div id="content-wrapper">
-      {this.props.chapters.map(chapter =>
-        <Chapter data={chapter} />
-      )}
-    </div>)
   }
+
+  componentDidMount(){
+    this.props.history.listen(val=>{
+      let match = false
+      this.props.chapters.forEach(chapter=>{
+        chapter.themes.forEach(theme=>{
+          if(val.pathname.includes(theme.path)) match = theme
+        })
+      })
+      if(match){
+        this.props.onChapterSelect(match)
+      }
+    })
+  }
+
+  componentWillUnmount(){
+    this.props.history.unlisten()
+  }
+
 }
 
 function Chapter(props) {
@@ -30,4 +59,4 @@ function Theme(props) {
   return (<Route exact path={props.data.path} component={props.data.component} />)
 }
 
-export default Content
+export default withRouter(Content)
