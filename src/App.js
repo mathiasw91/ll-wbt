@@ -58,6 +58,7 @@ class App extends Component {
     let vorhanden = newLatest.indexOf(chapter)
     if(vorhanden != -1) newLatest.splice(vorhanden,1)
     newLatest.unshift(chapter)
+    if(newLatest.length > 3) newLatest.splice(0,10)
     this.setState({...this.state, latest:newLatest})
   }
 
