@@ -6,7 +6,7 @@ import Home from './Home'
 class Content extends React.Component {
 
   render() {
-    if(this.props.location.pathname.endsWith('home')){
+    if(this.props.location.pathname.endsWith('home') || this.props.location.pathname === '/'){
       return (<div id="content-wrapper" className="home-wrapper">
         <Home latest={this.props.latest}/>
       </div>)
