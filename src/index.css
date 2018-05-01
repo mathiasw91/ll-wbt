@@ -87,3 +87,43 @@ h1, h2, h3, h4, h5, h6 {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
+
+/* Checkmark */
+.checkmark {
+    display:inline-block;
+    width:1.375em;
+    height:1.375em;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    font-size: 0.8em;
+    margin-left: 0.5em;
+}
+
+.checkmark_circle {
+    position: absolute;
+    width:1.375em;
+    height:1.375em;
+    background-color: green;
+    border-radius:0.6875em;
+    left: 0.1em;
+    top: 0.1em;
+}
+
+.checkmark_stem {
+    position: absolute;
+    width: 0.1875em;
+    height: 0.5625em;
+    background-color: #fff;
+    left: 0.7875em;
+    top: 0.475em;
+}
+
+.checkmark_kick {
+    position: absolute;
+    width:0.1875em;
+    height:0.1875em;
+    background-color:#fff;
+    left:0.6em;
+    top:0.85em;
+}

@@ -24,7 +24,15 @@ function Chapter(props) {
 }
 
 function Theme(props) {
-  return (<Link to={props.data.path} className="sidebar-theme">{props.data.name}</Link>)
+  return (<Link to={props.data.path} className="sidebar-theme">{props.data.name}<Checkmark/></Link>)
+}
+
+function Checkmark() {
+  return (<span class="checkmark">
+    <div class="checkmark_circle"></div>
+    <div class="checkmark_stem"></div>
+    <div class="checkmark_kick"></div>
+</span>)
 }
 
 export default Sidebar
