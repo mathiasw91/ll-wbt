@@ -59,6 +59,7 @@ class App extends Component {
           latest={this.state.latest}
           onChapterSelect={this.updateLatest.bind(this)}
           setQuestionAnswered={this.setQuestionAnswered.bind(this)}
+          resetQuiz={this.resetQuiz.bind(this)}
         />
       </div>
       </Router>
@@ -86,8 +87,20 @@ class App extends Component {
     if(activeIndexes.chapter !== false && activeIndexes.theme !== false){
         chapters[activeIndexes.chapter].themes[activeIndexes.theme].questions[questionId].answered = true
     }
+    this.setState({chapters: chapters})
   }
 
+  resetQuiz(){
+    let activeIndexes = this.getActiveChapterAndThemeIndex()
+    let chapters = this.state.chapters
+    if(activeIndexes.chapter !== false && activeIndexes.theme !== false){
+      chapters[activeIndexes.chapter].themes[activeIndexes.theme].questions.forEach(q=>{
+        q.answered = false
+      })
+      chapters[activeIndexes.chapter].themes[activeIndexes.theme].quizComplete = false
+    }
+    this.setState({chapters: chapters})
+  }
 
   //helper functions
   getActiveChapterAndThemeIndex(){

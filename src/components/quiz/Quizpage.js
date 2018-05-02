@@ -9,9 +9,6 @@ class Quizpage extends React.Component {
   constructor(props){
     super(props)
 
-    this.state = {
-      answer: false
-    }
   }
 
   render() {
@@ -21,8 +18,8 @@ class Quizpage extends React.Component {
         <ul className="answerOptions">
            {this.props.question.answers.map(this.renderAnswerOptions.bind(this))}
          </ul>
-         {this.state.answer !== false && (
-           <button onClick={this.nextQuestion.bind(this)}>nächste Frage</button>
+         {this.props.answer !== false && (
+           <button onClick={this.props.navigateNext}>nächste Frage</button>
          )}
       </div>
     )
@@ -34,29 +31,14 @@ class Quizpage extends React.Component {
          key={index}
          answerContent={key.content}
          value={index}
-         answer={this.state.answer}
+         answer={this.props.answer}
          onAnswerSelected={this.onAnswerSelected.bind(this)}
        />
      );
    }
 
-   setUserAnswer(answer) {
-    this.setState({
-      answersCount: this.state.answerContent +1,
-      answer: parseInt(answer)
-    });
-    if(this.props.question.answers[answer].correct){
-        this.props.setQuestionAnswered()
-    }
-  }
-
    onAnswerSelected(event){
-     this.setUserAnswer(event.currentTarget.value);
-   }
-
-   nextQuestion(){
-     this.setState({answer: false})
-     this.props.navigateNext()
+     this.props.setUserAnswer(event.currentTarget.value);
    }
 }
 
