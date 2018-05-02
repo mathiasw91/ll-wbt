@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Open+Sans+Condensed:300,700');
 
 html {
   height: 100%;
@@ -26,8 +26,9 @@ body {
 }
 
 aside#sidebar {
-  flex-basis: 250px;
+  flex-basis: auto;
   flex-grow: 0;
+  min-width: 10em;
   margin: 0 1em;
   padding: 1em;
   border-radius: 1em;
@@ -49,7 +50,7 @@ div#content-wrapper {
   height: 100%;
 }
 
-#sidebar-navigation a {
+#sidebar a {
   display: block;
   color: black;
   text-decoration: none; /* no underline */
@@ -65,8 +66,13 @@ a.sidebar-theme {
   padding-left: 1em;
 }
 
+a.sidebar-theme.active {
+  font-weight: 700;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Amatic SC', cursive;
+  margin-bottom: 0;
 }
 
 /* arrows for sidebar */
@@ -198,4 +204,27 @@ h1, h2, h3, h4, h5, h6 {
     background-color:#fff;
     left:0.6em;
     top:0.85em;
+}
+
+#home p {
+  margin-top: 0.3em;
+}
+
+#home-boxes {
+  display: flex;
+}
+
+#home #home-start {
+  flex-grow: 1;
+  padding-right: 1em;
+}
+
+#home #home-sidebar {
+  flex-grow: 0;
+  flex-basis: auto;
+  min-width: 12em;
+}
+
+#latest-themes > a {
+  display: block;
 }

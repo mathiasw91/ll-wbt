@@ -1,12 +1,13 @@
 import React from "react"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom"
 
 class Sidebar extends React.Component {
 
   render() {
     return (<aside id="sidebar">
-      <Link to="/home">Zur Übersicht</Link>
+      <h2><Link to="/home">Zur Übersicht</Link></h2>
     	<div id="sidebar-navigation">
+    	<h2>Themen</h2>
         {this.props.chapters.map((chapter, index) =>
           <Chapter data={chapter} clickhandler={this.props.chapterClicked} index={index}/>
         )}
@@ -25,14 +26,14 @@ function Chapter(props) {
 }
 
 function Theme(props) {
-  return (<Link to={props.data.path} className="sidebar-theme">{props.data.name}<Checkmark/></Link>)
+  return (<NavLink exact={true} to={props.data.path} activeClassName="active" className="sidebar-theme">{props.data.name}<Checkmark/></NavLink>)
 }
 
 function Checkmark() {
-  return (<span class="checkmark">
-    <div class="checkmark_circle"></div>
-    <div class="checkmark_stem"></div>
-    <div class="checkmark_kick"></div>
+  return (<span className="checkmark">
+    <div className="checkmark_circle"></div>
+    <div className="checkmark_stem"></div>
+    <div className="checkmark_kick"></div>
 </span>)
 }
 
