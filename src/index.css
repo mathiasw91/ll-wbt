@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Open+Sans+Condensed:300,700');
 
 html {
   height: 100%;
@@ -26,8 +26,9 @@ body {
 }
 
 aside#sidebar {
-  flex-basis: 250px;
+  flex-basis: auto;
   flex-grow: 0;
+  min-width: 10em;
   margin: 0 1em;
   padding: 1em;
   border-radius: 1em;
@@ -49,7 +50,7 @@ div#content-wrapper {
   height: 100%;
 }
 
-#sidebar-navigation a {
+#sidebar a {
   display: block;
   color: black;
   text-decoration: none; /* no underline */
@@ -65,8 +66,13 @@ a.sidebar-theme {
   padding-left: 1em;
 }
 
+a.sidebar-theme.active {
+  font-weight: 700;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Amatic SC', cursive;
+  margin-bottom: 0;
 }
 
 /* arrows for sidebar */
@@ -158,4 +164,67 @@ h1, h2, h3, h4, h5, h6 {
     background: #8BC53F url(assets/icon-check.svg) no-repeat;
     background-size: 27px;
     border-color: #8BC53F;
+}
+
+/* Checkmark */
+.checkmark {
+    display:inline-block;
+    width:1.375em;
+    height:1.375em;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    font-size: 0.8em;
+    margin-left: 0.5em;
+}
+
+.checkmark_circle {
+    position: absolute;
+    width:1.375em;
+    height:1.375em;
+    background-color: green;
+    border-radius:0.6875em;
+    left: 0.1em;
+    top: 0.1em;
+}
+
+.checkmark_stem {
+    position: absolute;
+    width: 0.1875em;
+    height: 0.5625em;
+    background-color: #fff;
+    left: 0.7875em;
+    top: 0.475em;
+}
+
+.checkmark_kick {
+    position: absolute;
+    width:0.1875em;
+    height:0.1875em;
+    background-color:#fff;
+    left:0.6em;
+    top:0.85em;
+}
+
+#home p {
+  margin-top: 0.3em;
+}
+
+#home-boxes {
+  display: flex;
+}
+
+#home #home-start {
+  flex-grow: 1;
+  padding-right: 1em;
+}
+
+#home #home-sidebar {
+  flex-grow: 0;
+  flex-basis: auto;
+  min-width: 12em;
+}
+
+#latest-themes > a {
+  display: block;
 }
