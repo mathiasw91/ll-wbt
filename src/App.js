@@ -13,13 +13,28 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
+      activeTheme: false,
       chapters: [
         {name:'Kapitel 1', themes: [
-          {name: 'Thema 1', path: '/pageone',component: PageOne},
-          {name: 'Thema 2', path: '/pagetwo',component: PageTwo},
+          {name: 'Thema 1', path: '/pageone',component: PageOne, questions: [
+            {question: 'Fragetext Frage 1', answers: [
+              {content: 'Antworttext Antwort 1', correct: false},
+              {content: 'Antworttext Antwort 2', correct: true},
+              {content: 'Antworttext Antwort 3', correct: false},
+            ]},
+            {question: 'Fragetext Frage 2', answers: [
+              {content: 'Antworttext Antwort 1', correct: false},
+              {content: 'Antworttext Antwort 2', correct: true}
+            ]}
+          ]},
+          {name: 'Thema 2', path: '/pagetwo',component: PageTwo, questions: [
+
+          ]},
         ]},
         {name:'Kapitel 2', themes: [
-          {name: 'Thema 1', path: '/pagethree',component: PageOne},
+          {name: 'Thema 1', path: '/pagethree',component: PageOne, questions: [
+            
+          ]},
         ]}
       ],
       latest: []
@@ -53,13 +68,13 @@ class App extends Component {
     this.setState({...this.state, chapters: chapters})
   }
 
-  updateLatest(chapter){
+  updateLatest(theme){
     let newLatest = this.state.latest
-    let vorhanden = newLatest.indexOf(chapter)
+    let vorhanden = newLatest.indexOf(theme)
     if(vorhanden != -1) newLatest.splice(vorhanden,1)
-    newLatest.unshift(chapter)
+    newLatest.unshift(theme)
     if(newLatest.length > 3) newLatest.splice(0,10)
-    this.setState({...this.state, latest:newLatest})
+    this.setState({...this.state, latest:newLatest, activeTheme: theme})
   }
 
 }

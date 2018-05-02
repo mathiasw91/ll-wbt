@@ -5,6 +5,11 @@ import Home from './Home'
 
 class Content extends React.Component {
 
+  constructor(props){
+    super(props)
+
+  }
+
   render() {
     if(this.props.location.pathname.endsWith('home') || this.props.location.pathname === '/'){
       return (<div id="content-wrapper" className="home-wrapper">
@@ -12,7 +17,7 @@ class Content extends React.Component {
       </div>)
     }else if(this.props.location.pathname.endsWith('quiz')){
       return (<div id="content-wrapper" className="quiz-wrapper">
-        <Quiz />
+        <Quiz questions={this.props.activeTheme.questions}/>
       </div>)
     }else{
       return (<div id="content-wrapper">
