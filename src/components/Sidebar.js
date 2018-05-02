@@ -26,7 +26,7 @@ function Chapter(props) {
 }
 
 function Theme(props) {
-  return (<NavLink exact={true} to={props.data.path} activeClassName="active" className="sidebar-theme">{props.data.name}<Checkmark/></NavLink>)
+  return (<NavLink exact={true} to={props.data.path} activeClassName="active" className={'sidebar-theme '+(props.data.quizComplete?'quiz-complete':'')}>{props.data.name}<Checkmark/></NavLink>)
 }
 
 function Checkmark() {

@@ -87,6 +87,8 @@ class App extends Component {
     if(activeIndexes.chapter !== false && activeIndexes.theme !== false){
         chapters[activeIndexes.chapter].themes[activeIndexes.theme].questions[questionId].answered = true
     }
+    let unanswered = chapters[activeIndexes.chapter].themes[activeIndexes.theme].questions.filter(q=>!q.answered)
+    if(unanswered.length == 0) chapters[activeIndexes.chapter].themes[activeIndexes.theme].quizComplete = true
     this.setState({chapters: chapters})
   }
 
