@@ -26,7 +26,7 @@ class Quiz extends React.Component {
                 counter={this.state.currentQuestion+1}
                 total={this.props.questions.length}
               />
-             <Quizpage question={this.props.questions[this.state.currentQuestion]} navigateNext={this.nextQuestion.bind(this)}/>
+             <Quizpage question={this.props.questions[this.state.currentQuestion]} setQuestionAnswered={()=>{this.props.setQuestionAnswered(this.state.currentQuestion)}} navigateNext={this.nextQuestion.bind(this)}/>
              <Link to={this.props.location.pathname.replace('/quiz','')}>Zurück zum Lerninhalt</Link>
            </div>
          )}
@@ -37,6 +37,7 @@ class Quiz extends React.Component {
   nextQuestion(){
     this.setState({currentQuestion: this.state.currentQuestion+1})
   }
+
 
 }
 

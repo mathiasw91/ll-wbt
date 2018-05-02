@@ -45,6 +45,9 @@ class Quizpage extends React.Component {
       answersCount: this.state.answerContent +1,
       answer: parseInt(answer)
     });
+    if(this.props.question.answers[answer].correct){
+        this.props.setQuestionAnswered()
+    }
   }
 
    onAnswerSelected(event){
