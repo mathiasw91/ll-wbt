@@ -19,7 +19,7 @@ class Quizpage extends React.Component {
            {this.props.question.answers.map(this.renderAnswerOptions.bind(this))}
          </ul>
          {this.props.answer !== false && (
-           <button onClick={this.props.navigateNext}>nächste Frage</button>
+           <button onClick={this.props.navigateNext}>weiter</button>
          )}
       </div>
     )
