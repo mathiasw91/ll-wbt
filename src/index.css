@@ -171,6 +171,13 @@ h1, h2, h3, h4, h5, h6 {
     border-color: #8BC53F;
 }
 
+.radioCustomButton.answer-wrong:checked ~ .radioCustomLabel:before {
+    content: '';
+    background: red url(assets/icon-check.svg) no-repeat;
+    background-size: 27px;
+    border-color: red;
+}
+
 /* Checkmark */
 .checkmark {
     display:inline-block;

@@ -12,6 +12,7 @@ class Quiz extends React.Component {
     this.state = {
      currentQuestion: 0,
      answer: false,
+     answerWrong: false,
      questionsAnswered: [],
     }
   }
@@ -19,7 +20,7 @@ class Quiz extends React.Component {
   render() {
     return (
       <div id="quiz">
-        <button onClick={()=>{this.props.resetQuiz();this.setState({currentQuestion:0})}}>Dieses Quiz zurücksetzen</button>
+        <button onClick={this.resetQuiz.bind(this)}>Dieses Quiz zurücksetzen</button>
          {this.state.currentQuestion > (this.props.questions.length-1) && (
            <div>Finished</div>
          )}
@@ -29,7 +30,7 @@ class Quiz extends React.Component {
                 counter={this.state.currentQuestion+1}
                 total={this.props.questions.length}
               />
-             <Quizpage question={this.props.questions[this.state.currentQuestion]} answer={this.state.answer} setUserAnswer={this.setUserAnswer.bind(this)} navigateNext={this.nextQuestion.bind(this)}/>
+             <Quizpage question={this.props.questions[this.state.currentQuestion]} answer={this.state.answer} answerWrong={this.state.answerWrong} setUserAnswer={this.setUserAnswer.bind(this)} navigateNext={this.nextQuestion.bind(this)}/>
              <Link to={this.props.location.pathname.replace('/quiz','')}>Zurück zum Lerninhalt</Link>
            </div>
          )}
@@ -38,7 +39,7 @@ class Quiz extends React.Component {
   }
 
   nextQuestion(){
-    this.setState({currentQuestion: this.state.currentQuestion+1, answer: false}, ()=>{
+    this.setState({currentQuestion: this.state.currentQuestion+1, answer: false, answerWrong: false}, ()=>{
       if(this.state.currentQuestion > this.props.questions.length-1){
         this.state.questionsAnswered.forEach(q=>{
           this.props.setQuestionAnswered(q)
@@ -54,7 +55,14 @@ class Quiz extends React.Component {
     if(this.props.questions[this.state.currentQuestion].answers[answer].correct){
         let qa = this.state.questionsAnswered
         qa.push(this.state.currentQuestion)
+    }else{
+      this.setState({answerWrong: true})
     }
+  }
+
+  resetQuiz(){
+    this.props.resetQuiz();
+    this.setState({currentQuestion:0, answerWrong: false, answer: false})
   }
 
 }
