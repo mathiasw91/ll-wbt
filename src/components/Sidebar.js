@@ -1,6 +1,8 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom"
 
+import * as AppActions from '../flux/AppActions'
+
 class Sidebar extends React.Component {
 
   render() {
@@ -9,7 +11,7 @@ class Sidebar extends React.Component {
     	<div id="sidebar-navigation">
     	<h2>Themen</h2>
         {this.props.chapters.map((chapter, index) =>
-          <Chapter data={chapter} clickhandler={this.props.chapterClicked} index={index}/>
+          <Chapter data={chapter} index={index}/>
         )}
       </div>
     </aside>)
@@ -18,7 +20,7 @@ class Sidebar extends React.Component {
 
 function Chapter(props) {
   return (<div>
-      <span className={"sidebar-chapter "+(!props.data.closed?'open':'')} onClick={()=>{props.clickhandler(props.index)}}>{props.data.name}</span>
+      <span className={"sidebar-chapter "+(!props.data.closed?'open':'')} onClick={()=>{AppActions.toggleChapter(props.index)}}>{props.data.name}</span>
       {(!props.data.closed) && (props.data.themes.map(theme =>
         <Theme data={theme} />
       ))}

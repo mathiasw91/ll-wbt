@@ -2,6 +2,7 @@ import React from "react"
 import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom"
 import Quiz from './quiz/Quiz'
 import Home from './Home'
+import * as AppActions from '../flux/AppActions'
 
 class Content extends React.Component {
 
@@ -17,7 +18,7 @@ class Content extends React.Component {
       </div>)
     }else if(this.props.location.pathname.endsWith('quiz')){
       return (<div id="content-wrapper" className="quiz-wrapper">
-        <Quiz questions={this.props.activeTheme.questions.filter(q=>!q.answered)} setQuestionAnswered={this.props.setQuestionAnswered} resetQuiz={this.props.resetQuiz}/>
+        <Quiz questions={this.props.activeTheme.questions.filter(q=>!q.answered)} />
       </div>)
     }else{
       return (<div id="content-wrapper">
@@ -39,7 +40,7 @@ class Content extends React.Component {
         })
       })
       if(match){
-        this.props.onChapterSelect(match)
+        AppActions.updateLatest(match)
       }
     })
   }
