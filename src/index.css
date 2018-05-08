@@ -228,13 +228,16 @@ h1, h2, h3, h4, h5, h6 {
 
 #home #home-start {
   flex-grow: 1;
-  padding-right: 1em;
+  padding-right: 5em;
 }
 
 #home #home-sidebar {
   flex-grow: 0;
-  flex-basis: auto;
-  min-width: 12em;
+  flex-basis: 30em;
+}
+
+#latest-themes {
+  margin-top: 40px;
 }
 
 #latest-themes > a {

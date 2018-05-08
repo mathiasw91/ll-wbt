@@ -7,7 +7,7 @@ class Sidebar extends React.Component {
 
   render() {
     return (<aside id="sidebar">
-      <h2><Link to="/home">Zur Übersicht</Link></h2>
+      <h2><Link to="/home"><i class="fa fa-angle-right"></i> Zur Übersicht</Link></h2>
     	<div id="sidebar-navigation">
     	<h2>Themen</h2>
         {this.props.chapters.map((chapter, index) =>
