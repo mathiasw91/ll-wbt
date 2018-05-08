@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-d
 
 class Home extends React.Component {
 
+
+
   render() {
     return (<div id="home">
       <h1>Übersicht</h1>
@@ -20,6 +22,9 @@ class Home extends React.Component {
         </div>
         <div id="home-sidebar">
           <h2>Lernfortschritt</h2>
+          {this.props.chapters.map(c=>(
+            <span>{c.name}: {c.themes.filter(c=>c.quizComplete).length} / {c.themes.length} gelöst</span>
+          ))}
           <h2>Letzte Kapitel</h2>
           {(this.props.latest.length != 0) && (<div id="latest-themes">
             {this.props.latest.map(theme=>(
