@@ -330,3 +330,20 @@ a, a:visited {
 a:hover, a:focus, a:active {
   color: rgba(16, 111, 38, 0.93);
 }
+
+
+/*score*/
+#quiz-score.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#quiz-score.result span {
+  font-weight: bold;
+}
+
+#quiz-score .rc-progress-circle  {
+  width: 200px;
+  margin: 20px 0px;
+}
