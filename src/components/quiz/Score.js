@@ -6,13 +6,13 @@ import {withRouter, Link} from 'react-router-dom'
       <div id="quiz-score">
         Dieses Quiz ist bereits beendet.
         TODO Link auf nächstes Thema
-        <Link to={props.location.pathname.replace('/quiz','')}>Zum nächsten Thema</Link>
+        <Link className="btn btn-default" to={props.location.pathname.replace('/quiz','')}>Zum nächsten Thema</Link>
       </div>
     )
     return (
       <div id="quiz-score">
         {props.correct} / {props.total} Fragen richtig beantwortet!
-        <Link to={props.location.pathname.replace('/quiz','')}>Zurück zum Lerninhalt</Link>
+        <Link className="btn btn-default" to={props.location.pathname.replace('/quiz','')}>Zurück zum Lerninhalt</Link>
       </div>
     )
   }
