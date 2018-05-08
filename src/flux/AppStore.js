@@ -2,6 +2,7 @@ import {EventEmitter} from 'events'
 import Dispatcher from './Dispatcher'
 import PageOne from '../pages/Pageone'
 import PageTwo from '../pages/Pagetwo'
+import testimg from '../assets/bg_salad.jpg'
 
 class AppStore extends EventEmitter {
   constructor(){
@@ -17,7 +18,7 @@ class AppStore extends EventEmitter {
           ]},
           {id: 1, question: 'Fragetext Frage 2', answers: [
             {content: 'Antworttext Antwort 1', correct: false},
-            {content: 'Antworttext Antwort 2', correct: true}
+            {content: {type: 'img', src: testimg}, correct: true}
           ]}
         ]},
         {name: 'Thema 2', path: '/pagetwo',component: PageTwo, questions: [
@@ -56,6 +57,18 @@ class AppStore extends EventEmitter {
     }
     let unanswered = this.chapters[activeIndexes.chapter].themes[activeIndexes.theme].questions.filter(q=>!q.answered)
     if(unanswered.length == 0) this.chapters[activeIndexes.chapter].themes[activeIndexes.theme].quizComplete = true
+    this.emit('change')
+  }
+
+  resetProgress(){
+    this.chapters.forEach(c=>{
+      c.themes.forEach(t=>{
+        t.questions.forEach(q=>{
+          q.answered = false
+        })
+        t.quizComplete = false
+      })
+    })
     this.emit('change')
   }
 
@@ -114,6 +127,10 @@ class AppStore extends EventEmitter {
       }
       case 'SET_QUESTION_ANSWERED': {
         this.setQuestionAnswered(action.id)
+        break
+      }
+      case 'RESET_PROGRESS': {
+        this.resetProgress()
         break
       }
       case 'RESET_QUIZ': {
