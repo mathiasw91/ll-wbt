@@ -2,6 +2,7 @@ import {EventEmitter} from 'events'
 import Dispatcher from './Dispatcher'
 import PageOne from '../pages/Pageone'
 import PageTwo from '../pages/Pagetwo'
+import StandortUndBoden from '../pages/standort-und-boden'
 import testimg from '../assets/bg_salad.jpg'
 
 class AppStore extends EventEmitter {
@@ -10,15 +11,17 @@ class AppStore extends EventEmitter {
 
     this.chapters = [
       {name:'Planen und Vorbereiten', themes: [
-        {name: 'Standort und Boden', path: '/standort-und-boden',component: PageOne, questions: [
-          {id: 0, question: 'Fragetext Frage 1', answers: [
-            {content: 'Antworttext Antwort 1', correct: false},
-            {content: 'Antworttext Antwort 2', correct: true},
-            {content: 'Antworttext Antwort 3', correct: false},
+        {name: 'Standort und Boden', path: '/standort-und-boden',component: StandortUndBoden, questions: [
+          {id: 0, question: 'Wann ist der ideale Zeitpunkt, ein eigenes Gemüsebeet anzulegen?', answers: [
+            {content: 'Im Herbst, damit es im Frühjahr bereit ist zum Einsatz.', correct: false},
+            {content: 'Im Frühjahr, sobald kein Bodenfrost mehr herrscht.', correct: true},
+            {content: 'Im Sommer, da es in dieser Zeit auch am meisten regnet.', correct: false},
           ]},
-          {id: 1, question: 'Fragetext Frage 2', answers: [
-            {content: 'Antworttext Antwort 1', correct: false},
-            {content: {type: 'img', src: testimg}, correct: true}
+          {id: 1, question: 'Warum ist es wichtig, dass der Ort für das Gemüsebeet sonnig und nicht ganz windstill ist?', answers: [
+            {content: 'Die Pflanzen brauchen viel Sonne um gut wachsen zu können. Ohne Wind würden sie allerdings vertrocknen, da es zu heiß wird.', correct: false},
+            {content: 'Luftzirkulation sorgt dafür, dass die Pflanzen immer mit genug Kohlenstoffdioxid versorgt werden, was für die Photosynthese – genau wie ausreichend Sonnenlicht – essentiell ist.', correct: false},
+            {content: 'Schädlinge und Pilze mögen Windstille, deswegen ist ein wenig Luftzirkulation sehr gut.', correct: true}
+            // {content: {type: 'img', src: testimg}, correct: true}
           ]}
         ]},
         {name: 'Form des Beetes', path: '/form-des-beetes',component: PageOne, questions: [

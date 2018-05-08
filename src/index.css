@@ -78,6 +78,7 @@ a.sidebar-theme:not(.quiz-complete) .checkmark {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Amatic SC', cursive;
   margin-bottom: 0;
+  color: rgb(6, 97, 27);
 }
 
 /* arrows for sidebar */
@@ -142,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .radioCustomLabel {
     position: relative;
-    width: 100%;
+    /*width: 100%;*/
     margin: 0;
     padding: 1.5rem 2.5rem 1.5rem 5rem;
     font-size: 16px;
@@ -349,4 +350,13 @@ a:hover, a:focus, a:active {
 #quiz-score .rc-progress-circle  {
   width: 200px;
   margin: 20px 0px;
+}
+table {
+    border-collapse: collapse;
+}
+table, td {
+   border: 1px solid #fff;
+}
+td {
+  padding: 0.5em;
 }
