@@ -9,8 +9,8 @@ class AppStore extends EventEmitter {
     super()
 
     this.chapters = [
-      {name:'Kapitel 1', themes: [
-        {name: 'Thema 1', path: '/pageone',component: PageOne, questions: [
+      {name:'Planen und Vorbereiten', themes: [
+        {name: 'Standort und Boden', path: '/standort-und-boden',component: PageOne, questions: [
           {id: 0, question: 'Fragetext Frage 1', answers: [
             {content: 'Antworttext Antwort 1', correct: false},
             {content: 'Antworttext Antwort 2', correct: true},
@@ -21,14 +21,32 @@ class AppStore extends EventEmitter {
             {content: {type: 'img', src: testimg}, correct: true}
           ]}
         ]},
-        {name: 'Thema 2', path: '/pagetwo',component: PageTwo, questions: [
-
+        {name: 'Form des Beetes', path: '/form-des-beetes',component: PageOne, questions: [
+        ]},
+        {name: 'Bodenvorbereitung', path: '/bodenvorbereitung',component: PageOne, questions: [
         ]},
       ]},
-      {name:'Kapitel 2', themes: [
-        {name: 'Thema 1', path: '/pagethree',component: PageOne, questions: [
-
+      {name:'Anlegen und Pflegen', themes: [
+        {name: 'Auswahl der Pflanzen', path: '/auswahl-der-pflanzen',component: PageOne, questions: [
         ]},
+        {name: 'Aussaat und Bepflanzung', path: '/aussaat-und-bepflanzung',component: PageOne, questions: [
+        ]},
+        {name: 'Düngen und Bewässern', path: '/duengen-und-bewaessern',component: PageOne, questions: [
+        ]},
+        {name: 'Schädlinge und Unkraut', path: '/schaedlinge-und-unkraut',component: PageOne, questions: [
+        ]},
+        {name: 'Nach der Ernte', path: '/nach-der-ernte',component: PageOne, questions: [
+        ]}
+      ]},
+      {name:'Gängige Pflanzen', themes: [
+        {name: 'Tomate', path: '/tomate',component: PageOne, questions: [
+        ]},
+        {name: 'Salat', path: '/salat',component: PageOne, questions: [
+        ]},
+        {name: 'Gurke', path: '/gurke',component: PageOne, questions: [
+        ]},
+        {name: 'Erdbeere', path: '/erdbeere',component: PageOne, questions: [
+        ]}
       ]}
     ]
     this.activeTheme = this.chapters[0].themes[0]

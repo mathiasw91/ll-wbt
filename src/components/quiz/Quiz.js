@@ -23,20 +23,22 @@ class Quiz extends React.Component {
   render() {
     return (
       <div id="quiz">
-        <button onClick={this.resetQuiz.bind(this)}>Dieses Quiz zurücksetzen</button>
-         {this.state.currentQuestion > (this.state.questionTotal-1) && (
-           <Score total={this.state.questionTotal} correct={this.state.questionsAnswered.length}/>
-         )}
-         {this.state.currentQuestion < this.props.questions.length && (
-           <div>
-             <QuestionCount
-                counter={this.state.currentQuestion+1}
-                total={this.props.questions.length}
-              />
-             <Quizpage question={this.props.questions[this.state.currentQuestion]} answer={this.state.answer} answerWrong={this.state.answerWrong} setUserAnswer={this.setUserAnswer.bind(this)} navigateNext={this.nextQuestion.bind(this)}/>
-             <Link to={this.props.location.pathname.replace('/quiz','')}>Zurück zum Lerninhalt</Link>
-           </div>
-         )}
+        {this.state.currentQuestion > (this.state.questionTotal-1) && (
+          <Score total={this.state.questionTotal} correct={this.state.questionsAnswered.length}/>
+        )}
+        {this.state.currentQuestion < this.props.questions.length && (
+          <div>
+            <QuestionCount
+               counter={this.state.currentQuestion+1}
+               total={this.props.questions.length}
+             />
+            <Quizpage question={this.props.questions[this.state.currentQuestion]} answer={this.state.answer} answerWrong={this.state.answerWrong} setUserAnswer={this.setUserAnswer.bind(this)} navigateNext={this.nextQuestion.bind(this)}/>
+            <div style={{marginTop:"1em"}}>
+              <Link className="btn btn-default" to={this.props.location.pathname.replace('/quiz','')}>Zurück zum Lerninhalt</Link>
+              <button className="btn btn-default" style={{marginLeft:"2em"}} onClick={this.resetQuiz.bind(this)}>Dieses Quiz zurücksetzen</button>
+            </div>
+          </div>
+        )}
       </div>
     )
   }
