@@ -17,7 +17,7 @@ import {Circle} from 'rc-progress'
     return (
       <div id="quiz-score" className="result">
         <span>{props.correct} / {props.total} Fragen richtig beantwortet!</span>
-        <Circle percent={pctg} strokeWidth="4" strokeColor={circleColor} gapDegree="360"/>
+        <Circle percent={pctg} strokeWidth="4" strokeColor={circleColor}/>
       </div>
     )
   }
