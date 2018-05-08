@@ -21,6 +21,12 @@ export function setQuestionAnswered(id){
   })
 }
 
+export function resetProgress(){
+  Dispatcher.dispatch({
+    type: 'RESET_PROGRESS',
+  })
+}
+
 export function resetQuiz(){
   Dispatcher.dispatch({
     type: 'RESET_QUIZ',

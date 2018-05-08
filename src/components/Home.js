@@ -1,6 +1,8 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom"
 
+import * as AppActions from '../flux/AppActions'
+
 class Home extends React.Component {
 
 
@@ -25,6 +27,7 @@ class Home extends React.Component {
           {this.props.chapters.map(c=>(
             <span>{c.name}: {c.themes.filter(c=>c.quizComplete).length} / {c.themes.length} gelöst</span>
           ))}
+          <button onClick={AppActions.resetProgress}>Zurücksetzen</button>
           <h2>Letzte Kapitel</h2>
           {(this.props.latest.length != 0) && (<div id="latest-themes">
             {this.props.latest.map(theme=>(
