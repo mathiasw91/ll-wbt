@@ -25,9 +25,9 @@ class Home extends React.Component {
         <div id="home-sidebar">
           <h2>Lernfortschritt</h2>
           {this.props.chapters.map(c=>(
-            <span>{c.name}: {c.themes.filter(c=>c.quizComplete).length} / {c.themes.length} gelöst</span>
+            <span style={{display:"block"}}>{c.name}: {c.themes.filter(c=>c.quizComplete).length}&nbsp;/&nbsp;{c.themes.length}&nbsp;gelöst</span>
           ))}
-          <button onClick={AppActions.resetProgress}>Zurücksetzen</button>
+          <button className="btn btn-default" style={{marginTop:"0.8em"}} onClick={AppActions.resetProgress}>Zurücksetzen</button>
           <h2>Letzte Kapitel</h2>
           {(this.props.latest.length != 0) && (<div id="latest-themes">
             {this.props.latest.map(theme=>(

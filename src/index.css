@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Open+Sans+Condensed:300,700');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Open+Sans:300,700');
 
 html {
   height: 100%;
@@ -11,7 +11,7 @@ body {
   height: 100%;
   background-image: url(assets/bg_salad.jpg);
   background-size: cover;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App {
@@ -28,7 +28,7 @@ body {
 aside#sidebar {
   flex-basis: auto;
   flex-grow: 0;
-  min-width: 10em;
+  min-width: 20em;
   margin: 0 1em;
   padding: 1em;
   border-radius: 1em;
@@ -173,7 +173,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .radioCustomButton.answer-wrong:checked ~ .radioCustomLabel:before {
     content: '';
-    background: red url(assets/icon-check.svg) no-repeat;
+    background: red url(assets/icon-false.svg) no-repeat;
     background-size: 27px;
     border-color: red;
 }
@@ -244,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Buttons */
 
 .btn {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-decoration: none;
   display: inline-block;
   font-weight: 400;
@@ -290,7 +290,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-default {
-  color: #fff;
+  color: #fff !important;
   background-color: #28a745;
   border-color: #28a745;
 }
@@ -321,4 +321,12 @@ fieldset:disabled a.btn {
 .btn-default:not(:disabled):not(.disabled):active:focus, .btn-default:not(:disabled):not(.disabled).active:focus,
 .show > .btn-default.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+a, a:visited {
+  color: #28a745;
+}
+
+a:hover, a:focus, a:active {
+  color: rgba(16, 111, 38, 0.93);
 }

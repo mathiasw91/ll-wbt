@@ -25,7 +25,7 @@ class Content extends React.Component {
         {this.props.chapters.map(chapter =>
           <Chapter data={chapter} />
         )}
-        <Link to={this.props.location.pathname+'/quiz'}>zum Quiz</Link>
+        <Link className="btn btn-default" to={this.props.location.pathname+'/quiz'}>zum Quiz</Link>
       </div>)
     }
 
