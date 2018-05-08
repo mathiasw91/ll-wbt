@@ -2,7 +2,7 @@ import React from 'react'
 import {withRouter, Link} from 'react-router-dom'
 
   function Score(props) {
-    if(props.total == 0) return (
+    if(props.alreadyFinished) return (
       <div id="quiz-score">
         Dieses Quiz ist bereits beendet.
         TODO Link auf nächstes Thema

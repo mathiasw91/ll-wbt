@@ -65,7 +65,7 @@ class AppStore extends EventEmitter {
     let vorhanden = this.latest.indexOf(theme)
     if(vorhanden != -1) this.latest.splice(vorhanden,1)
     this.latest.unshift(theme)
-    if(this.latest.length > 3) this.latest.splice(0,10)
+    if(this.latest.length > 3) this.latest.splice(3,1)
     this.activeTheme = theme
     this.emit('change')
   }
