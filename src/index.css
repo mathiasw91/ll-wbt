@@ -337,6 +337,13 @@ a:hover, a:focus, a:active {
 
 
 /*quiz*/
+#quiz .text-progress {
+  margin: 10px 0px;
+  text-align: center;
+  color: rgb(6, 97, 27);
+  font-size: 1.2em;
+}
+
 #quiz .question-feedback {
   font-size: 1.2em;
   margin: 10px 0px 20px 0px;
