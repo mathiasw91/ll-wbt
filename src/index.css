@@ -360,3 +360,7 @@ table, td {
 td {
   padding: 0.5em;
 }
+
+table.valign-top td {
+  vertical-align: top;
+}

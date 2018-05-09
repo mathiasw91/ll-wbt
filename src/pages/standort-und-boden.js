@@ -5,6 +5,7 @@ class StandortUndBoden extends React.Component {
 
 
   render() {
+    let tableImgWidth = "250px"
     return (
       <div>
         <h2>Standort und Boden</h2>
@@ -19,14 +20,14 @@ class StandortUndBoden extends React.Component {
           Schon beim Anlegen des Gemüsebeetes gibt es einige Punkte zu beachten. So ist es zum Beispiel wichtig, einen Wasseranschluss in unmittelbarer Nähe zu haben, damit Sie später für die Bewässerung nur kurze Wege zurücklegen müssen. Auch der Kompost sollte nicht allzu weit weg sein. Befindet sich das Haus und besonders der Zugang zur Küche direkt neben dem Gemüsebeet, kann man auch beim Kochen noch mal schnell ein paar frische Kräuter schneiden und ist im Nu wieder am Herd.
         </p>
         <h3>Bodentypen</h3>
-        <table>
+        <table class="valign-top">
           <tr>
             <td>
               <h4>Leichter Sandboden</h4>
               <p>Ein leichter Boden kann realtiv einfach mit Kompost oder Stallmist gut aufbereitet werden.</p>
             </td>
             <td>
-              <img src={process.env.PUBLIC_URL + '/assets/sandboden.jpg'} style={{width:"100%"}}/>
+              <img src={process.env.PUBLIC_URL + '/assets/sandboden.jpg'} style={{width:tableImgWidth}}/>
             </td>
           </tr>
           <tr>
@@ -35,7 +36,7 @@ class StandortUndBoden extends React.Component {
               <p>Die Aufbereitung ist bei diesen Böden eher zeit- und arbeitsintensiv.</p>
             </td>
             <td>
-              <img src={process.env.PUBLIC_URL + '/assets/lehmboden.jpg'} style={{width:"100%"}}/>
+              <img src={process.env.PUBLIC_URL + '/assets/lehmboden.jpg'} style={{width:tableImgWidth}}/>
             </td>
           </tr>
           <tr>
@@ -44,7 +45,7 @@ class StandortUndBoden extends React.Component {
               <p>Die Aufbereitung ist bei diesen Böden eher zeit- und arbeitsintensiv.</p>
             </td>
             <td>
-              <img src={process.env.PUBLIC_URL + '/assets/tonboden.jpg'} style={{width:"100%"}}/>
+              <img src={process.env.PUBLIC_URL + '/assets/tonboden.jpg'} style={{width:tableImgWidth}}/>
             </td>
           </tr>
           <tr>
@@ -53,7 +54,7 @@ class StandortUndBoden extends React.Component {
               <p>Eignet sich gut für den Anbau von Gemüse.</p>
             </td>
             <td>
-              <img src={process.env.PUBLIC_URL + '/assets/sandiger-lehm.jpg'} style={{width:"100%"}}/>
+              <img src={process.env.PUBLIC_URL + '/assets/sandiger-lehm.jpg'} style={{width:tableImgWidth}}/>
             </td>
           </tr>
           <tr>
@@ -62,7 +63,7 @@ class StandortUndBoden extends React.Component {
               <p>Ein lockerer, humus-, sowie nährstoffreicher Boden ist am besten dazu geeignet, um ein Gemüsebeet anzulegen.</p>
             </td>
             <td>
-              <img src={process.env.PUBLIC_URL + '/assets/humus.jpg'} style={{width:"100%"}}/>
+              <img src={process.env.PUBLIC_URL + '/assets/humus.jpg'} style={{width:tableImgWidth}}/>
             </td>
           </tr>
         </table>
