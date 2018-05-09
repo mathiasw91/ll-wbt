@@ -336,6 +336,16 @@ a:hover, a:focus, a:active {
 }
 
 
+/*quiz*/
+#quiz .question-feedback {
+  font-size: 1.2em;
+  margin: 10px 0px 20px 0px;
+}
+
+#quiz .question span {
+  color: orangered;
+}
+
 /*score*/
 #quiz-score.result {
     display: flex;

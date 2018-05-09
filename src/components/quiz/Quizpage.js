@@ -18,6 +18,9 @@ class Quizpage extends React.Component {
         <ul className="answerOptions">
            {this.props.question.answers.map(this.renderAnswerOptions.bind(this))}
          </ul>
+         {this.props.answer !== false && this.props.answerWrong === true && this.props.question.feedback && (
+           <div className="question-feedback"><i class="fa fa-exclamation-circle"></i> Hinweis: {this.props.question.feedback}</div>
+         )}
          {this.props.answer !== false && (
            <button className="btn btn-default" onClick={this.props.navigateNext}>weiter</button>
          )}

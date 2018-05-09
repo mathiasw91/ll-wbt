@@ -12,7 +12,8 @@ class AppStore extends EventEmitter {
     this.chapters = [
       {name:'Planen und Vorbereiten', themes: [
         {name: 'Standort und Boden', path: '/standort-und-boden',component: StandortUndBoden, questions: [
-          {id: 0, question: 'Wann ist der ideale Zeitpunkt, ein eigenes Gemüsebeet anzulegen?', answers: [
+          {id: 0, question: 'Wann ist der ideale Zeitpunkt, ein eigenes Gemüsebeet anzulegen?',
+            feedback: 'some feedback', answers: [
             {content: 'Im Herbst, damit es im Frühjahr bereit ist zum Einsatz.', correct: false},
             {content: 'Im Frühjahr, sobald kein Bodenfrost mehr herrscht.', correct: true},
             {content: 'Im Sommer, da es in dieser Zeit auch am meisten regnet.', correct: false},
