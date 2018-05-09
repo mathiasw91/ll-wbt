@@ -16,8 +16,11 @@ import {Circle} from 'rc-progress'
 
     return (
       <div id="quiz-score" className="result">
-        <span>{props.correct} / {props.total} Fragen richtig beantwortet!</span>
+        <span>Du hast {props.correct} / {props.total} Fragen richtig beantwortet!</span>
         <Circle percent={pctg} strokeWidth="4" strokeColor={circleColor}/>
+        {props.remaining !== 0 && (
+          <div>Es verbleiben noch {props.remaining} unbeantwortete Fragen. Wiederhole das Quiz, bis alle Fragen gelöst sind.</div>
+        )}
       </div>
     )
   }

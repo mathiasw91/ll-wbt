@@ -17,6 +17,8 @@ class Quiz extends React.Component {
      answerWrong: false,
      questionsAnswered: props.total - props.questions.length, //Anz. aller beantworteten Fragen(sessionübergreifend)
      questionsTotal: props.total, //Anz. aller Fragen(sessionübergreifend)
+     questionsAnsweredSession: 0, //Anz. der richtig beantworteten Fragen der Session
+     questionsTotalSession: props.questions.length, //Anz. der Fragen der Session
     }
   }
 
@@ -26,7 +28,7 @@ class Quiz extends React.Component {
     }
     this.setState({questionsAnswered: nextProps.total - nextProps.questions.length})
     if(this.updateQuestions) {
-      this.setState({questions: nextProps.questions})
+      this.setState({questions: nextProps.questions, questionsTotalSession: nextProps.questions.length})
       this.updateQuestions = false
     }
   }
@@ -36,7 +38,8 @@ class Quiz extends React.Component {
     return (
       <div id="quiz">
         {this.state.currentQuestion >= this.state.questions.length && (
-          <Score total={this.state.questionsTotal} correct={this.state.questionsAnswered}
+          <Score total={this.state.questionsTotalSession} correct={this.state.questionsAnsweredSession}
+          remaining={this.state.questionsTotal-this.state.questionsAnswered}
           alreadyFinished={(this.state.questionsAnswered == this.state.questionsTotal) && this.state.currentQuestion == 0}/>
         )}
         {this.state.currentQuestion < this.state.questions.length && (
@@ -65,6 +68,7 @@ class Quiz extends React.Component {
       answer: parseInt(answer)
     });
     if(this.state.questions[this.state.currentQuestion].answers[answer].correct){
+      this.setState({questionsAnsweredSession: this.state.questionsAnsweredSession+1})
         AppActions.setQuestionAnswered(this.state.questions[this.state.currentQuestion].id)
     }else{
       this.setState({answerWrong: true})
@@ -74,7 +78,7 @@ class Quiz extends React.Component {
   resetQuiz(){
     AppActions.resetQuiz();
     this.updateQuestions = true
-    this.setState({currentQuestion:0, answerWrong: false, answer: false})
+    this.setState({currentQuestion:0, answerWrong: false, answer: false, questionsTotalSession: 0, questionsAnsweredSession: 0})
   }
 
 }
