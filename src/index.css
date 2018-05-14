@@ -381,3 +381,13 @@ td {
 table.valign-top td {
   vertical-align: top;
 }
+
+.clearfix {
+  clear: both;
+  display: block;
+  float: none;
+}
+
+.no-margin-top {
+  margin-top: 0px;
+}

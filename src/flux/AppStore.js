@@ -3,6 +3,7 @@ import Dispatcher from './Dispatcher'
 import PageOne from '../pages/Pageone'
 import PageTwo from '../pages/Pagetwo'
 import StandortUndBoden from '../pages/standort-und-boden'
+import FormDesBeetes from '../pages/form-des-beetes'
 import testimg from '../assets/bg_salad.jpg'
 
 class AppStore extends EventEmitter {
@@ -25,7 +26,7 @@ class AppStore extends EventEmitter {
             // {content: {type: 'img', src: testimg}, correct: true}
           ]}
         ]},
-        {name: 'Form des Beetes', path: '/form-des-beetes',component: PageOne, questions: [
+        {name: 'Form des Beetes', path: '/form-des-beetes',component: FormDesBeetes, questions: [
         ]},
         {name: 'Bodenvorbereitung', path: '/bodenvorbereitung',component: PageOne, questions: [
         ]},
