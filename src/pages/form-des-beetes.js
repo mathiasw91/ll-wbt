@@ -23,11 +23,11 @@ class FormDesBeetes extends React.Component {
         <h3>Beettypen</h3>
         <p>Vor allem auf schweren Böden lohnt es sich, den Anbau des Gemüses eine Etage höher zu legen. Dabei gibt es mehrere Möglichkeiten:</p>
         <h4>Hochbeet</h4>
-        <img src={process.env.PUBLIC_URL + '/assets/hochbeet.jpg'} style={{float: 'left', marginRight: '15px'}} />
+        <img src={'assets/hochbeet.jpg'} style={{float: 'left', marginRight: '15px'}} />
         <p class="no-margin-top">Ein Hügelbeet besteht im Kern aus Gestrüpp, darüber folgen umgedrehte Grassoden, Laub sowie eine Schicht grober Kompost oder Stallmist. Die Grundfläche sollte etwa 1,50 Meter breit und fünf Meter lang sein. Auch hier eignet sich eine Nord-Süd-Ausrichtung am besten. Ein Vorteil des Hügelbeetes ist, dass das Hügelinnere im Vergleich zum Boden gut durchlüftet ist und die Wurzeln nicht im Wasser stehen. Außerdem müssen Sie sich bei der Pflege des Beetes weniger tief bücken als bei ebenerdigen Reihenbeeten. Nachteile des Hügelbeetes sind Wühlmäuse, die sich gern im Innern der Wölbung aufhalten sowie die Tatsache, dass Sie das Beet häufiger gießen müssen, weil Wasser aus tieferen Bodenschichten fehlt.</p>
         <span class="clearfix"></span>
         <h4>Hügelbeet</h4>
-        <img src={process.env.PUBLIC_URL + '/assets/huegelbeet.jpg'} style={{float: 'left', marginRight: '15px'}} />
+        <img src={'assets/huegelbeet.jpg'} style={{float: 'left', marginRight: '15px'}} />
         <p class="no-margin-top">Ein Hochbeet wird ähnlich geschichtet wie ein Hügelbeet. Aus langlebigem Lärchen-, Eichen-, oder Robinienholz gebaut, ist das Hochbeet nicht nur praktisch, sondern auch ein Hingucker im Garten. Im Innern der Holzwand sollte eine Noppenfolie angebracht werden, die die Konstruktion vor Feuchtigkeit schützt. Am Boden halten ein engmaschiges Gitter oder Hohllochziegel Wühlmäuse fern. Wenn Sie das Beet so befüllen wie das Hügelbeet, müssen Sie immer wieder Erde und Kompost nachfüllen, da sich die Schichten mit der Zeit absenken. Ein großer Vorteil des Hochbeetes ist der individuelle Zuschnitt auf die Wünsche des Gärtners. Eine Höhe von 70 bis 90 Zentimetern hat sich für ein rückenschonendes Arbeiten bewährt – sie kann aber individuell an die eigene Körpergröße angepasst werden. Ein Hochbeet erfordert zwar einen einmaligen Zeit- und Kostenaufwand, ist dann aber relativ langlebig und wenig pflegeintensiv.</p>
         <span class="clearfix"></span>
 

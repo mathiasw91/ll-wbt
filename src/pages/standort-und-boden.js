@@ -27,7 +27,7 @@ class StandortUndBoden extends React.Component {
               <p>Ein leichter Boden kann realtiv einfach mit Kompost oder Stallmist gut aufbereitet werden.</p>
             </td>
             <td>
-              <img src={process.env.PUBLIC_URL + '/assets/sandboden.jpg'} style={{width:tableImgWidth}}/>
+              <img src={'assets/sandboden.jpg'} style={{width:tableImgWidth}}/>
             </td>
           </tr>
           <tr>
@@ -36,7 +36,7 @@ class StandortUndBoden extends React.Component {
               <p>Die Aufbereitung ist bei diesen Böden eher zeit- und arbeitsintensiv.</p>
             </td>
             <td>
-              <img src={process.env.PUBLIC_URL + '/assets/lehmboden.jpg'} style={{width:tableImgWidth}}/>
+              <img src={'assets/lehmboden.jpg'} style={{width:tableImgWidth}}/>
             </td>
           </tr>
           <tr>
@@ -45,7 +45,7 @@ class StandortUndBoden extends React.Component {
               <p>Die Aufbereitung ist bei diesen Böden eher zeit- und arbeitsintensiv.</p>
             </td>
             <td>
-              <img src={process.env.PUBLIC_URL + '/assets/tonboden.jpg'} style={{width:tableImgWidth}}/>
+              <img src={'assets/tonboden.jpg'} style={{width:tableImgWidth}}/>
             </td>
           </tr>
           <tr>
@@ -54,7 +54,7 @@ class StandortUndBoden extends React.Component {
               <p>Eignet sich gut für den Anbau von Gemüse.</p>
             </td>
             <td>
-              <img src={process.env.PUBLIC_URL + '/assets/sandiger-lehm.jpg'} style={{width:tableImgWidth}}/>
+              <img src={'assets/sandiger-lehm.jpg'} style={{width:tableImgWidth}}/>
             </td>
           </tr>
           <tr>
@@ -63,7 +63,7 @@ class StandortUndBoden extends React.Component {
               <p>Ein lockerer, humus-, sowie nährstoffreicher Boden ist am besten dazu geeignet, um ein Gemüsebeet anzulegen.</p>
             </td>
             <td>
-              <img src={process.env.PUBLIC_URL + '/assets/humus.jpg'} style={{width:tableImgWidth}}/>
+              <img src={'assets/humus.jpg'} style={{width:tableImgWidth}}/>
             </td>
           </tr>
         </table>

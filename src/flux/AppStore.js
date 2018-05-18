@@ -12,7 +12,7 @@ class AppStore extends EventEmitter {
 
     this.chapters = [
       {name:'Planen und Vorbereiten', themes: [
-        {name: 'Standort und Boden', path: '/standort-und-boden',component: StandortUndBoden, questions: [
+        {name: 'Standort und Boden', path: process.env.PUBLIC_URL + '/standort-und-boden',component: StandortUndBoden, questions: [
           {id: 0, question: 'Wann ist der ideale Zeitpunkt, ein eigenes Gemüsebeet anzulegen?',
             feedback: 'some feedback', answers: [
             {content: 'Im Herbst, damit es im Frühjahr bereit ist zum Einsatz.', correct: false},
@@ -26,31 +26,31 @@ class AppStore extends EventEmitter {
             // {content: {type: 'img', src: testimg}, correct: true}
           ]}
         ]},
-        {name: 'Form des Beetes', path: '/form-des-beetes',component: FormDesBeetes, questions: [
+        {name: 'Form des Beetes', path: process.env.PUBLIC_URL + '/form-des-beetes',component: FormDesBeetes, questions: [
         ]},
-        {name: 'Bodenvorbereitung', path: '/bodenvorbereitung',component: PageOne, questions: [
+        {name: 'Bodenvorbereitung', path: process.env.PUBLIC_URL + '/bodenvorbereitung',component: PageOne, questions: [
         ]},
       ]},
       {name:'Anlegen und Pflegen', themes: [
-        {name: 'Auswahl der Pflanzen', path: '/auswahl-der-pflanzen',component: PageOne, questions: [
+        {name: 'Auswahl der Pflanzen', path: process.env.PUBLIC_URL + '/auswahl-der-pflanzen',component: PageOne, questions: [
         ]},
-        {name: 'Aussaat und Bepflanzung', path: '/aussaat-und-bepflanzung',component: PageOne, questions: [
+        {name: 'Aussaat und Bepflanzung', path: process.env.PUBLIC_URL + '/aussaat-und-bepflanzung',component: PageOne, questions: [
         ]},
-        {name: 'Düngen und Bewässern', path: '/duengen-und-bewaessern',component: PageOne, questions: [
+        {name: 'Düngen und Bewässern', path: process.env.PUBLIC_URL + '/duengen-und-bewaessern',component: PageOne, questions: [
         ]},
-        {name: 'Schädlinge und Unkraut', path: '/schaedlinge-und-unkraut',component: PageOne, questions: [
+        {name: 'Schädlinge und Unkraut', path: process.env.PUBLIC_URL + '/schaedlinge-und-unkraut',component: PageOne, questions: [
         ]},
-        {name: 'Nach der Ernte', path: '/nach-der-ernte',component: PageOne, questions: [
+        {name: 'Nach der Ernte', path: process.env.PUBLIC_URL + '/nach-der-ernte',component: PageOne, questions: [
         ]}
       ]},
       {name:'Gängige Pflanzen', themes: [
-        {name: 'Tomate', path: '/tomate',component: PageOne, questions: [
+        {name: 'Tomate', path: process.env.PUBLIC_URL + '/tomate',component: PageOne, questions: [
         ]},
-        {name: 'Salat', path: '/salat',component: PageOne, questions: [
+        {name: 'Salat', path: process.env.PUBLIC_URL + '/salat',component: PageOne, questions: [
         ]},
-        {name: 'Gurke', path: '/gurke',component: PageOne, questions: [
+        {name: 'Gurke', path: process.env.PUBLIC_URL + '/gurke',component: PageOne, questions: [
         ]},
-        {name: 'Erdbeere', path: '/erdbeere',component: PageOne, questions: [
+        {name: 'Erdbeere', path: process.env.PUBLIC_URL + '/erdbeere',component: PageOne, questions: [
         ]}
       ]}
     ]
