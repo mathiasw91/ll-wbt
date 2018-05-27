@@ -5,6 +5,7 @@ import PageTwo from '../pages/Pagetwo'
 import StandortUndBoden from '../pages/standort-und-boden'
 import FormDesBeetes from '../pages/form-des-beetes'
 import testimg from '../assets/bg_salad.jpg'
+import Bodenvorbereitung from '../pages/bodenvorbereitung'
 
 class AppStore extends EventEmitter {
   constructor(){
@@ -28,7 +29,7 @@ class AppStore extends EventEmitter {
         ]},
         {name: 'Form des Beetes', path: process.env.PUBLIC_URL + '/form-des-beetes',component: FormDesBeetes, questions: [
         ]},
-        {name: 'Bodenvorbereitung', path: process.env.PUBLIC_URL + '/bodenvorbereitung',component: PageOne, questions: [
+        {name: 'Bodenvorbereitung', path: process.env.PUBLIC_URL + '/bodenvorbereitung',component: Bodenvorbereitung, questions: [
         ]},
       ]},
       {name:'Anlegen und Pflegen', themes: [
