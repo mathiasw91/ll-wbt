@@ -1,22 +1,27 @@
 import React from "react"
 
 
-class Bodenvorbereitung extends React.Component {
+class AuswahlDerPflanzen extends React.Component {
 
 
-//https://www.mein-schoener-garten.de/gemuesebeet-651#bodenvorbereitung
+//https://www.mein-schoener-garten.de/gemuesebeet-651#mischkultur
 
   render() {
     return (
       <div>
-        <h2>Bodenvorbereitung</h2>
 
-        <h3>Boden bearbeiten</h3>
-        <p>Nach der Planung des Gemüsebeetes geht es an die Umsetzung. Wenn möglich, beginnen Sie damit schon im Herbst, sodass das Beet fürs Frühjahr optimal vorbereitet ist. Stecken Sie als erstes die Umrisse des Beetes ab. Dafür eignen sich Holzstäbe und Schnüre. Es kann auch hilfreich sein, die Beetform mit Kalk auf den Boden zu streuen. Zur Bodenvorbereitung tragen Sie zunächst mithilfe einer Ziehhacke das Gras und die Gründüngung ab. Lockern Sie den Grund mit einer Grabegabel etwa 20 bis 30 Zentimeter tief. Alternativ ist das Durchlüften auch mit einem Sauzahn möglich: Der einzinkige Grubber lockert den Boden tiefgründig, ohne die Lage der Schichten zu verändern. Ziehen Sie das Gerät im Abstand von etwa 20 Zentimetern in diagonalen Bahnen tief durch den Boden – zunächst in Längs- und danach in Querrichtung, sodass auf der Oberfläche ein rautenförmiges Muster entsteht. Anschließend können Sie das Unkraut entfernen und die Oberfläche glatt rechen.</p>
-        <p>Danach werden Reihen gezogen. Am besten gelingt dies, indem Sie eine Schnur spannen und mit einer Hacke die Reihen daran entlang ziehen. Bei gutem Augenmaß können Sie die Reihen auch "aus der Hand" mit dem umgekehrten Stiel der Hacke frei ziehen. Tipp: Bearbeiten Sie nur trockenen Boden, da er andernfalls schmiert und sich Bodenkrümel bilden, die sehr hart werden, wenn sie trocknen.</p>
+        <h1>Auswahl der Pflanzen</h1>
+        <h2><i class="fa fa-leaf"></i> Mischkultur</h2>
+        <p>Unter einer Mischkultur versteht man ein Anbausystem auf dem Gemüsebeet, bei dem Monokulturen strikt vermieden werden. Diese haben auch im privaten Gemüsegarten viele Nachteile: Der Boden wird einseitig ausgelaugt, Schädlinge und Krankheiten können sich rasant ausbreiten und die Erde zunichte machen.</p>
+        <p>In der Mischkultur hingegen wird eine harmonische Pflanzengemeinschaft angestrebt, bei der unterschiedliche Gemüsearten nebeneinander gedeihen und voneinander profitieren. Sie eignet sich besonders für kleine Gärten, in denen ein richtiger Fruchtwechsel zu aufwändig wäre. Bei der Mischkultur ist es wichtig zu wissen, welche Gemüseart wann wie viel Platz benötigt. Grundsätzlich gilt: Eine große Anzahl von Gewächsen verträgt sich gut miteinander und beeinflusst sich positiv. Andere Arten wiederum stehen in Konkurrenz zueinander. Viele Kräuter wehren Schädlinge ab.</p>
 
-        <h3>Bodenverbesserung</h3>
-        <p>Leichte Sandböden können Sie mit einigen Handvoll Gesteinsmehl verbessern. Lehmboden wird mit Sand lockerer und durchlässiger. Schwere, tonige Böden sollten Sie jährlich bereits im Herbst vor dem ersten Frost tiefgründig umgraben. Nachdem sie den Boden gelockert haben, wird er mit nährstoffreichem, reifem Kompost angereichert und die Oberfläche glatt gerecht. So erhalten Sie ein möglichst feinkrümeliges Beet. Da sich der Boden noch absetzt, sollte er mindestens eine Woche ruhen, bevor Sie darauf ansäen.</p>
+        <h2><i class="fa fa-leaf"></i> Fruchtwechsel und Fruchtfolge</h2>
+        <p>Beim Fruchtwechsel und der Fruchtfolge handelt es sich um ein zeitlich gebundenes Rotationssystem, bei dem die Gemüsearten jedes Jahr ein Beet weiter wandern. Hierbei wird zwischen Stark-, Mittel- und Schwachzehren unterschieden. Auf einem gut gedüngten Gemüsebeet wachsen im ersten Jahr die Starkzehrer, im zweiten die Mittel- und im dritten Jahr die Schwachzehrer. So wird sichergestellt, dass Pflanzen aus der derselben Familie nicht in zwei aufeinanderfolgenden Jahren im selben Beet wachsen – zum Beispiel Kohl und Rettich oder Zwiebeln und Lauch. Sonst ist die Gefahr groß, dass der Boden einseitig auslaugt, denn verwandte Pflanzen haben oft einen ähnlichen Nährstoffbedarf.</p>
+        <p>Starkzehrer sind zum Beispiel verschiedene Kohlarten, Gurken, Kartoffeln, Lauch oder Sellerie. Bereiten Sie die Beete bereits im Herbst vor und versorgen Sie diese zusätzlich mit Kompost oder Hornmehl.</p>
+        <p>Mittelzehrer: Zwiebeln, Möhren, Salate, Spinat, Radieschen, Kohlrabi </p>
+        <p>Schwachzehrer: Bohnen, Erbsen, Kräuter</p>
+        <p>Es gibt sowohl zwei-, drei- als auch vierjährige Fruchtfolgen. Bei der dreijährigen Fruchtfolge bieten sich drei Gemüsebeete an, auf denen die drei Gruppen im jährlichen Wechsel rotieren. Bei der vierjährigen Fruchtfolge, die sich besonders für sandige oder ständig kranke Böden (verursacht durch zum Beispiel Kohlhernie) eignet, wird der Garten in vier Beete oder Quartiere eingeteilt. Das Prinzip bleibt unverändert, außer dass Sie Gründüngungspflanzen wie Phacelia, Buchweizen oder andere Arten, die mit keiner Gemüseart verwandt sind, im vierten Beet säen, auf das dann im kommenden Jahr die Starkzehrer folgen. Tipp: Sowohl bei der Mischkultur als auch bei der Fruchtfolge ist es unbedingt ratsam, dass Sie sich die Belegung der Beete und die angebauten Gemüsearten in einem Gartentagebuch festhalten. So wissen Sie im kommenden Jahr noch genau, wann Sie welches Gemüse auf welchem Beet kultiviert haben.</p>
+
 
       </div>
     )
@@ -24,4 +29,4 @@ class Bodenvorbereitung extends React.Component {
 }
 
 
-export default Bodenvorbereitung
+export default AuswahlDerPflanzen

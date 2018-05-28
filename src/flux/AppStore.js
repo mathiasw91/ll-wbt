@@ -6,6 +6,11 @@ import StandortUndBoden from '../pages/standort-und-boden'
 import FormDesBeetes from '../pages/form-des-beetes'
 import testimg from '../assets/bg_salad.jpg'
 import Bodenvorbereitung from '../pages/bodenvorbereitung'
+import AuswahlDerPflanzen from '../pages/auswahl-der-pflanzen'
+import AussaatUndBepflanzung from '../pages/aussaat-und-bepflanzung'
+import DuengenUndNachwaessern from '../pages/duengen-und-nachwaessern'
+import SchadelingeUndUnkraut from '../pages/schaedlinge-und-unkraut'
+import NachDerErnte from '../pages/nach-der-ernte'
 
 class AppStore extends EventEmitter {
   constructor(){
@@ -33,15 +38,15 @@ class AppStore extends EventEmitter {
         ]},
       ]},
       {name:'Anlegen und Pflegen', themes: [
-        {name: 'Auswahl der Pflanzen', path: process.env.PUBLIC_URL + '/auswahl-der-pflanzen',component: PageOne, questions: [
+        {name: 'Auswahl der Pflanzen', path: process.env.PUBLIC_URL + '/auswahl-der-pflanzen',component: AuswahlDerPflanzen, questions: [
         ]},
-        {name: 'Aussaat und Bepflanzung', path: process.env.PUBLIC_URL + '/aussaat-und-bepflanzung',component: PageOne, questions: [
+        {name: 'Aussaat und Bepflanzung', path: process.env.PUBLIC_URL + '/aussaat-und-bepflanzung',component: AussaatUndBepflanzung, questions: [
         ]},
-        {name: 'Düngen und Bewässern', path: process.env.PUBLIC_URL + '/duengen-und-bewaessern',component: PageOne, questions: [
+        {name: 'Düngen und Bewässern', path: process.env.PUBLIC_URL + '/duengen-und-bewaessern',component: DuengenUndNachwaessern, questions: [
         ]},
-        {name: 'Schädlinge und Unkraut', path: process.env.PUBLIC_URL + '/schaedlinge-und-unkraut',component: PageOne, questions: [
+        {name: 'Schädlinge und Unkraut', path: process.env.PUBLIC_URL + '/schaedlinge-und-unkraut',component: SchadelingeUndUnkraut, questions: [
         ]},
-        {name: 'Nach der Ernte', path: process.env.PUBLIC_URL + '/nach-der-ernte',component: PageOne, questions: [
+        {name: 'Nach der Ernte', path: process.env.PUBLIC_URL + '/nach-der-ernte',component: NachDerErnte, questions: [
         ]}
       ]},
       {name:'Gängige Pflanzen', themes: [
