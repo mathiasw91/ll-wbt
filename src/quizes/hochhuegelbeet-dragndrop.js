@@ -2,11 +2,11 @@ import React from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 // fake data generator
-const getItems = (count, offset = 0) =>
-    Array.from({ length: count }, (v, k) => k).map(k => ({
-        id: `item-${k + offset}`,
-        content: `item ${k + offset}`
-    }));
+// const getItems = (count, offset = 0) =>
+//     Array.from({ length: count }, (v, k) => k).map(k => ({
+//         id: `item-${k + offset}`,
+//         content: `item ${k + offset}`
+//     }));
 
 // a little function to help us with reordering the result
 // const reorder = (list, startIndex, endIndex) => {
@@ -56,7 +56,7 @@ const getListStyle = isDraggingOver => ({
     minHeight: 200,
 });
 
-class DragNDropQuiz extends React.Component {
+class HochHuegelBeetDragnDrop extends React.Component {
     state = {
         items: [
           {id: 0, content: 'langlebig und wenig pfelegeintensiv', match: 'hochbeet'},
@@ -74,7 +74,7 @@ class DragNDropQuiz extends React.Component {
      * source arrays stored in the state.
      */
     id2List = {
-        aussagen: 'items',
+        items: 'items',
         droppable2: 'hochbeet',
         droppable3: 'huegelbeet'
     };
@@ -112,7 +112,7 @@ class DragNDropQuiz extends React.Component {
                 destination
             );
             let newState = this.state
-            if(result.aussagen) newState.items = result.aussagen
+            if(result.items) newState.items = result.items
             if(result.droppable2) newState.hochbeet = result.droppable2
             if(result.droppable3) newState.huegelbeet = result.droppable3
             if(!newState.items.length) newState.finished = true
@@ -139,18 +139,19 @@ class DragNDropQuiz extends React.Component {
     render() {
         return (
           <div id="hochbeet-huegelbeet-quiz">
-            <h2 class="question">Ordnen Sie die Aussagen dem passenden Beettyp zu.</h2>
+            <h2 class="question">Ordnen Sie die Eigenschaften dem passenden Beettyp zu.</h2>
             <div class="flex-wrap">
               <DragDropContext onDragEnd={this.onDragEnd}>
                 <div class="left">
-                    <h2>Aussagen</h2>
-                    <Droppable droppableId="aussagen">
+                    <h2>Eigenschaften</h2>
+                    <Droppable droppableId="items">
                         {(provided, snapshot) => (
                             <div
                                 ref={provided.innerRef}
                                 style={getListStyle(snapshot.isDraggingOver)}>
                                 {this.state.items.map((item, index) => (
                                     <Draggable
+                                        isDragDisabled={this.state.finished}
                                         key={item.id}
                                         draggableId={item.id}
                                         index={index}>
@@ -183,6 +184,7 @@ class DragNDropQuiz extends React.Component {
                                   style={getListStyle(snapshot.isDraggingOver)}>
                                   {this.state.hochbeet.map((item, index) => (
                                       <Draggable
+                                          isDragDisabled={this.state.finished}
                                           key={item.id}
                                           draggableId={item.id}
                                           index={index}>
@@ -214,6 +216,7 @@ class DragNDropQuiz extends React.Component {
                                   style={getListStyle(snapshot.isDraggingOver)}>
                                   {this.state.huegelbeet.map((item, index) => (
                                       <Draggable
+                                          isDragDisabled={this.state.finished}
                                           key={item.id}
                                           draggableId={item.id}
                                           index={index}>
@@ -246,4 +249,4 @@ class DragNDropQuiz extends React.Component {
     }
 }
 
-export default DragNDropQuiz
+export default HochHuegelBeetDragnDrop

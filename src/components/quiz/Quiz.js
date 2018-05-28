@@ -4,7 +4,6 @@ import Quizpage from './Quizpage'
 import QuestionCount from './Questioncount'
 import Score from './Score'
 import * as AppActions from '../../flux/AppActions'
-import DragNDropQuiz from './Dragndropquiz'
 
 
 class Quiz extends React.Component {
@@ -37,6 +36,7 @@ class Quiz extends React.Component {
 
   render() {
     var q = this.state.questions[this.state.currentQuestion]
+    var CustomQuiz = q.component
     return (
       <div id="quiz">
         {this.state.currentQuestion >= this.state.questions.length && (
@@ -50,10 +50,11 @@ class Quiz extends React.Component {
                counter={this.state.questionsAnswered}
                total={this.state.questionsTotal}
              />
-             {q.type === 'dragNDrop' && (
-               <DragNDropQuiz navigateNext={this.nextQuestion.bind(this)} onCorrectAnswer={this.setQuestionAnswered.bind(this)}/>
+             {CustomQuiz !== undefined && (
+               <CustomQuiz navigateNext={this.nextQuestion.bind(this)} onCorrectAnswer={this.setQuestionAnswered.bind(this)}/>
+
              )}
-             {q.type === undefined && (
+             {q.component === undefined && (
                <Quizpage question={this.state.questions[this.state.currentQuestion]} answer={this.state.answer} answerWrong={this.state.answerWrong} setUserAnswer={this.setUserAnswer.bind(this)} navigateNext={this.nextQuestion.bind(this)}/>
              )}
           </div>

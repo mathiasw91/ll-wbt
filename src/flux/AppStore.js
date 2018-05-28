@@ -11,6 +11,7 @@ import AussaatUndBepflanzung from '../pages/aussaat-und-bepflanzung'
 import DuengenUndNachwaessern from '../pages/duengen-und-nachwaessern'
 import SchadelingeUndUnkraut from '../pages/schaedlinge-und-unkraut'
 import NachDerErnte from '../pages/nach-der-ernte'
+import HochHuegelBeetDragnDrop from '../quizes/hochhuegelbeet-dragndrop'
 
 class AppStore extends EventEmitter {
   constructor(){
@@ -33,7 +34,7 @@ class AppStore extends EventEmitter {
           ]}
         ]},
         {name: 'Form des Beetes', path: process.env.PUBLIC_URL + '/form-des-beetes',component: FormDesBeetes, questions: [
-          {id: 0, type: 'dragNDrop'},
+          {id: 0, component: HochHuegelBeetDragnDrop},
           {id: 1, question: 'normale textfrage', answers:[
             {content: 'Antwort richtig', correct: true},
             {content: 'Antwort falsch', correct: false}
