@@ -36,7 +36,8 @@ class Quiz extends React.Component {
 
   render() {
     var q = this.state.questions[this.state.currentQuestion]
-    var CustomQuiz = q.component
+    var CustomQuiz
+    if(q) CustomQuiz = q.component
     return (
       <div id="quiz">
         {this.state.currentQuestion >= this.state.questions.length && (

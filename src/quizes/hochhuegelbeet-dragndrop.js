@@ -124,12 +124,25 @@ class HochHuegelBeetDragnDrop extends React.Component {
 
     finish(){
       let correct = true
-      this.state.hochbeet.forEach(i=>{
-        if(i.match != 'hochbeet') correct = false
+      let newhoch = this.state.hochbeet.map(i=>{
+        if(i.match != 'hochbeet'){
+          i.correct = false
+          correct = false
+        }else{
+          i.correct = true
+        }
+        return i
       })
-      this.state.huegelbeet.forEach(i=>{
-        if(i.match != 'huegelbeet') correct = false
+      let newhuegel = this.state.huegelbeet.map(i=>{
+        if(i.match != 'huegelbeet'){
+          i.correct = false
+          correct = false
+        }else{
+          i.correct = true
+        }
+        return i
       })
+      this.setState({hochbeet: newhoch, huegelbeet: newhuegel})
 
       if(correct) this.props.onCorrectAnswer()
     }
@@ -138,7 +151,7 @@ class HochHuegelBeetDragnDrop extends React.Component {
     // But in this example everything is just done in one place for simplicity
     render() {
         return (
-          <div id="hochbeet-huegelbeet-quiz">
+          <div id="hochbeet-huegelbeet-quiz" className={'dnd-quiz '+(this.state.finished?'finished': '')}>
             <h2 class="question">Ordnen Sie die Eigenschaften dem passenden Beettyp zu.</h2>
             <div class="flex-wrap">
               <DragDropContext onDragEnd={this.onDragEnd}>
@@ -157,6 +170,7 @@ class HochHuegelBeetDragnDrop extends React.Component {
                                         index={index}>
                                         {(provided, snapshot) => (
                                             <div
+                                                className={"dnd-item "+(item.correct? 'right':'wrong')}
                                                 ref={provided.innerRef}
                                                 {...provided.draggableProps}
                                                 {...provided.dragHandleProps}
@@ -190,6 +204,7 @@ class HochHuegelBeetDragnDrop extends React.Component {
                                           index={index}>
                                           {(provided, snapshot) => (
                                               <div
+                                                  className={"dnd-item "+(item.correct? 'right':'wrong')}
                                                   ref={provided.innerRef}
                                                   {...provided.draggableProps}
                                                   {...provided.dragHandleProps}
@@ -222,6 +237,7 @@ class HochHuegelBeetDragnDrop extends React.Component {
                                           index={index}>
                                           {(provided, snapshot) => (
                                               <div
+                                                  className={"dnd-item "+(item.correct? 'right':'wrong')}
                                                   ref={provided.innerRef}
                                                   {...provided.draggableProps}
                                                   {...provided.dragHandleProps}
