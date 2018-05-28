@@ -9,18 +9,18 @@ class FormDesBeetes extends React.Component {
   render() {
     return (
       <div>
-        <h2>Form des Beetes</h2>
-        <h3>Länge und Breite</h3>
+        <h1>Form des Beetes</h1>
+        <h2><i class="fa fa-leaf"></i> Länge und Breite</h2>
         <p>Grundsätzlich sind den Gestaltungswünschen beim Anlegen eines Gemüsebeetes keine Grenzen gesetzt. Ausführungen mit geraden Reihen sind ebenso möglich wie bepflanzte kreisrunde Flächen. Um die Gemüsebeete aber möglichst einfach und bequem pflegen und bearbeiten zu können, haben sich rechteckige Reihenbeete bewährt. Rechtwinklig dazu verlaufende Laufwege garantieren einen leichten Zugang. Das klassische Gemüsebeet ist 1,20 Meter breit und hat eine Nord-Süd-Ausrichtung. Die Kulturen wachsen auf dem Reihenbeet in geraden Bahnen. Am Berg legt man die Beete quer zum Hang an, sodass das Regenwasser abfließen kann. Der Hauptweg im Gemüsebeet sollte – wenn möglich – mindestens 60 bis 80 Zentimeter breit sein, damit Sie mit dem Schubkarren noch gut zwischen den Gemüsereihen hindurchfahren können. Für die Nebenwege sind in der Regel 30 Zentimeter ausreichend. Viel länger als fünf Meter sollte ein Gemüsebeet nicht sein, da man sonst dazu neigt, über das Beet zu steigen, um die Wege abzukürzen – dabei tritt man schnell ein paar Pflanzen kaputt.</p>
 
-        <h3>Benötigte Größe</h3>
+        <h2><i class="fa fa-leaf"></i> Benötigte Größe</h2>
         <p>Die Anzahl der Gemüsebeete hängt davon ab, wie viel man anbauen und ernten möchten. Um eine Person ausschließlich mit Gemüse aus dem eigenen Garten zu versorgen, sind etwa 30 bis 40 Quadratmeter Fläche nötig. Bei einer Beetlänge von fünf Metern und einer Breite von 1,2 Metern wären also ungefähr sechs angelegte Beete zur Selbstversorgung nötig. </p>
 
-        <h3>Beeteinfassung</h3>
+        <h2><i class="fa fa-leaf"></i> Beeteinfassung</h2>
         <p>Dicke und kurze Holzpflöcke markieren die Ecken der Reihenbeete, eine Einfassung in der Länge und Breite schützt vor Schädlingen und hält die Erde gut im Beet. Eine Beeteinfassung aus Beton- oder Naturstein kann kosten- und zeitaufwendiger sein, hält aber Unkraut sehr gut fern. Zu naturnahen Gärten passen Einfassungen aus Holz oder Flechtzäune aus Weiden. Sie sollten mindestens 20 Zentimeter tief im Boden eingegraben werden. Die Trittwege zwischen den Gemüsebeeten können mit Gehwegplatten oder Rindenmulch befestigt werden.</p>
         <p>Beerensträucher pflanzt man am besten am Rand des Gemüsebeetes. Mehrjährige Kräuter bekommen ein Extrabeet, einjährige Kräuter wachsen zwischen den Gemüsereihen. Einjährige Sommerblumen, die am Rand und auch mitten im Gemüsebeet blühen, verwandeln zusammen mit blühenden Kräutern das eher nüchterne Bild rechtwinkliger Gemüsebeete in einen attraktiven Gartenbereich. Tagetes und Kapuzinerkresse verbessern gleichzeitig den Boden, Lupinen versorgen ihn mit Stickstoff.</p>
 
-        <h3>Beettypen</h3>
+        <h2><i class="fa fa-leaf"></i> Beettypen</h2>
         <p>Vor allem auf schweren Böden lohnt es sich, den Anbau des Gemüses eine Etage höher zu legen. Dabei gibt es mehrere Möglichkeiten:</p>
         <h4>Hochbeet</h4>
         <img src={'assets/hochbeet.jpg'} style={{float: 'left', marginRight: '15px'}} />
