@@ -4,6 +4,7 @@ import Quizpage from './Quizpage'
 import QuestionCount from './Questioncount'
 import Score from './Score'
 import * as AppActions from '../../flux/AppActions'
+import DragNDropQuiz from './Dragndropquiz'
 
 
 class Quiz extends React.Component {
@@ -35,6 +36,7 @@ class Quiz extends React.Component {
 
 
   render() {
+    var q = this.state.questions[this.state.currentQuestion]
     return (
       <div id="quiz">
         {this.state.currentQuestion >= this.state.questions.length && (
@@ -48,7 +50,12 @@ class Quiz extends React.Component {
                counter={this.state.questionsAnswered}
                total={this.state.questionsTotal}
              />
-            <Quizpage question={this.state.questions[this.state.currentQuestion]} answer={this.state.answer} answerWrong={this.state.answerWrong} setUserAnswer={this.setUserAnswer.bind(this)} navigateNext={this.nextQuestion.bind(this)}/>
+             {q.type === 'dragNDrop' && (
+               <DragNDropQuiz navigateNext={this.nextQuestion.bind(this)} onCorrectAnswer={this.setQuestionAnswered.bind(this)}/>
+             )}
+             {q.type === undefined && (
+               <Quizpage question={this.state.questions[this.state.currentQuestion]} answer={this.state.answer} answerWrong={this.state.answerWrong} setUserAnswer={this.setUserAnswer.bind(this)} navigateNext={this.nextQuestion.bind(this)}/>
+             )}
           </div>
         )}
         <div style={{marginTop:"5em"}}>
@@ -68,11 +75,15 @@ class Quiz extends React.Component {
       answer: parseInt(answer)
     });
     if(this.state.questions[this.state.currentQuestion].answers[answer].correct){
-      this.setState({questionsAnsweredSession: this.state.questionsAnsweredSession+1})
-        AppActions.setQuestionAnswered(this.state.questions[this.state.currentQuestion].id)
+      this.setQuestionAnswered()
     }else{
       this.setState({answerWrong: true})
     }
+  }
+
+  setQuestionAnswered(){
+    this.setState({questionsAnsweredSession: this.state.questionsAnsweredSession+1})
+    AppActions.setQuestionAnswered(this.state.questions[this.state.currentQuestion].id)
   }
 
   resetQuiz(){

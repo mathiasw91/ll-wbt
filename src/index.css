@@ -391,3 +391,9 @@ table.valign-top td {
 .no-margin-top {
   margin-top: 0px;
 }
+
+
+#hochbeet-huegelbeet-quiz .flex-wrap {
+  display: flex;
+  justify-content: space-around;
+}

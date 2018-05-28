@@ -33,6 +33,11 @@ class AppStore extends EventEmitter {
           ]}
         ]},
         {name: 'Form des Beetes', path: process.env.PUBLIC_URL + '/form-des-beetes',component: FormDesBeetes, questions: [
+          {id: 0, type: 'dragNDrop'},
+          {id: 1, question: 'normale textfrage', answers:[
+            {content: 'Antwort richtig', correct: true},
+            {content: 'Antwort falsch', correct: false}
+          ]}
         ]},
         {name: 'Bodenvorbereitung', path: process.env.PUBLIC_URL + '/bodenvorbereitung',component: Bodenvorbereitung, questions: [
         ]},
@@ -124,7 +129,7 @@ class AppStore extends EventEmitter {
         }
       })
     })
-    return {chapter: activeThemeIndex, theme: activeThemeIndex}
+    return {chapter: activeChapterIndex, theme: activeThemeIndex}
   }
 
   getQuestionById(chapterId, themeId, questionId){
