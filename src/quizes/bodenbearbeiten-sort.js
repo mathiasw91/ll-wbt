@@ -8,30 +8,14 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 //         content: `item ${k + offset}`
 //     }));
 
+
 // a little function to help us with reordering the result
-// const reorder = (list, startIndex, endIndex) => {
-//     const result = Array.from(list);
-//     const [removed] = result.splice(startIndex, 1);
-//     result.splice(endIndex, 0, removed);
-//
-//     return result;
-// };
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
 
-/**
- * Moves an item from one list to another list.
- */
-const move = (source, destination, droppableSource, droppableDestination) => {
-    const sourceClone = Array.from(source);
-    const destClone = Array.from(destination);
-    const [removed] = sourceClone.splice(droppableSource.index, 1);
-
-    destClone.splice(droppableDestination.index, 0, removed);
-
-    const result = {};
-    result[droppableSource.droppableId] = sourceClone;
-    result[droppableDestination.droppableId] = destClone;
-
-    return result;
+  return result;
 };
 
 const grid = 8;
@@ -65,7 +49,6 @@ class BodenBearbeitenSort extends React.Component {
           {id: 3, content: 'Ziehen von Reihen'},
           {id: 0, content: 'Abstecken der Umrisse'},
         ],
-        sorted: [],
         finished: false,
     };
 
@@ -76,51 +59,30 @@ class BodenBearbeitenSort extends React.Component {
      */
     id2List = {
         items: 'items',
-        droppable2: 'sorted',
     };
 
     getList = id => this.state[this.id2List[id]];
 
     onDragEnd = result => {
-        const { source, destination } = result;
+    // dropped outside the list
+    if (!result.destination) {
+      return;
+    }
 
-        // dropped outside the list
-        if (!destination) {
-            return;
-        }
+    const items = reorder(
+      this.state.items,
+      result.source.index,
+      result.destination.index
+    );
 
-        if (source.droppableId === destination.droppableId) {
-            const items = this.getList(source.droppableId)
-
-
-            let state = { items };
-
-            if (source.droppableId === 'droppable2') {
-                state = { sorted: items };
-            }
-
-
-            this.setState(state);
-        } else {
-            const result = move(
-                this.getList(source.droppableId),
-                this.getList(destination.droppableId),
-                source,
-                destination
-            );
-            let newState = this.state
-            if(result.items) newState.items = result.items
-            if(result.droppable2) newState.sorted = result.droppable2
-            if(!newState.items.length) newState.finished = true
-            this.setState(newState, ()=>{
-              if(!newState.items.length) this.finish()
-            });
-        }
-    };
+    this.setState({
+      items,
+    });
+  }
 
     finish(){
       let correct = true
-      let newSorted = this.state.sorted.map((i, index)=>{
+      let newSorted = this.state.items.map((i, index)=>{
         if(i.id !== index){
           i.correct = false
           correct = false
@@ -130,7 +92,7 @@ class BodenBearbeitenSort extends React.Component {
         return i
       })
 
-      this.setState({sorted: newSorted})
+      this.setState({items: newSorted, finished: true})
 
       if(correct) this.props.onCorrectAnswer()
     }
@@ -141,7 +103,7 @@ class BodenBearbeitenSort extends React.Component {
         return (
           <div id="bodenbearbeiten-quiz" className={'dnd-quiz '+(this.state.finished?'finished': '')}>
             <h2 class="question">Bringen Sie die Arbeitsschritte in die richtige Reihenfolge.</h2>
-            <div class="flex-wrap">
+            <div class="flex-wrap" style={{marginBottom: '15px'}}>
               <DragDropContext onDragEnd={this.onDragEnd}>
                 <div class="left">
                     <h2>Arbeitsschritte</h2>
@@ -176,45 +138,10 @@ class BodenBearbeitenSort extends React.Component {
                         )}
                     </Droppable>
                   </div>
-                  <div class="right">
-                    <div>
-                      <h2>Ablauf der Bodenvorbereitung</h2>
-                      <Droppable droppableId="droppable2">
-                          {(provided, snapshot) => (
-                              <div
-                                  ref={provided.innerRef}
-                                  style={getListStyle(snapshot.isDraggingOver)}>
-                                  {this.state.sorted.map((item, index) => (
-                                      <Draggable
-                                          isDragDisabled={this.state.finished}
-                                          key={item.id}
-                                          draggableId={item.id}
-                                          index={index}>
-                                          {(provided, snapshot) => (
-                                              <div
-                                                  className={"dnd-item "+(item.correct? 'right':'wrong')}
-                                                  ref={provided.innerRef}
-                                                  {...provided.draggableProps}
-                                                  {...provided.dragHandleProps}
-                                                  style={getItemStyle(
-                                                      snapshot.isDragging,
-                                                      provided.draggableProps.style
-                                                  )}>
-                                                  {item.content}
-                                              </div>
-                                          )}
-                                      </Draggable>
-                                  ))}
-                                  {provided.placeholder}
-                              </div>
-                          )}
-                      </Droppable>
-                    </div>
-                  </div>
               </DragDropContext>
             </div>
             {this.state.finished == true && (<button className="btn btn-default" onClick={this.props.navigateNext}>weiter</button>)}
-
+            {this.state.finished == false && (<button className="btn btn-default" onClick={this.finish.bind(this)}>fertig</button>)}
           </div>
         );
     }
