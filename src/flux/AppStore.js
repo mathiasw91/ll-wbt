@@ -12,6 +12,8 @@ import DuengenUndNachwaessern from '../pages/duengen-und-nachwaessern'
 import SchadelingeUndUnkraut from '../pages/schaedlinge-und-unkraut'
 import NachDerErnte from '../pages/nach-der-ernte'
 import HochHuegelBeetDragnDrop from '../quizes/hochhuegelbeet-dragndrop'
+import BodenBearbeitenSort from '../quizes/bodenbearbeiten-sort'
+
 
 class AppStore extends EventEmitter {
   constructor(){
@@ -41,6 +43,18 @@ class AppStore extends EventEmitter {
           ]}
         ]},
         {name: 'Bodenvorbereitung', path: process.env.PUBLIC_URL + '/bodenvorbereitung',component: Bodenvorbereitung, questions: [
+          {id: 0, question: 'Wodurch kann die Bildung von Bodenkrümeln vermiden werden?',
+          feedback: 'Die Krümel entstehen durch das Trocknen der Erde', answers: [
+            {content: 'Den Boden nur im feuchten Zustand bearbeiten', correct: false},
+            {content: 'Den Boden nur im trockenden Zustand bearbeiten', correct: true}
+          ]},
+          {id: 1, question: 'Welcher Bodentyp kann durch Zugabe von Sand verbessert werden?',
+          feebdack: 'Der Sand macht den Boden lockrer und durchlässiger', answers: [
+            {content: 'Leichte Sandböden', correct: false},
+            {content: 'Lehmboden', correct: true},
+            {content: 'Schwere, tonige Böden', correct: false}
+          ]},
+          {id: 2, component: BodenBearbeitenSort}
         ]},
       ]},
       {name:'Anlegen und Pflegen', themes: [
