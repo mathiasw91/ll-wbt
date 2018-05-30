@@ -41,9 +41,9 @@ const getItemStyle = (isDragging, draggableStyle) => ({
     userSelect: 'none',
     padding: grid * 2,
     margin: `0 0 ${grid}px 0`,
-
+    borderRadius: '7px',
     // change background colour if dragging
-    background: isDragging ? 'lightgreen' : 'grey',
+    background: isDragging ? 'white' : 'white',
 
     // styles we need to apply on draggables
     ...draggableStyle
@@ -54,14 +54,17 @@ const getListStyle = isDraggingOver => ({
     padding: grid,
     width: 250,
     minHeight: 200,
+    borderRadius: '7px',
 });
 
 class HochHuegelBeetDragnDrop extends React.Component {
     state = {
         items: [
           {id: 0, content: 'langlebig und wenig pfelegeintensiv', match: 'hochbeet'},
-          {id: 1, content: 'schützt vor Wühlmäusen', match: 'hochbeet'},
-          {id: 2, content: 'gute Durchlüftung', match: 'huegelbeet'}
+          {id: 1, content: 'anfällig für Wühlmäuse', match: 'huegelbeet'},
+          {id: 2, content: 'schützt vor Wühlmäusen', match: 'hochbeet'},
+          {id: 3, content: 'gute Durchlüftung', match: 'huegelbeet'},
+          {id: 4, content: 'individuell auf Körpergröße anpassbar', match: 'hochbeet'}
         ],
         hochbeet: [],
         huegelbeet: [],
