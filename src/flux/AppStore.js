@@ -13,6 +13,7 @@ import SchadelingeUndUnkraut from '../pages/schaedlinge-und-unkraut'
 import NachDerErnte from '../pages/nach-der-ernte'
 import HochHuegelBeetDragnDrop from '../quizes/hochhuegelbeet-dragndrop'
 import BodenBearbeitenSort from '../quizes/bodenbearbeiten-sort'
+import ZehrerDnD from '../quizes/zehrer-dnd'
 
 
 class AppStore extends EventEmitter {
@@ -59,6 +60,19 @@ class AppStore extends EventEmitter {
       ]},
       {name:'Anlegen und Pflegen', themes: [
         {name: 'Auswahl der Pflanzen', path: process.env.PUBLIC_URL + '/auswahl-der-pflanzen',component: AuswahlDerPflanzen, questions: [
+          {id: 1, question: 'Was versteht man unter Mischkultur?', answers: [
+            {content: 'Die Pflanzen farblich gemischt anzubauen', correct: false},
+            {content: 'Ein zeitlich gebundenes Rotationssystem beim Anbau', correct: false},
+            {content: 'Unterschiedliche Gemüsearten kombiniert anzubauen', correct: true},
+            {content: 'Die Pflanzen auf unterschiedliche Beete aufzuteilen', correct: false}
+          ]},
+          {id: 2, component: ZehrerDnD},
+          {id: 3, question: 'Für welche Böden eigenet sich die vierjährige Fruchtfolge besonders?', answers: [
+            {content: 'Sandige Böden', correct: true},
+            {content: 'Böden die viel Feuchtigkeit erhalten', correct: false},
+            {content: 'Böden die wenig Feuchtigkeit erhalten', correct: false},
+            {content: 'Ständig kranke Böden', correct: true}
+          ]}
         ]},
         {name: 'Aussaat und Bepflanzung', path: process.env.PUBLIC_URL + '/aussaat-und-bepflanzung',component: AussaatUndBepflanzung, questions: [
         ]},
