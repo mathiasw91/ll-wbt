@@ -40,7 +40,6 @@ const getItemStyle = (isDragging, draggableStyle) => ({
     // some basic styles to make the items look a bit nicer
     userSelect: 'none',
     padding: grid * 2,
-    margin: `0 0 ${grid}px 0`,
     borderRadius: '7px',
     width: '200px',
     // change background colour if dragging
@@ -210,9 +209,9 @@ class ZehrerDnD extends React.Component {
 
                     <table style={{textAlign: 'left'}}>
                       <tr>
-                        <th style={{border: '3px solid #d50114'}}>Starkzehrer</th>
-                        <th style={{border: '3px solid rgb(249, 172, 3)'}}>Mittelzehrer</th>
-                        <th style={{border: '3px solid rgb(254, 253, 5)'}}>Schwachzehrer</th>
+                        <th style={{border: '3px solid #d50114', background: '#d50114'}}>Starkzehrer</th>
+                        <th style={{border: '3px solid rgb(249, 172, 3)', background: 'rgb(249,172,3)'}}>Mittelzehrer</th>
+                        <th style={{border: '3px solid rgb(254, 253, 5)', background: 'rgb(254,253,5)'}}>Schwachzehrer</th>
                       </tr>
                       <tr>
                         <td style={{border: '3px solid #d50114'}}>

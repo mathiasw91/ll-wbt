@@ -26,9 +26,9 @@ class AuswahlDerPflanzen extends React.Component {
 
         <table style={{width:'100%', textAlign: 'left'}}>
           <tr>
-            <th style={{border: '3px solid #d50114'}}>Starkzehrer</th>
-            <th style={{border: '3px solid rgb(249, 172, 3)'}}>Mittelzehrer</th>
-            <th style={{border: '3px solid rgb(254, 253, 5)'}}>Schwachzehrer</th>
+            <th style={{border: '3px solid #d50114', background: '#d50114'}}>Starkzehrer</th>
+            <th style={{border: '3px solid rgb(249, 172, 3)', background: 'rgb(249,172,3)'}}>Mittelzehrer</th>
+            <th style={{border: '3px solid rgb(254, 253, 5)', background: 'rgb(254,253,5)'}}>Schwachzehrer</th>
           </tr>
           <tr>
             <td style={{border: '3px solid #d50114'}}>

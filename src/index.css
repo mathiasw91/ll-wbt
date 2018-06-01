@@ -414,6 +414,10 @@ table.valign-top td {
   width: 210px;
 }
 
+#zehrer-dnd .dnd-item {
+  margin: 0px 0px 10px 0px;
+}
+
 #zehrer-dnd #item-container {
   display: flex;
   flex-wrap: wrap;
@@ -422,5 +426,5 @@ table.valign-top td {
 }
 
 #zehrer-dnd #item-container .dnd-item {
-  margin: 0px 10px 8px 10px !important;
+  margin: 0px 10px 10px 0px;
 }
