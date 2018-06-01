@@ -12,7 +12,7 @@ class DuengenUndNachwaessern extends React.Component {
         <h1>Düngen und Nachwässern</h1>
 
         <h2><i class="fa fa-leaf"></i> Düngemittel</h2>
-        <p>Ein bewährter organischer Dünger und Humuslieferant ist Kompost, den sie mithilfe von organischen Abfällen wie Laub, Eierschalen, Essensresten und Stallmist selbst herstellen können. Grundsätzlich gilt es, Mist und Kompost im zeitigen Frühjahr auf dem Gemüsebeet zu verteilen. Starkzehrer müssen meist ein weiteres Mal im Sommer mit Nährstoffen versorgt werden. Tomaten, Kohl und Sellerie benötigen drei bis vier Liter Kompost pro Quadratmeter. Erbsen, Bohnen und Möhren erhalten etwa die Hälfte. Alternativ eignet sich für Starkzehrer auch eine Düngung mit Hornspänen.</p>
+        <p>Die Pflanzen enziehen dem Boden Nährstoffe, deshalb ist es wichtig ihm diese in Form von Düngemittel regelmäßig wieder zurückzugeben. Ein bewährter organischer Dünger und Humuslieferant ist Kompost, den sie mithilfe von organischen Abfällen wie Laub, Eierschalen, Essensresten und Stallmist selbst herstellen können. Grundsätzlich gilt es, Mist und Kompost im zeitigen Frühjahr auf dem Gemüsebeet zu verteilen. Starkzehrer müssen meist ein weiteres Mal im Sommer mit Nährstoffen versorgt werden. Tomaten, Kohl und Sellerie benötigen drei bis vier Liter Kompost pro Quadratmeter. Erbsen, Bohnen und Möhren erhalten etwa die Hälfte. Alternativ eignet sich für Starkzehrer auch eine Düngung mit Hornspänen.</p>
 
         <h2><i class="fa fa-leaf"></i> Dosierung und Anwendung</h2>
 
