@@ -16,6 +16,9 @@ class QuizpageMultiple extends React.Component {
 
   }
 
+  componentWillReceiveProps(newprops){
+    if(this.props.question.id != newprops.question.id) this.setState({answered: false, answers: []})
+  }
 
 
   finish(){
