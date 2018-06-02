@@ -18,6 +18,7 @@ import mittelschwererlehmboden from '../assets/quiz/lehmboden.jpg'
 import tonboden from '../assets/quiz/tonboden.jpg'
 import sandigerlehmboden from '../assets/quiz/sandiger-lehm.jpg'
 import humusboden from '../assets/quiz/humus.jpg'
+import Unkrautdeutendnd from '../quizes/unkrautdeuten-dnd'
 
 
 class AppStore extends EventEmitter {
@@ -130,6 +131,26 @@ class AppStore extends EventEmitter {
           ]}
         ]},
         {name: 'Schädlinge und Unkraut', path: process.env.PUBLIC_URL + '/schaedlinge-und-unkraut',component: SchadelingeUndUnkraut, questions: [
+          {id: 0, component: Unkrautdeutendnd},
+          {id: 1, question: 'Was bedeutet Mulchen?',
+          feedback: 'Mulch besteht aus Grasschnitt, Stroh oder Rinde', answers: [
+            {content: 'Das Abringen von Netzen zum Schutz von Schädlingen aus der Luft', correct: false},
+            {content: 'Das Abdecken des Bodens durch eine organische Schicht, damit sich Unkraut nicht ausbreiten kann', correct: true}
+          ]},
+          {id: 2, question: 'Welcher Schädling tritt besonders in nassen Jahren vermährt auf?',
+          feedback: 'Sie ernähren sich hauptsächlich von Salat und Wurzeln', answers: [
+            {content: 'Blattläuse', correct: false},
+            {content: 'Kartoffelkäfer', correct: false},
+            {content: 'Nacktschnecke', correct: true},
+            {content: 'Vögel', correct: false}
+          ]},
+          {id: 3, question: 'Welchen Schädlng kann man mit Hilfe eines Blumentopfes umziehen?',
+          feedback: 'Dieses Tier hat auch einen positiven Nutzen, denn es gräbt Gänge und sorgt damit für Entlüftung', answers: [
+            {content: 'Ameisen', correct: true},
+            {content: 'Erdflöhe', correct: false},
+            {content: 'Nacktschnecken', correct: false},
+            {content: 'Weiße Fliege', correct: false}
+          ]}
         ]},
         {name: 'Nach der Ernte', path: process.env.PUBLIC_URL + '/nach-der-ernte',component: NachDerErnte, questions: [
         ]}

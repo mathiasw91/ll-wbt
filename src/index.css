@@ -443,3 +443,23 @@ table.valign-top td {
 #zehrer-dnd #item-container .dnd-item {
   margin: 0px 10px 10px 0px;
 }
+
+#unkrautdeuten-dnd .dnd-item {
+  margin: 0px 0px 10px 0px;
+}
+
+#unkrautdeuten-dnd #item-container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: auto !important;
+  margin-bottom: 10px;
+}
+
+#unkrautdeuten-dnd .dnd-item {
+  margin: 0px 10px 10px 0px;
+}
+
+#unkrautdeuten-dnd .right > div {
+  flex-basis: 230px;
+  margin: 0px 10px;
+}
