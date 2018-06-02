@@ -103,7 +103,7 @@ class AppStore extends EventEmitter {
             {content: 'Der empfohlene Abstand zwischen den Samen ist zu beachten', correct: true},
             {content: 'Je mehr Saatgut auf einer Stelle liegt, desto höher die Erfolgschancen', correct: false},
             {content: 'Ein frisch ausgesäter Samen verträgt noch nicht viel Feuchtigkeit und ist deshalb möglichst trocken zu halten', correct: false},
-            {content: 'Feutchte Säcke auf dem Saatbeet schützen vor Austrocknung', correct: true}
+            {content: 'Feuchte Säcke auf dem Saatbeet schützen vor Austrocknung', correct: true}
           ]},
           {id: 2, question: 'Welche der folgenden Pflanzen müssen besonders tief eingepflanzt werden?', multiple: true,
           feedback: 'Lauch und Tomate setzt man tiefer. Sellerie, Salat und Paprika müssen höher im Beet stehen.', answers: [
