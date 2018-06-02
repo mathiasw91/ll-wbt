@@ -14,6 +14,10 @@ import NachDerErnte from '../pages/nach-der-ernte'
 import HochHuegelBeetDragnDrop from '../quizes/hochhuegelbeet-dragndrop'
 import BodenBearbeitenSort from '../quizes/bodenbearbeiten-sort'
 import ZehrerDnD from '../quizes/zehrer-dnd'
+import mittelschwererlehmboden from '../assets/quiz/lehmboden.jpg'
+import tonboden from '../assets/quiz/tonboden.jpg'
+import sandigerlehmboden from '../assets/quiz/sandiger-lehm.jpg'
+import humusboden from '../assets/quiz/humus.jpg'
 
 
 class AppStore extends EventEmitter {
@@ -24,16 +28,24 @@ class AppStore extends EventEmitter {
       {name:'Planen und Vorbereiten', themes: [
         {name: 'Standort und Boden', path: process.env.PUBLIC_URL + '/standort-und-boden',component: StandortUndBoden, questions: [
           {id: 0, question: 'Wann ist der ideale Zeitpunkt, ein eigenes Gemüsebeet anzulegen?',
-            feedback: 'some feedback', answers: [
-            {content: 'Im Herbst, damit es im Frühjahr bereit ist zum Einsatz.', correct: false},
-            {content: 'Im Frühjahr, sobald kein Bodenfrost mehr herrscht.', correct: true},
-            {content: 'Im Sommer, da es in dieser Zeit auch am meisten regnet.', correct: false},
+            feedback: 'Sobald der Bodenfrost vorrüber ist, können die ersten Gemüsekulturen ausgesät werden.', answers: [
+            {content: 'Frühling.', correct: true},
+            {content: 'Sommer', correct: false},
+            {content: 'Herbst', correct: false},
+            {content: 'Winter', corret: false}
           ]},
-          {id: 1, question: 'Warum ist es wichtig, dass der Ort für das Gemüsebeet sonnig und nicht ganz windstill ist?', answers: [
-            {content: 'Die Pflanzen brauchen viel Sonne um gut wachsen zu können. Ohne Wind würden sie allerdings vertrocknen, da es zu heiß wird.', correct: false},
-            {content: 'Luftzirkulation sorgt dafür, dass die Pflanzen immer mit genug Kohlenstoffdioxid versorgt werden, was für die Photosynthese – genau wie ausreichend Sonnenlicht – essentiell ist.', correct: false},
-            {content: 'Schädlinge und Pilze mögen Windstille, deswegen ist ein wenig Luftzirkulation sehr gut.', correct: true}
+          {id: 1, question: 'Ein möglichst windstiller Platz unter schattenwerfenden Bäumen ist die ideale Lage für ein Gemüsebeet.',
+          feedback: 'Gemüse gedeiht am besten unter Sonne. Windstille Ecken ziehen Schädlinge an.', answers: [
+            {content: 'Richtig', correct: false},
+            {content: 'Falsch', correct: true},
             // {content: {type: 'img', src: testimg}, correct: true}
+          ]},
+          {id: 2, question: 'Welches der folgenden Bilder zeigt einen Tonboden?',
+          feedback: 'Tonboden ist leicht glänzend und matschig.', answers:[
+            {content: {type: 'img', src: mittelschwererlehmboden}, correct: false},
+            {content: {type: 'img', src: tonboden}, correct: true},
+            {content: {type: 'img', src: sandigerlehmboden}, correct: false},
+            {content: {type: 'img', src: humusboden}, correct: false}
           ]}
         ]},
         {name: 'Form des Beetes', path: process.env.PUBLIC_URL + '/form-des-beetes',component: FormDesBeetes, questions: [
