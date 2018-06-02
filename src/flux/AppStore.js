@@ -115,6 +115,19 @@ class AppStore extends EventEmitter {
           ]}
         ]},
         {name: 'Düngen und Bewässern', path: process.env.PUBLIC_URL + '/duengen-und-bewaessern',component: DuengenUndNachwaessern, questions: [
+          {id: 0, question: 'Warum ist die Zugabe von Düngemittel wichtig für die Pflanzen?',
+          feedback: 'Dünger ist ein Lieferant von Nährstoffen', answers: [
+            {content: 'Pflanzen entziehen dem Boden Nährstoffe. Dünger gibt ihm diese wieder zurück', correct: true},
+            {content: 'Düngemittel wärmt die Pflanzen und führt somit zu schnellerem Wachstum', correct: false},
+            {content: 'Düngemittel verhindert, dass die Pflanzen sich ungewollt ausbreiten', correct: false}
+          ]},
+          {id: 1, question: 'Welche Aussagen über Kompost sind korrekt?',
+          multiple: true, answers: [
+            {content: 'Kann aus organischen Abfällen selbst hergestellt werden', correct: true},
+            {content: 'Liefert Futter für Bodenlebewesen', correct: true},
+            {content: 'Verbessert bei mehrjähriger Anwendung sandige, lehmige oder verdichtete Böden', correct: true},
+            {content: 'Sorgt für feinkrümelige, leicht zu bearbeitende Erde', correct: true}
+          ]}
         ]},
         {name: 'Schädlinge und Unkraut', path: process.env.PUBLIC_URL + '/schaedlinge-und-unkraut',component: SchadelingeUndUnkraut, questions: [
         ]},
