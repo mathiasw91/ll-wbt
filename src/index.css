@@ -179,6 +179,17 @@ h1, h2, h3, h4, h5, h6 {
     border-color: red;
 }
 
+.quiz-page.multiple .radioCustomButton.answer-wrong:checked ~ .radioCustomLabel:before {
+    content: '';
+    background: #8BC53F url(assets/icon-check.svg) no-repeat;
+    background-size: 27px;
+    border-color: #8BC53F;
+}
+
+.quiz-page.multiple .answerOption.answer-wrong {
+  border: 3px solid red;
+}
+
 /* Checkmark */
 .checkmark {
     display:inline-block;

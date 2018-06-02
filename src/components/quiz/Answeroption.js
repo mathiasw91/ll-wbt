@@ -11,22 +11,24 @@ import React from 'react'
       }
     }
     return (
-      <li className="answerOption">
+      <li className={"answerOption "+wrongClass}>
         <input
           type="radio"
           className={"radioCustomButton"+wrongClass}
-          name="radioGroup"
           id={'answer-'+props.value}
           checked={props.value === props.answer}
           value={props.value}
-          disabled={props.answer !== false}
-          onChange={props.onAnswerSelected}
+          disabled={props.disabled}
+          onClick={(event)=>{
+            props.onAnswerSelected(event)
+          }}
         />
         <label className="radioCustomLabel" htmlFor={'answer-'+props.value}>
           {answerContent}
         </label>
       </li>
     )
+
   }
 
   export default AnswerOption

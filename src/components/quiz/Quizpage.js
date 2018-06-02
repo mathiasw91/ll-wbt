@@ -36,6 +36,7 @@ class Quizpage extends React.Component {
          value={index}
          answer={this.props.answer}
          answerWrong={this.props.answerWrong}
+         disabled={this.props.answer !== false}
          onAnswerSelected={this.onAnswerSelected.bind(this)}
        />
      );

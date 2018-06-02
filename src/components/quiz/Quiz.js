@@ -4,6 +4,7 @@ import Quizpage from './Quizpage'
 import QuestionCount from './Questioncount'
 import Score from './Score'
 import * as AppActions from '../../flux/AppActions'
+import QuizpageMultiple from './QuizpageMultiple'
 
 
 class Quiz extends React.Component {
@@ -55,7 +56,10 @@ class Quiz extends React.Component {
                <CustomQuiz navigateNext={this.nextQuestion.bind(this)} onCorrectAnswer={this.setQuestionAnswered.bind(this)}/>
 
              )}
-             {q.component === undefined && (
+             {(q.component === undefined && q.multiple === true) && (
+               <QuizpageMultiple question={this.state.questions[this.state.currentQuestion]} onCorrectAnswer={this.setQuestionAnswered.bind(this)} navigateNext={this.nextQuestion.bind(this)}/>
+             )}
+             {(q.component === undefined && q.multiple !== true) && (
                <Quizpage question={this.state.questions[this.state.currentQuestion]} answer={this.state.answer} answerWrong={this.state.answerWrong} setUserAnswer={this.setUserAnswer.bind(this)} navigateNext={this.nextQuestion.bind(this)}/>
              )}
           </div>
