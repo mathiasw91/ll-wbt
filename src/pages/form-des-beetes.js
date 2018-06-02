@@ -24,9 +24,7 @@ class FormDesBeetes extends React.Component {
         </ul>
 
         <h2><i class="fa fa-leaf"></i> Beeteinfassung</h2>
-        <p>Mit dicken und kurzen Holzpflöcken markiert man die Ecken der Reihenbeete. Eine Einfassung um das gesamte Beet beitet Schutz vor Schädlingen und hält zusätzlich die Erde im Beet. Für maximalen Schutz empfiehlt sich eine Einfassung aus Beton- oder Natursein, welche jedoch teurer sein können. Zu naturnahren Gärten passen Einfassungen aus Holz oder Flechtzäune aus Weiden. Die Einfassung sollte mindestens 20cm tief in den Boden eingegraben werden. Für die Trittwege auf dem Beet kann man Gehwegplatten oder Rindmulch benutzen.</p>
-
-        <p>Beerensträucher pflanzt man am besten am Rand des Gemüsebeetes. Mehrjährige Kräuter bekommen ein Extrabeet, einjährige Kräuter wachsen zwischen den Gemüsereihen. Einjährige Sommerblumen, die am Rand und auch mitten im Gemüsebeet blühen, verwandeln zusammen mit blühenden Kräutern das eher nüchterne Bild rechtwinkliger Gemüsebeete in einen attraktiven Gartenbereich. Tagetes und Kapuzinerkresse verbessern gleichzeitig den Boden, Lupinen versorgen ihn mit Stickstoff.</p>
+        <p>Eine Einfassung um das gesamte Beet beitet Schutz vor Schädlingen und hält zusätzlich die Erde im Beet. Für maximalen Schutz empfiehlt sich eine Einfassung aus Beton- oder Naturstein, welche jedoch teurer sein können. Zu naturnahren Gärten passen Einfassungen aus Holz oder Flechtzäune aus Weiden. Die Einfassung sollte mindestens 20cm tief in den Boden eingegraben werden. Für die Trittwege auf dem Beet kann man Gehwegplatten oder Rindmulch benutzen.</p>
 
         <h2><i class="fa fa-leaf"></i> Beettypen</h2>
         <p style={{marginBottom: '0px'}}>Vor allem auf schweren Böden lohnt es sich, den Anbau des Gemüses eine Etage höher zu legen. Dabei gibt es mehrere Möglichkeiten:</p>

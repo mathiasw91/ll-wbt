@@ -49,11 +49,14 @@ class AppStore extends EventEmitter {
           ]}
         ]},
         {name: 'Form des Beetes', path: process.env.PUBLIC_URL + '/form-des-beetes',component: FormDesBeetes, questions: [
-          {id: 0, component: HochHuegelBeetDragnDrop},
-          {id: 1, question: 'normale textfrage', answers:[
-            {content: 'Antwort richtig', correct: true},
-            {content: 'Antwort falsch', correct: false}
-          ]}
+          {id: 0, question: 'Welche Maßnahme hilft zum Schutz vor Schädlingen?',
+          feedback: 'Eine Einfassung schirmt das Beet nach außen ab und bietet somit eine Barriere für viele Tiere.', answers: [
+            {content: 'Eine rechteckige Form des Beetes', correct: false},
+            {content: 'Die Pflanzen in Reihen anzuordnen', correct: false},
+            {content: 'Das gesamte Beet einfassen', correct: true},
+            {content: 'Trittwege aus Platten oder Rindmulch anzulegen', correct: false}
+          ]},
+          {id: 1, component: HochHuegelBeetDragnDrop}
         ]},
         {name: 'Bodenvorbereitung', path: process.env.PUBLIC_URL + '/bodenvorbereitung',component: Bodenvorbereitung, questions: [
           {id: 0, question: 'Wodurch kann die Bildung von Bodenkrümeln vermiden werden?',
@@ -62,7 +65,7 @@ class AppStore extends EventEmitter {
             {content: 'Den Boden nur im trockenden Zustand bearbeiten', correct: true}
           ]},
           {id: 1, question: 'Welcher Bodentyp kann durch Zugabe von Sand verbessert werden?',
-          feebdack: 'Der Sand macht den Boden lockrer und durchlässiger', answers: [
+          feedback: 'Der Sand macht den Boden lockerer und durchlässiger', answers: [
             {content: 'Leichte Sandböden', correct: false},
             {content: 'Lehmboden', correct: true},
             {content: 'Schwere, tonige Böden', correct: false}

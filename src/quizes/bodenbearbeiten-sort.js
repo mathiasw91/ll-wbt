@@ -45,9 +45,9 @@ class BodenBearbeitenSort extends React.Component {
     state = {
         items: [
           {id: 2, content: 'Lockern des Bodens'},
-          {id: 1, content: 'Abtragen von Gras und Gründungung'},
+          {id: 1, content: 'Abtragen von Gras und Gründüngung'},
           {id: 3, content: 'Ziehen von Reihen'},
-          {id: 0, content: 'Abstecken der Umrisse'},
+          {id: 0, content: 'Abstecken der Umrisse des Beetes'},
         ],
         finished: false,
     };
