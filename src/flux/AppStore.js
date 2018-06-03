@@ -153,6 +153,18 @@ class AppStore extends EventEmitter {
           ]}
         ]},
         {name: 'Nach der Ernte', path: process.env.PUBLIC_URL + '/nach-der-ernte',component: NachDerErnte, questions: [
+          {id: 0, question: 'Warum darf das Beet im Winter nicht offen gelassen werden?', multiple: true,
+          answers: [
+            {content: 'Es entsteht Bodenerosion', correct: true},
+            {content: 'Es gehen Nährstoffe verloren', correct: true},
+            {content: '', correct: false},
+            {content: 'Unkraut breitet sich aus', correct: true}
+          ]},
+          {id: 1, question: 'Was beschreibt die Frostgare?',
+          feedback: 'Den Boden umgraben und die groben Schollen dem Frost aussetzen fördert die Wirkung der Frostgare', answers: [
+            {content: 'Die beseitigung von ungewolltem Unkraut durch den Frost', correct: false},
+            {content: 'Eine feinkörnige, krümelige Bodenstruktur, entstanden durch den Frost', correct: true}
+          ]}
         ]}
       ]},
       {name:'Gängige Pflanzen', themes: [
