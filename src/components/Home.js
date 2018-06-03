@@ -17,8 +17,6 @@ class Home extends React.Component {
             Dieses WBT liefert das nötige Grundwissen, um ein eigenes Gemüsebeet, bestehend aus verschiedenen Nutzpflanzen, zu planen, anzulegen und zu betreiben.<br/>
             Zur Zielgruppe gehört jeder, der seinen eigenen kleinen Gemüsegarten haben möchte. Es zielt auf Garten-Anfänger ab und setzt deshalb keine Vorkenntnisse im Gartenbau voraus.
           </p>
-          <p>Im WBT gibt es praktische Lerninhalte, welche parallel zur Arbeit am Beet als Anleitung genutzt werden können, und theoretische Lerninhalte, welche unabhängig bearbeitet werden können.</p>
-
 
           <h2><i class="fa fa-graduation-cap"></i> Lernziele</h2>
           <p>Sie lernen, wie man ein Beet plant und vorbereitet. Dazu gehört die Analyse des Standortes und des Bodens, sowie die Wahl einer passenden Form des Beetes. Außerdem die notwendigen Maßnahmen zur Verbesserung des Bodens.<br/>
@@ -26,7 +24,7 @@ class Home extends React.Component {
           Zusätzlich werden Ihnen Informationen und Hinweise zu ausgewählten gängigen Pflanzen vermittelt.</p>
 
           <h2><i class="fa fa-hourglass-start"></i> Bearbeitungszeit</h2>
-          <p>Die Bearbeitungszeit für dieses WBT beträgt...</p>
+          <p>Die Bearbeitungszeit für dieses WBT beträgt circa 60 Minuten.</p>
         </div>
         <div id="home-sidebar">
           <h2><i class="fa fa-chart-line"></i> Lernfortschritt</h2>
