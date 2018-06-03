@@ -180,6 +180,8 @@ class AppStore extends EventEmitter {
     ]
     this.activeTheme = this.chapters[0].themes[0]
     this.latest = []
+
+    this.loadFromLocalStorage()
   }
 
   toggleChapter(id){
@@ -194,6 +196,7 @@ class AppStore extends EventEmitter {
     if(this.latest.length > 3) this.latest.splice(3,1)
     this.activeTheme = theme
     this.emit('change')
+    this.saveLatestToLocalStorage()
   }
 
   setQuestionAnswered(questionId){
@@ -205,6 +208,7 @@ class AppStore extends EventEmitter {
     let unanswered = this.chapters[activeIndexes.chapter].themes[activeIndexes.theme].questions.filter(q=>!q.answered)
     if(unanswered.length == 0) this.chapters[activeIndexes.chapter].themes[activeIndexes.theme].quizComplete = true
     this.emit('change')
+    this.saveChaptersToLocalStorage()
   }
 
   resetProgress(){
@@ -217,6 +221,7 @@ class AppStore extends EventEmitter {
       })
     })
     this.emit('change')
+    this.saveChaptersToLocalStorage()
   }
 
   resetQuiz(){
@@ -228,6 +233,7 @@ class AppStore extends EventEmitter {
       this.chapters[activeIndexes.chapter].themes[activeIndexes.theme].quizComplete = false
     }
     this.emit('change')
+    this.saveChaptersToLocalStorage()
   }
 
   //helper functions
@@ -259,6 +265,46 @@ class AppStore extends EventEmitter {
 
   getLatest(){
     return this.latest
+  }
+
+  saveChaptersToLocalStorage(){
+    localStorage.setItem('chapters', JSON.stringify(this.chapters));
+  }
+
+  saveLatestToLocalStorage(){
+    localStorage.setItem('latest', JSON.stringify(this.latest));
+  }
+
+  loadFromLocalStorage(){
+    let chapters = localStorage.getItem('chapters')
+    if(chapters){
+      try {
+        let parsed = JSON.parse(chapters)
+        parsed.forEach((chapter,i)=>{
+          chapter.themes.forEach((theme,j)=>{
+            if(theme.quizComplete){
+              this.chapters[i].themes[j].quizComplete = true
+            }
+            theme.questions.forEach((question, k)=>{
+              if(question.answered) this.chapters[i].themes[j].questions[k].answered = true
+            })
+          })
+        })
+        this.emit('change')
+      }catch(err){
+        console.log("error parsing the chapters from local storage", err)
+      }
+    }
+    let latest = localStorage.getItem('latest')
+    if(latest){
+      try {
+        let parsed = JSON.parse(latest)
+        this.latest = parsed
+        this.emit('change')
+      }catch(err){
+        console.log("error parsing the chapters from local storage", err)
+      }
+    }
   }
 
 
