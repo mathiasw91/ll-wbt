@@ -6,8 +6,6 @@ import {Circle} from 'rc-progress'
     if(props.alreadyFinished) return (
       <div id="quiz-score">
         Dieses Quiz ist bereits beendet.
-        TODO Link auf nächstes Thema
-        <Link className="btn btn-default" to={props.location.pathname.replace('/quiz','')}>Zum nächsten Thema</Link>
       </div>
     )
 
@@ -16,10 +14,13 @@ import {Circle} from 'rc-progress'
 
     return (
       <div id="quiz-score" className="result">
-        <span>Du hast {props.correct} / {props.total} Fragen richtig beantwortet!</span>
+        <span>Sie haben {props.correct} / {props.total} Fragen richtig beantwortet!</span>
         <Circle percent={pctg} strokeWidth="4" strokeColor={circleColor}/>
         {props.remaining !== 0 && (
           <div>Es verbleiben noch {props.remaining} unbeantwortete Fragen. Wiederhole das Quiz, bis alle Fragen gelöst sind.</div>
+        )}
+        {props.remaining === 0 && (
+          <div>Damit wurde das Quiz erfolgreich abgeschlossen.</div>
         )}
       </div>
     )

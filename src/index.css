@@ -194,11 +194,15 @@ b {
 }
 
 .quiz-page.multiple .answerOption.answer-wrong {
-  background: rgba(128,0,0,0.2);
+  background: rgba(255,0,0,0.4);
 }
 
 .quiz-page.multiple.answered .answerOption:not(.answer-wrong) {
-  background: rgba(0,128,0,0.2);
+  background: rgba(0,200,0,0.4);
+}
+
+.quiz-page.multiple .answerOptions {
+  margin-bottom: 20px;
 }
 
 /* Checkmark */
@@ -425,11 +429,11 @@ table.valign-top td {
 }
 
 .dnd-quiz.finished .dnd-item.right {
-  background: rgba(0,128,0,0.2) !important;  
+  background: rgba(0,200,0,0.4) !important;
 }
 
 .dnd-quiz.finished .dnd-item.wrong {
-  background: rgba(128,0,0,0.2) !important;
+  background: rgba(255,0,0,0.4) !important;
 }
 
 #zehrer-dnd th, td {

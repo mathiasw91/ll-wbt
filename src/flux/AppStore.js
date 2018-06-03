@@ -30,7 +30,7 @@ class AppStore extends EventEmitter {
         {name: 'Standort und Boden', path: process.env.PUBLIC_URL + '/standort-und-boden',component: StandortUndBoden, questions: [
           {id: 0, question: 'Wann ist der ideale Zeitpunkt, ein eigenes Gemüsebeet anzulegen?',
             feedback: 'Sobald der Bodenfrost vorrüber ist, können die ersten Gemüsekulturen ausgesät werden.', answers: [
-            {content: 'Frühling.', correct: true},
+            {content: 'Frühling', correct: true},
             {content: 'Sommer', correct: false},
             {content: 'Herbst', correct: false},
             {content: 'Winter', corret: false}
