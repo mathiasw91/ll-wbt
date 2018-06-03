@@ -45,13 +45,13 @@ class SchadelingeUndUnkraut extends React.Component {
         {this.state.spanOpen == 'ameisen' && (<div style={divStyle}>
           <img src={'assets/ameise.jpg'} style={imgStyle}/>
           <p>Ameisen sind im Gemüsegarten sehr nützlich, da sie abgestorbene Pflanzenteile als Biomasse in den Boden bringen, dort mit ihren Gängen für Entlüftung sorgen oder sich von Schädlingen wie Drahtwürmer, Kohlweißlingsraupen oder Schneckeneiern ernähren. In zu großer Anzahl können sie aber lästig werden.</p>
-          <p>Ameisen haben einen empfindlichen Geruchssinn, den wir uns zu Hilfe machen können. So können Zimtstangen, Zitronenscheiben, Tomatenblätter, Nelken oder Chilipulver die Ameisen vertreiben.<br/> Alternativ kann man einen mit Stroh gefüllten Top mit der Öffnung nach unten neben das Nest stellen. Die Ameisen werden diesen als neues Zuhause annehmen und umziehen.</p>
+          <p>Ameisen haben einen empfindlichen Geruchssinn, den wir uns zu Nutze machen können. So können Zimtstangen, Zitronenscheiben, Tomatenblätter, Nelken oder Chilipulver die Ameisen vertreiben.<br/> Alternativ kann man einen mit Stroh gefüllten Top mit der Öffnung nach unten neben das Nest stellen. Die Ameisen werden diesen als neues Zuhause annehmen und umziehen. Anschließend kann der nun bewohnte Topf vom Beet entfernt werden.</p>
         <div class="clearfix"></div></div>)}
 
         <span style={spanStyle} onClick={this.openSpan.bind(this, 'blattläuse')}>Blattläuse {this.state.spanOpen == 'blattläuse'?'':'(einblenden)'}</span>
         {this.state.spanOpen == 'blattläuse' && (<div style={divStyle}>
           <img src={'assets/blattlaus.jpg'} style={imgStyle}/>
-          <p>Die Pflanzensaft saugenden Insekten können auf mehrfache Weise zu Schäden an Ihrem Gemüse führen. Durch starkes Saugen verformen sie die Blätter. Außerdem übertagen sie Pflanzenviren und ihre Ausscheidungen dienen als Nährboden für Rußtaupilze.</p>
+          <p>Die Pflanzensaft saugenden Insekten können auf mehrfache Weise zu Schäden an ihrem Gemüse führen. Durch starkes Saugen verformen sie die Blätter. Außerdem übertagen sie Pflanzenviren und ihre Ausscheidungen dienen als Nährboden für Rußtaupilze.</p>
           <p>Bevor man direkt die Blattläuse aktiv bekämpft sollte man erstmal abwarten, ob ihre natürlichen Feinde nicht die Arbeit übernehmen. Nehmen die Blattläuse jedoch Überhand, gibt es eine Reihe von biologischen Hausmitteln, die Sie gegen die Blattläuse anwenden können.</p>
           <ul>
             <li>Die Läuse mit einem scharfen Wasserstrahl von den Pflanzen spülen.</li>
@@ -64,7 +64,7 @@ class SchadelingeUndUnkraut extends React.Component {
         <span style={spanStyle} onClick={this.openSpan.bind(this, 'erdfloehe')}>Erdflöhe {this.state.spanOpen == 'erdfloehe'?'':'(einblenden)'}</span>
         {this.state.spanOpen == 'erdfloehe' && (<div style={divStyle}>
           <img src={'assets/erdflo.jpg'} style={imgStyle}/>
-          <p>Meist an kleinen runden Fraßlöchern an Radieschen, Rukola oder Kohl erkennt man die Anwesenheit von Erdflöhen, die jedoch keine Flöhe, sondern kleine Käfer sind. Während die Schäden Jungpflanzen noch durchaus gefährlich werden können, sind sie bei größeren Pflanzen zu vernachlässigen.Wichtig ist jedoch, dass Sie das Gemüse trotz der Löcher bedenkenlos verzehren können und dass es genauso gut schmeckt.</p>
+          <p>Meist an kleinen runden Fraßlöchern an Radieschen, Rukola oder Kohl erkennt man die Anwesenheit von Erdflöhen, die jedoch keine Flöhe, sondern kleine Käfer sind. Während die Schäden Jungpflanzen noch durchaus gefährlich werden können, sind sie bei größeren Pflanzen zu vernachlässigen.Wichtig ist jedoch, dass Sie das Gemüse trotz der Löcher bedenkenlos verzehren können.</p>
           <p>Weil Erdflöhe warmen und trockenen Boden lieben, ist die Vorbeugung und Regulierung recht einfach. Wässern und hacken Sie die Stellen, an denen Erdflöhe auftreten wiederholt. Zudem mögen die Tiere keine Zwiebelgewächse - Zwiebeln, Lauch oder Knoblauch als Nachbarn können ebenfalls helfen</p>
         <div class="clearfix"></div></div>)}
 
@@ -72,7 +72,7 @@ class SchadelingeUndUnkraut extends React.Component {
         {this.state.spanOpen == 'kartoffelkaefer' && (<div style={divStyle}>
           <img src={'assets/kartoffelkaefer.jpg'} style={imgStyle}/>
           <p>Der Käfer und seine Larven können innerhalb kurzer Zeit das Laub der Kartoffeln im großen Stil abfressen und so zu immensen Schäden führen. Finden sie kein Kartoffellaub mehr, wandern sie auf andere Nachtschattengewächse wie Tomaten oder vor allem Auberginen weiter. Nach der Saison überwintert der Käfer im Boden, um in der neuen Saison wieder Ausschau nach Kartoffeln zu halten.</p>
-          <p>Zwar ist es unangenehm, doch die einzige Methode zur Bekämpfung ist, die Käfer und Larven per Hand aufzusammeln und zu töten. Am einfachsten ist es, die eingesammelten Tiere mit einer Plastiktüte abzudecken und zu tertreten.</p>
+          <p>Zwar ist es unangenehm, doch die einzige Methode zur Bekämpfung ist, die Käfer und Larven per Hand aufzusammeln und zu töten. Am einfachsten ist es, die eingesammelten Tiere mit einer Plastiktüte abzudecken und zu zertreten.</p>
         <div class="clearfix"></div></div>)}
 
         <span style={spanStyle} onClick={this.openSpan.bind(this, 'nacktschnecken')}>Nacktschnecken {this.state.spanOpen == 'nacktschnecken'?'':'(einblenden)'}</span>

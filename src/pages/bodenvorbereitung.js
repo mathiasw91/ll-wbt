@@ -12,10 +12,10 @@ class Bodenvorbereitung extends React.Component {
         <h1>Bodenvorbereitung</h1>
 
         <h2><i class="fa fa-leaf"></i> Boden bearbeiten</h2>
-        <p>Nachdem das Gemüsebeetes geplant ist geht es nun an die Umsetzung. Idealerweise beginnen Sie damit schon im Herbst, so ist das Beet fürs Frühjahr optimal vorbereitet. Bearbeiten Sie den Boden nur, wenn er trocken ist, um die Bildung von Bodenkrümeln zu vermeiden.<br/>Folgen sie diesen Arbeitsschritten:</p>
+        <p>Nachdem das Gemüsebeet geplant ist geht es nun an die Umsetzung. Idealerweise beginnen Sie damit schon im Herbst, so ist das Beet fürs Frühjahr optimal vorbereitet. Bearbeiten Sie den Boden nur, wenn er trocken ist, um die Bildung von Bodenkrümeln zu vermeiden.<br/>Folgen sie diesen Arbeitsschritten:</p>
         <ol>
           <li>Abstecken der Umrisse: Nutzen Sie dafür Holzstäbe und Schnüre. Manchmal macht es Sinn, die Beetform mit Kalk auf dem Boden abzustreuen.</li>
-          <li>Abtragen von Gras und Gründüngung mit einer Zielhacke</li>
+          <li>Abtragen von Gras und Gründüngung mit einer Ziehhacke</li>
           <li>Lockern des Bodens mit einer Grabegabel 20-30cm tief.</li>
           <li>Ziehen von Reihen: Spannen Sie eine Schnur und ziehen mit einer Hacke dran entlang.</li>
         </ol>

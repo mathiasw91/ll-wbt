@@ -12,7 +12,7 @@ class FormDesBeetes extends React.Component {
       <div>
         <h1>Form des Beetes</h1>
         <h2><i class="fa fa-leaf"></i> Länge und Breite</h2>
-        <p>Grundsätzlich hat man bei der Gestaltung des Gemüsebeetes alle Freiheiten. Für eine leichte Pflege empfiehlt es sich jedoch, das Beet rechteckig anzulegen und die Pflanzen in Reihen anzuordnen. In jedem Fall sollte man Laufwege einplanen, um leicht an die Pflanzen zu gelangen. Eine Breite von ca. 120cm beitet sich an, damit man von allen Seiten bequem mit einer Armlänge arbeiten kann und nicht auf die bepflanzte Fläche treten muss. Der Hauptweg sollte mit mindestens 60cm breit genug sein, um ihn mit einem Schubkarren zu befahren. Für die Nebenwege sind 30cm ausreichend. Baut man das Beet an einem Berg, so bietet sich eine Ausrichtung quer zum Hang an, damit dass Regenwasser abfließen kann.</p>
+        <p>Grundsätzlich hat man bei der Gestaltung des Gemüsebeetes alle Freiheiten. Für eine leichte Pflege empfiehlt es sich jedoch, das Beet rechteckig anzulegen und die Pflanzen in Reihen anzuordnen. In jedem Fall sollte man Laufwege einplanen, um leicht an die Pflanzen zu gelangen. Eine Breite von ca. 120cm bietet sich an, damit man von allen Seiten bequem mit einer Armlänge arbeiten kann und nicht auf die bepflanzte Fläche treten muss. Der Hauptweg sollte mit mindestens 60cm breit genug sein, um ihn mit einem Schubkarren zu befahren. Für die Nebenwege sind 30cm ausreichend. Baut man das Beet an einem Berg, so bietet sich eine Ausrichtung quer zum Hang an, damit dass Regenwasser abfließen kann.</p>
 
         <h2><i class="fa fa-leaf"></i> Benötigte Größe</h2>
         <p>Die Anzahl und Größe der Gemüsebeete hängt davon ab, wie viel Gemüse man genötigt. Es gelten folgende Richtwerte (pro Person):</p>
@@ -20,7 +20,7 @@ class FormDesBeetes extends React.Component {
           <li>Totale Selbstversorgung: mindestens 80m&sup2;</li>
           <li>Überwiegende Selbstversorgung: 40-80m&sup2;</li>
           <li>Teilweise Selbstversorgung: 20-40m&sup2;</li>
-          <li>Ergänzende Versorbung: 1-20m&sup2;</li>
+          <li>Ergänzende Versorgung: 1-20m&sup2;</li>
         </ul>
 
         <h2><i class="fa fa-leaf"></i> Beeteinfassung</h2>

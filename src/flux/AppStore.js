@@ -60,7 +60,7 @@ class AppStore extends EventEmitter {
           {id: 1, component: HochHuegelBeetDragnDrop}
         ]},
         {name: 'Bodenvorbereitung', path: process.env.PUBLIC_URL + '/bodenvorbereitung',component: Bodenvorbereitung, questions: [
-          {id: 0, question: 'Wodurch kann die Bildung von Bodenkrümeln vermiden werden?',
+          {id: 0, question: 'Wodurch kann die Bildung von Bodenkrümeln vermieden werden?',
           feedback: 'Die Krümel entstehen durch das Trocknen der Erde', answers: [
             {content: 'Den Boden nur im feuchten Zustand bearbeiten', correct: false},
             {content: 'Den Boden nur im trockenden Zustand bearbeiten', correct: true}
@@ -137,14 +137,14 @@ class AppStore extends EventEmitter {
             {content: 'Das Abringen von Netzen zum Schutz von Schädlingen aus der Luft', correct: false},
             {content: 'Das Abdecken des Bodens durch eine organische Schicht, damit sich Unkraut nicht ausbreiten kann', correct: true}
           ]},
-          {id: 2, question: 'Welcher Schädling tritt besonders in nassen Jahren vermährt auf?',
+          {id: 2, question: 'Welcher Schädling tritt besonders in nassen Jahren vermehrt auf?',
           feedback: 'Sie ernähren sich hauptsächlich von Salat und Wurzeln', answers: [
             {content: 'Blattläuse', correct: false},
             {content: 'Kartoffelkäfer', correct: false},
             {content: 'Nacktschnecke', correct: true},
             {content: 'Vögel', correct: false}
           ]},
-          {id: 3, question: 'Welchen Schädlng kann man mit Hilfe eines Blumentopfes umziehen?',
+          {id: 3, question: 'Welchen Schädling kann man mit Hilfe eines Blumentopfes umsiedeln?',
           feedback: 'Dieses Tier hat auch einen positiven Nutzen, denn es gräbt Gänge und sorgt damit für Entlüftung', answers: [
             {content: 'Ameisen', correct: true},
             {content: 'Erdflöhe', correct: false},
@@ -157,7 +157,7 @@ class AppStore extends EventEmitter {
           answers: [
             {content: 'Es entsteht Bodenerosion', correct: true},
             {content: 'Es gehen Nährstoffe verloren', correct: true},
-            {content: '', correct: false},
+            {content: 'Weil der Schnee dann nicht abtaut', correct: false},
             {content: 'Unkraut breitet sich aus', correct: true}
           ]},
           {id: 1, question: 'Was beschreibt die Frostgare?',
