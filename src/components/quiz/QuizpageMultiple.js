@@ -40,7 +40,7 @@ class QuizpageMultiple extends React.Component {
   render() {
     return (
       <div className={"quiz-page multiple "+(this.state.answered?'answered':'')}>
-        <Question content={this.props.question.question}/>
+        <Question content={this.props.question.question+' (Mehrfachauswahl möglich)'} />
         <ul className="answerOptions">
            {this.props.question.answers.map(this.renderAnswerOptions.bind(this))}
          </ul>
