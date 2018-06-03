@@ -18,7 +18,7 @@ class SchadelingeUndUnkraut extends React.Component {
 
   render() {
 
-    let spanStyle = {fontWeight: 'bold', display: 'block', marginBottom: '7px'}
+    let spanStyle = {fontWeight: 'bold', display: 'block', marginBottom: '7px', cursor: 'pointer', color: 'rgb(6, 97, 27)'}
     let divStyle = {}
     let imgStyle = {width: '200px', float: 'left', marginRight: '10px'}
     return (

@@ -76,8 +76,11 @@ a.sidebar-theme:not(.quiz-complete) .checkmark {
 
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Amatic SC', cursive;
   margin-bottom: 0;
+  color: rgb(6, 97, 27);
+}
+
+b {
   color: rgb(6, 97, 27);
 }
 
@@ -249,7 +252,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #home #home-sidebar {
   flex-grow: 0;
-  flex-basis: 30em;
+  flex-basis: 40em;
 }
 
 #latest-themes {
