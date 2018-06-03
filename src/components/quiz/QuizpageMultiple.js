@@ -39,7 +39,7 @@ class QuizpageMultiple extends React.Component {
 
   render() {
     return (
-      <div className="quiz-page multiple">
+      <div className={"quiz-page multiple "+(this.state.answered?'answered':'')}>
         <Question content={this.props.question.question}/>
         <ul className="answerOptions">
            {this.props.question.answers.map(this.renderAnswerOptions.bind(this))}
