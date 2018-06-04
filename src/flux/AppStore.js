@@ -168,16 +168,16 @@ class AppStore extends EventEmitter {
           ]}
         ]}
       ]},
-      {name:'Gängige Pflanzen', themes: [
-        {name: 'Tomate', path: process.env.PUBLIC_URL + '/tomate',component: PageOne, questions: [
-        ]},
-        {name: 'Salat', path: process.env.PUBLIC_URL + '/salat',component: PageOne, questions: [
-        ]},
-        {name: 'Gurke', path: process.env.PUBLIC_URL + '/gurke',component: PageOne, questions: [
-        ]},
-        {name: 'Erdbeere', path: process.env.PUBLIC_URL + '/erdbeere',component: PageOne, questions: [
-        ]}
-      ]}
+      // {name:'Gängige Pflanzen', themes: [
+      //   {name: 'Tomate', path: process.env.PUBLIC_URL + '/tomate',component: PageOne, questions: [
+      //   ]},
+      //   {name: 'Salat', path: process.env.PUBLIC_URL + '/salat',component: PageOne, questions: [
+      //   ]},
+      //   {name: 'Gurke', path: process.env.PUBLIC_URL + '/gurke',component: PageOne, questions: [
+      //   ]},
+      //   {name: 'Erdbeere', path: process.env.PUBLIC_URL + '/erdbeere',component: PageOne, questions: [
+      //   ]}
+      // ]}
     ]
     this.activeTheme = this.chapters[0].themes[0]
     this.latest = []
