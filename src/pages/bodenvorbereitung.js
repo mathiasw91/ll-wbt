@@ -22,7 +22,11 @@ class Bodenvorbereitung extends React.Component {
 
 
         <h2><i class="fa fa-leaf"></i> Bodenverbesserung</h2>
-        <p>Je nach Bodentyp gibt es unterschiedliche Maßnahmen zur Verbesserung. Leichte Sandböden können Sie mit einigen Handvoll Gesteinsmehl verbessern. Lehmboden wird mit Sand lockerer und durchlässiger. Schwere, tonige Böden sollten Sie jährlich bereits im Herbst vor dem ersten Frost tiefgründig umgraben. Nachdem sie den Boden gelockert haben, wird er mit nährstoffreichem, reifem Kompost angereichert und die Oberfläche glatt gerecht. So erhalten Sie ein möglichst feinkrümeliges Beet. Da sich der Boden noch absetzt, sollte er mindestens eine Woche ruhen, bevor Sie darauf ansäen.</p>
+        <p>Je nach Bodentyp gibt es unterschiedliche Maßnahmen zur Verbesserung:</p>
+        <p><b>Leichte Sandböden</b> können Sie mit einigen Handvoll Gesteinsmehl verbessern.</p>
+        <p><b>Lehmboden</b> wird mit Sand lockerer und durchlässiger.</p>
+        <p><b>Schwere, tonige Böden</b> sollten Sie jährlich bereits im Herbst vor dem ersten Frost tiefgründig umgraben.</p>
+        <p>Nachdem sie den Boden gelockert haben, wird er mit nährstoffreichem, reifem Kompost angereichert und die Oberfläche glatt gerecht. So erhalten Sie ein möglichst feinkrümeliges Beet. Da sich der Boden noch absetzt, sollte er mindestens eine Woche ruhen, bevor Sie darauf ansäen.</p>
 
       </div>
     )
