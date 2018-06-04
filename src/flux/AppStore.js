@@ -82,7 +82,8 @@ class AppStore extends EventEmitter {
             {content: 'Böden die wenig Feuchtigkeit erhalten', correct: false},
             {content: 'Ständig kranke Böden', correct: true}
           ]},
-          {id: 1, question: 'Was versteht man unter Mischkultur?', answers: [
+          {id: 1, question: 'Was versteht man unter Mischkultur?',
+          feedback: 'Mischkultur verhindert, dass der Boden einseitig ausgelauft wird', answers: [
             {content: 'Die Pflanzen farblich gemischt anzubauen', correct: false},
             {content: 'Ein zeitlich gebundenes Rotationssystem beim Anbau', correct: false},
             {content: 'Unterschiedliche Gemüsearten kombiniert anzubauen', correct: true},
