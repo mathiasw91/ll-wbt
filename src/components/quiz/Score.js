@@ -14,14 +14,19 @@ import {Circle} from 'rc-progress'
 
     return (
       <div id="quiz-score" className="result">
-        <span>Sie haben {props.correct} / {props.total} Fragen richtig beantwortet!</span>
-        <Circle percent={pctg} strokeWidth="4" strokeColor={circleColor}/>
-        {props.remaining !== 0 && (
-          <div>Es verbleiben noch {props.remaining} unbeantwortete Fragen. Wiederhole das Quiz, bis alle Fragen gelöst sind.</div>
-        )}
-        {props.remaining === 0 && (
-          <div>Damit wurde das Quiz erfolgreich abgeschlossen.</div>
-        )}
+        <h1>Auswertung</h1>
+        <div style={{display:'flex', alignItems:'center'}}>
+          <Circle percent={pctg} strokeWidth="4" strokeColor={circleColor}/>
+          <div style={{fontSize: '24px', marginLeft: '20px'}}>
+            <span >Sie haben {props.correct} / {props.total} Fragen richtig beantwortet!</span>
+            {props.remaining !== 0 && (
+              <div>Es verbleiben noch {props.remaining} unbeantwortete Fragen. Wiederhole das Quiz, bis alle Fragen gelöst sind.</div>
+            )}
+            {props.remaining === 0 && (
+              <div>Damit wurde das Quiz erfolgreich abgeschlossen.</div>
+            )}
+          </div>
+        </div>
       </div>
     )
   }
