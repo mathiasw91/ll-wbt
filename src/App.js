@@ -30,10 +30,14 @@ class App extends Component {
     })
   }
 
+  onRouteChange(){
+    window.scrollTo(0,0)
+  }
+
   render() {
 
     return (
-      <Router>
+      <Router onChange={this.onRouteChange.bind(this)}>
       <div className="App">
         <Sidebar
           chapters={this.state.chapters}
