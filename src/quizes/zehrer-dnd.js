@@ -70,6 +70,7 @@ class ZehrerDnD extends React.Component {
         mittel: [],
         schwach: [],
         finished: false,
+        answerWrong: false,
     };
 
     /**
@@ -159,7 +160,7 @@ class ZehrerDnD extends React.Component {
         }
         return i
       })
-      this.setState({stark: newstark, mittel:newmittel, schwach: newschwach})
+      this.setState({stark: newstark, mittel:newmittel, schwach: newschwach, answeredWrong: !correct})
 
       if(correct) this.props.onCorrectAnswer()
     }
@@ -316,6 +317,9 @@ class ZehrerDnD extends React.Component {
                   </div>
               </DragDropContext>
             </div>
+            {this.state.finished == true && this.state.answeredWrong === true &&  (
+              <div className="question-feedback"><i class="fa fa-exclamation-circle"></i> Hinweis: Lies nochmal im Lernabschnitt "Fruchtwechsel und Fruchtfolge" nach</div>
+            )}
             {this.state.finished == true && (<button className="btn btn-default" onClick={this.props.navigateNext}>weiter</button>)}
 
           </div>

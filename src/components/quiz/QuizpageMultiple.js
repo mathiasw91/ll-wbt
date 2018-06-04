@@ -9,6 +9,7 @@ class QuizpageMultiple extends React.Component {
   state = {
     answered: false,
     answers: [],
+    answeredWrong: false
   }
 
   constructor(props){
@@ -33,7 +34,7 @@ class QuizpageMultiple extends React.Component {
       }
   })
 
-    this.setState({answered: true})
+    this.setState({answered: true, answeredWrong: !correct})
     if(correct) this.props.onCorrectAnswer()
   }
 
@@ -44,7 +45,7 @@ class QuizpageMultiple extends React.Component {
         <ul className="answerOptions">
            {this.props.question.answers.map(this.renderAnswerOptions.bind(this))}
          </ul>
-         {this.state.answered !== false && this.props.answerWrong === true && this.props.question.feedback && (
+         {this.state.answered !== false && this.state.answeredWrong === true && this.props.question.feedback && (
            <div className="question-feedback"><i class="fa fa-exclamation-circle"></i> Hinweis: {this.props.question.feedback}</div>
          )}
          {this.state.answered === false && (

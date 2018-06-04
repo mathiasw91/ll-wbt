@@ -50,6 +50,7 @@ class BodenBearbeitenSort extends React.Component {
           {id: 0, content: 'Abstecken der Umrisse des Beetes'},
         ],
         finished: false,
+        answeredWrong: false,
     };
 
     /**
@@ -92,7 +93,7 @@ class BodenBearbeitenSort extends React.Component {
         return i
       })
 
-      this.setState({items: newSorted, finished: true})
+      this.setState({items: newSorted, finished: true, answeredWrong: !correct})
 
       if(correct) this.props.onCorrectAnswer()
     }
@@ -140,6 +141,9 @@ class BodenBearbeitenSort extends React.Component {
                   </div>
               </DragDropContext>
             </div>
+            {this.state.finished == true && this.state.answeredWrong === true &&  (
+              <div className="question-feedback"><i class="fa fa-exclamation-circle"></i> Hinweis: Lies nochmal im Lernabschnitt "Boden bearbeiten" nach</div>
+            )}
             {this.state.finished == true && (<button className="btn btn-default" onClick={this.props.navigateNext}>weiter</button>)}
             {this.state.finished == false && (<button className="btn btn-default" onClick={this.finish.bind(this)}>fertig</button>)}
           </div>

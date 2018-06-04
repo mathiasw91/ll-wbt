@@ -76,7 +76,8 @@ class AppStore extends EventEmitter {
       ]},
       {name:'Anlegen und Pflegen', themes: [
         {name: 'Auswahl der Pflanzen', path: process.env.PUBLIC_URL + '/auswahl-der-pflanzen',component: AuswahlDerPflanzen, questions: [
-          {id: 0, question: 'Für welche Böden eigenet sich die vierjährige Fruchtfolge besonders?', multiple: true, answers: [
+          {id: 0, question: 'Für welche Böden eigenet sich die vierjährige Fruchtfolge besonders?',
+          feedback: 'Lies nochmal im Lernabschnitt "Fruchtwechsel und Fruchtfolge" nach', multiple: true, answers: [
             {content: 'Sandige Böden', correct: true},
             {content: 'Böden die viel Feuchtigkeit erhalten', correct: false},
             {content: 'Böden die wenig Feuchtigkeit erhalten', correct: false},
@@ -101,14 +102,14 @@ class AppStore extends EventEmitter {
             {content: 'Der Termin ist auf der Saattüte nachzulesen', correct: true}
           ]},
           {id: 1, question: 'Welche der folgenden Hinweise zum Säen sind korrekt?',
-          multiple: true, answers: [
+          feedback: 'Lies nochmal im Lernabschnitt "Hinweise zum Säen" nach', multiple: true, answers: [
             {content: 'Der empfohlene Abstand zwischen den Samen ist zu beachten', correct: true},
             {content: 'Je mehr Saatgut auf einer Stelle liegt, desto höher die Erfolgschancen', correct: false},
             {content: 'Ein frisch ausgesäter Samen verträgt noch nicht viel Feuchtigkeit und ist deshalb möglichst trocken zu halten', correct: false},
             {content: 'Feuchte Säcke auf dem Saatbeet schützen vor Austrocknung', correct: true}
           ]},
           {id: 2, question: 'Welche der folgenden Pflanzen müssen besonders tief eingepflanzt werden?', multiple: true,
-          feedback: 'Lauch und Tomate setzt man tiefer. Sellerie, Salat und Paprika müssen höher im Beet stehen.', answers: [
+          feedback: 'Lies nochmal im Lernabschnitt "Bepflanzen" nach', answers: [
             {content: 'Lauch', correct: true},
             {content: 'Paprika', correct: false},
             {content: 'Salat', correct: false},
@@ -124,7 +125,7 @@ class AppStore extends EventEmitter {
             {content: 'Düngemittel verhindert, dass die Pflanzen sich ungewollt ausbreiten', correct: false}
           ]},
           {id: 1, question: 'Welche Aussagen über Kompost sind korrekt?',
-          multiple: true, answers: [
+          feedback: 'Lies nochmal im Lernabschnitt "Düngemittel" nach', multiple: true, answers: [
             {content: 'Kann aus organischen Abfällen selbst hergestellt werden', correct: true},
             {content: 'Liefert Futter für Bodenlebewesen', correct: true},
             {content: 'Verbessert bei mehrjähriger Anwendung sandige, lehmige oder verdichtete Böden', correct: true},
@@ -154,7 +155,8 @@ class AppStore extends EventEmitter {
           ]}
         ]},
         {name: 'Nach der Ernte', path: process.env.PUBLIC_URL + '/nach-der-ernte',component: NachDerErnte, questions: [
-          {id: 0, question: 'Warum darf das Beet im Winter nicht offen gelassen werden?', multiple: true,
+          {id: 0, question: 'Warum darf das Beet im Winter nicht offen gelassen werden?',
+          feedback: 'Lies nochmal im Lernabschnitt "nicht offen lassen" nach',multiple: true,
           answers: [
             {content: 'Es entsteht Bodenerosion', correct: true},
             {content: 'Es gehen Nährstoffe verloren', correct: true},

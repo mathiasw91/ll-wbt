@@ -69,6 +69,7 @@ class HochHuegelBeetDragnDrop extends React.Component {
         hochbeet: [],
         huegelbeet: [],
         finished: false,
+        answeredWrong: false,
     };
 
     /**
@@ -145,7 +146,7 @@ class HochHuegelBeetDragnDrop extends React.Component {
         }
         return i
       })
-      this.setState({hochbeet: newhoch, huegelbeet: newhuegel})
+      this.setState({hochbeet: newhoch, huegelbeet: newhuegel, answeredWrong: !correct})
 
       if(correct) this.props.onCorrectAnswer()
     }
@@ -261,6 +262,9 @@ class HochHuegelBeetDragnDrop extends React.Component {
                   </div>
               </DragDropContext>
             </div>
+            {this.state.finished == true && this.state.answeredWrong === true &&  (
+              <div className="question-feedback"><i class="fa fa-exclamation-circle"></i> Hinweis: Lies nochmal im Lernabschnitt "Beettypen" nach</div>
+            )}
             {this.state.finished == true && (<button className="btn btn-default" onClick={this.props.navigateNext}>weiter</button>)}
 
           </div>
