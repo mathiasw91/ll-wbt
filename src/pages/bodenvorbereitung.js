@@ -7,18 +7,24 @@ class Bodenvorbereitung extends React.Component {
 //https://www.mein-schoener-garten.de/gemuesebeet-651#bodenvorbereitung
 
   render() {
+    let liStyle = {margin: '15px 10px'}
     return (
       <div>
         <h1>Bodenvorbereitung</h1>
 
         <h2><i class="fa fa-leaf"></i> Boden bearbeiten</h2>
-        <p>Nachdem das Gemüsebeet geplant ist geht es nun an die Umsetzung. Idealerweise beginnen Sie damit schon im Herbst, so ist das Beet fürs Frühjahr optimal vorbereitet. Bearbeiten Sie den Boden nur, wenn er trocken ist, um die Bildung von Bodenkrümeln zu vermeiden.<br/>Folgen sie diesen Arbeitsschritten:</p>
-        <ol>
-          <li>Abstecken der Umrisse: Nutzen Sie dafür Holzstäbe und Schnüre. Manchmal macht es Sinn, die Beetform mit Kalk auf dem Boden abzustreuen.</li>
-          <li>Abtragen von Gras und Gründüngung mit einer Ziehhacke</li>
-          <li>Lockern des Bodens mit einer Grabegabel 20-30cm tief.</li>
-          <li>Ziehen von Reihen: Spannen Sie eine Schnur und ziehen mit einer Hacke dran entlang.</li>
-        </ol>
+        <div style={{display: 'flex'}}>
+          <img src={'assets/beet-abstecken.jpg'} style={{height: '300px', marginRight: '10px'}}/>
+          <div>
+            <p style={{marginTop: '0px'}}>Nachdem das Gemüsebeet geplant ist geht es nun an die Umsetzung. Idealerweise beginnen Sie damit schon im Herbst, so ist das Beet fürs Frühjahr optimal vorbereitet. Bearbeiten Sie den Boden nur, wenn er trocken ist, um die Bildung von Bodenkrümeln zu vermeiden.<br/>Folgen sie diesen Arbeitsschritten:</p>
+            <ol>
+              <li style={liStyle}>Abstecken der Umrisse: Nutzen Sie dafür Holzstäbe und Schnüre. Manchmal macht es Sinn, die Beetform mit Kalk auf dem Boden abzustreuen.</li>
+              <li style={liStyle}>Abtragen von Gras und Gründüngung mit einer Ziehhacke</li>
+              <li style={liStyle}>Lockern des Bodens mit einer Grabegabel 20-30cm tief.</li>
+              <li style={liStyle}>Ziehen von Reihen: Spannen Sie eine Schnur und ziehen mit einer Hacke dran entlang.</li>
+            </ol>
+          </div>
+        </div>
 
 
         <h2><i class="fa fa-leaf"></i> Bodenverbesserung</h2>

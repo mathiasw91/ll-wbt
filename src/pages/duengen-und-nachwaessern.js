@@ -24,8 +24,12 @@ class DuengenUndNachwaessern extends React.Component {
         <p>Flüssigdünger sollte man lieber nur in geringen Mengen ins Gießwasser geben, dafür aber häuf ausgießen.</p>
 
         <h2><i class="fa fa-leaf"></i> Gießen</h2>
-        <p>Die Bewässerung des Gemüsebeetes hängt von der angebauten Gemüseart, dem Boden und natürlich der Saison und Witterung ab. Flachwurzler müssen häufiger gegossen werden als Mitteltief- und Tiefwurzler. Achten Sie darauf, dass der Boden nach dem Wässern tiefgründig durchfeuchtet ist. Je nach Bodenart sind dafür 10 bis 20 Liter Wasser pro Quadratmeter nötig. Sie sollten dabei auf Regenwasser zurückgreifen. Da es keinerlei Mineralien enthält, beeinflusst es den Nährstoffgehalt des Bodens kaum. Eine unterirdische Zisterne oder eine einfache Regentonne hilft, das Regenwasser über längere Zeit zu sammeln.</p>
-
+        <div style={{display: 'flex'}}>
+          <img src={'assets/giessen.jpg'} style={{height: '200px', marginRight: '10px'}} />
+          <div>
+            <p style={{marginTop: '0px'}}>Die Bewässerung des Gemüsebeetes hängt von der angebauten Gemüseart, dem Boden und natürlich der Saison und Witterung ab. Flachwurzler müssen häufiger gegossen werden als Mitteltief- und Tiefwurzler. Achten Sie darauf, dass der Boden nach dem Wässern tiefgründig durchfeuchtet ist. Je nach Bodenart sind dafür 10 bis 20 Liter Wasser pro Quadratmeter nötig. Sie sollten dabei auf Regenwasser zurückgreifen. Da es keinerlei Mineralien enthält, beeinflusst es den Nährstoffgehalt des Bodens kaum. Eine unterirdische Zisterne oder eine einfache Regentonne hilft, das Regenwasser über längere Zeit zu sammeln.</p>
+          </div>
+        </div>
       </div>
     )
   }

@@ -8,6 +8,7 @@ class FormDesBeetes extends React.Component {
 //https://www.selbstversorgerland.de/garten/boden-naehrstoffe/gemuesebeet-anlegen-1740
 
   render() {
+    let liStyle = {margin: '15px 10px'}
     return (
       <div>
         <h1>Form des Beetes</h1>
@@ -17,10 +18,10 @@ class FormDesBeetes extends React.Component {
         <h2><i class="fa fa-leaf"></i> Benötigte Größe</h2>
         <p>Die Anzahl und Größe der Gemüsebeete hängt davon ab, wie viel Gemüse man genötigt. Es gelten folgende Richtwerte (pro Person):</p>
         <ul>
-          <li>Totale Selbstversorgung: mindestens 80m&sup2;</li>
-          <li>Überwiegende Selbstversorgung: 40-80m&sup2;</li>
-          <li>Teilweise Selbstversorgung: 20-40m&sup2;</li>
-          <li>Ergänzende Versorgung: 1-20m&sup2;</li>
+          <li style={liStyle}>Totale Selbstversorgung: mindestens 80m&sup2;</li>
+          <li style={liStyle}>Überwiegende Selbstversorgung: 40-80m&sup2;</li>
+          <li style={liStyle}>Teilweise Selbstversorgung: 20-40m&sup2;</li>
+          <li style={liStyle}>Ergänzende Versorgung: 1-20m&sup2;</li>
         </ul>
 
         <h2><i class="fa fa-leaf"></i> Beeteinfassung</h2>

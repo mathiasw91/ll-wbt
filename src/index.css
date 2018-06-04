@@ -84,6 +84,10 @@ b {
   color: rgb(6, 97, 27);
 }
 
+img:not(.eckig) {
+  border-radius: 7px;
+}
+
 /* arrows for sidebar */
 .sidebar-chapter:before,
 .sidebar-theme:before {
@@ -105,7 +109,7 @@ b {
 
 
 .answerOptions {
-  margin: 0;
+  margin: '0px 0px 0px 20px';
   padding: 0;
   list-style: none;
 }
@@ -201,9 +205,6 @@ b {
   background: rgba(0,200,0,0.4);
 }
 
-.quiz-page.multiple .answerOptions {
-  margin-bottom: 20px;
-}
 
 /* Checkmark */
 .checkmark {

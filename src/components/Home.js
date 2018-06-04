@@ -20,8 +20,8 @@ class Home extends React.Component {
 
           <h2><i class="fa fa-graduation-cap"></i> Lernziele</h2>
           <p>Sie lernen, wie man ein Beet plant und vorbereitet. Dazu gehört die Analyse des Standortes und des Bodens, sowie die Wahl einer passenden Form des Beetes. Außerdem die notwendigen Maßnahmen zur Verbesserung des Bodens.<br/>
-          Sie lernen, ihr Beet anzulegen und zu pflegen. Dazu gehört die Auswahl und Aussaat der Pflanzen, sowie Düngung, Bewässerung und Schädlings- und Unkrautbekämpfung. Außerdem noch die Pflege und Maßnahmen nach der Ernte.<br/>
-          Zusätzlich werden Ihnen Informationen und Hinweise zu ausgewählten gängigen Pflanzen vermittelt.</p>
+          Sie lernen, ihr Beet anzulegen und zu pflegen. Dazu gehört die Auswahl und Aussaat der Pflanzen, sowie Düngung, Bewässerung und Schädlings- und Unkrautbekämpfung. Außerdem noch die Pflege und Maßnahmen nach der Ernte.</p>
+          <p>Jedes Thema besteht aus Lerninhalten, gefolgt von einem Quiz. Ein Thema ist dann abgeschlossen, wenn jede Aufgabe des Quizes korrekt gelöst wurde.</p>
 
           <h2><i class="fa fa-hourglass-start"></i> Bearbeitungszeit</h2>
           <p>Die Bearbeitungszeit für dieses WBT beträgt circa 60 Minuten.</p>
