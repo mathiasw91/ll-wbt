@@ -9,7 +9,7 @@ class Home extends React.Component {
 
   render() {
     return (<div id="home">
-      <h1>Übersicht</h1>
+      <h1>Mein erstes Gemüsebeet - Übersicht</h1>
       <div id="home-boxes">
         <div id="home-start">
           <h2><i class="fa fa-leaf"></i> Einleitung</h2>
