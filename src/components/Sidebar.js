@@ -20,7 +20,7 @@ class Sidebar extends React.Component {
 
 function Chapter(props) {
   return (<div>
-      <span className={"sidebar-chapter "+(!props.data.closed?'open':'')} onClick={()=>{AppActions.toggleChapter(props.index)}}>{props.data.name}</span>
+      <span className={"sidebar-chapter "+(!props.data.closed?'open ':'')+(props.data.chapterComplete?'quiz-complete':'')} onClick={()=>{AppActions.toggleChapter(props.index)}}>{props.data.name}</span>
       {(!props.data.closed) && (props.data.themes.map(theme =>
         <Theme data={theme} />
       ))}
@@ -28,7 +28,8 @@ function Chapter(props) {
 }
 
 function Theme(props) {
-  return (<NavLink exact={true} to={props.data.path} activeClassName="active" className={'sidebar-theme '+(props.data.quizComplete?'quiz-complete':'')}>{props.data.name}<Checkmark/></NavLink>)
+  let locked = props.data.extra && !props.data.unlocked
+  return (<NavLink exact={true} onClick={(event)=>{if(locked)event.preventDefault()}} title={locked?'Dieser Inhalt muss erst freigeschaltet werden': props.data.name} to={props.data.path} activeClassName="active" className={'sidebar-theme '+(props.data.quizComplete?'quiz-complete ':'')+(locked?'locked': '')}>{props.data.name}<Checkmark/></NavLink>)
 }
 
 function Checkmark() {

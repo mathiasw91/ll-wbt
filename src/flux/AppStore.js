@@ -19,6 +19,7 @@ import tonboden from '../assets/quiz/tonboden.jpg'
 import sandigerlehmboden from '../assets/quiz/sandiger-lehm.jpg'
 import humusboden from '../assets/quiz/humus.jpg'
 import Unkrautdeutendnd from '../quizes/unkrautdeuten-dnd'
+import Tomate from '../pages/tomate'
 
 
 class AppStore extends EventEmitter {
@@ -170,19 +171,16 @@ class AppStore extends EventEmitter {
           ]}
         ]}
       ]},
-      // {name:'Gängige Pflanzen', themes: [
-      //   {name: 'Tomate', path: process.env.PUBLIC_URL + '/tomate',component: PageOne, questions: [
-      //   ]},
-      //   {name: 'Salat', path: process.env.PUBLIC_URL + '/salat',component: PageOne, questions: [
-      //   ]},
-      //   {name: 'Gurke', path: process.env.PUBLIC_URL + '/gurke',component: PageOne, questions: [
-      //   ]},
-      //   {name: 'Erdbeere', path: process.env.PUBLIC_URL + '/erdbeere',component: PageOne, questions: [
-      //   ]}
-      // ]}
+      {name:'Gängige Pflanzen', extra: true, themes: [
+        {name: 'Tomate', path: process.env.PUBLIC_URL + '/extra-tomate',component: Tomate, extra: true},
+        {name: 'Salat', path: process.env.PUBLIC_URL + '/extra-salat',component: Tomate, extra: true},
+      ]}
     ]
     this.activeTheme = this.chapters[0].themes[0]
     this.latest = []
+
+    this.chapters[0].unlocks = this.chapters[2].themes[0]
+    this.chapters[1].unlocks = this.chapters[2].themes[1]
 
     this.loadFromLocalStorage()
   }
@@ -209,7 +207,17 @@ class AppStore extends EventEmitter {
       if(question) question.answered = true
     }
     let unanswered = this.chapters[activeIndexes.chapter].themes[activeIndexes.theme].questions.filter(q=>!q.answered)
-    if(unanswered.length == 0) this.chapters[activeIndexes.chapter].themes[activeIndexes.theme].quizComplete = true
+    if(unanswered.length == 0){
+      this.chapters[activeIndexes.chapter].themes[activeIndexes.theme].quizComplete = true
+      let chapterComplete = true
+      this.chapters[activeIndexes.chapter].themes.forEach(theme=>{
+        if(!theme.quizComplete) chapterComplete = false
+      })
+      if(chapterComplete){
+        this.chapters[activeIndexes.chapter].chapterComplete = true
+        this.chapters[activeIndexes.chapter].unlocks.unlocked = true
+      }
+    }
     this.emit('change')
     this.saveChaptersToLocalStorage()
   }
@@ -222,6 +230,8 @@ class AppStore extends EventEmitter {
         })
         t.quizComplete = false
       })
+      c.chapterComplete = false
+      c.unlocks.unlocked = false
     })
     this.emit('change')
     this.saveChaptersToLocalStorage()
@@ -234,6 +244,8 @@ class AppStore extends EventEmitter {
         q.answered = false
       })
       this.chapters[activeIndexes.chapter].themes[activeIndexes.theme].quizComplete = false
+      this.chapters[activeIndexes.chapter].chapterComplete = false
+      this.chapters[activeIndexes.chapter].unlocks.unlocked = false
     }
     this.emit('change')
     this.saveChaptersToLocalStorage()
@@ -284,14 +296,21 @@ class AppStore extends EventEmitter {
       try {
         let parsed = JSON.parse(chapters)
         parsed.forEach((chapter,i)=>{
+          let chapterComplete = true
           chapter.themes.forEach((theme,j)=>{
             if(theme.quizComplete){
               this.chapters[i].themes[j].quizComplete = true
+            }else{
+              chapterComplete = false
             }
             theme.questions.forEach((question, k)=>{
               if(question.answered) this.chapters[i].themes[j].questions[k].answered = true
             })
           })
+          if(chapterComplete){
+            this.chapters[i].chapterComplete = true
+            this.chapters[i].unlocks.unlocked = true
+          }
         })
         this.emit('change')
       }catch(err){

@@ -19,16 +19,16 @@ class Home extends React.Component {
           </p>
 
           <h2><i class="fa fa-graduation-cap"></i> Lernziele</h2>
-          <p>Sie lernen, wie man ein Beet plant und vorbereitet. Dazu gehört die Analyse des Standortes und des Bodens, sowie die Wahl einer passenden Form des Beetes. Außerdem die notwendigen Maßnahmen zur Verbesserung des Bodens.<br/>
-          Sie lernen, ihr Beet anzulegen und zu pflegen. Dazu gehört die Auswahl und Aussaat der Pflanzen, sowie Düngung, Bewässerung und Schädlings- und Unkrautbekämpfung. Außerdem noch die Pflege und Maßnahmen nach der Ernte.</p>
-          <p>Jedes Thema besteht aus Lerninhalten, gefolgt von einem Quiz. Ein Thema ist dann abgeschlossen, wenn jede Aufgabe des Quizes korrekt gelöst wurde.</p>
+          <p>Im ersten Kapitel lernen Sie wie man ein Beet plant und vorbereitet. Dazu gehört die Analyse des Standortes und des Bodens, sowie die Wahl einer passenden Form des Beetes. Außerdem die notwendigen Maßnahmen zur Verbesserung des Bodens.<br/>
+          Im zweiten Kapitel lernen Sie ihr Beet anzulegen und zu pflegen. Dazu gehört die Auswahl und Aussaat der Pflanzen, sowie Düngung, Bewässerung und Schädlings- und Unkrautbekämpfung. Außerdem noch die Pflege und Maßnahmen nach der Ernte.</p>
+          <p>Jedes Thema besteht aus Lerninhalten, gefolgt von einem Quiz. Ein Thema ist dann abgeschlossen, wenn jede Aufgabe des Quizes korrekt gelöst wurde. Sind alle Themen eines Kapitels gelöst, wird ein Bonus-Thema freigeschaltet, welches nützliche Tipps zu einer gängigen Pflanze bietet.</p>
 
           <h2><i class="fa fa-hourglass-start"></i> Bearbeitungszeit</h2>
           <p>Die Bearbeitungszeit für dieses WBT beträgt circa 60 Minuten.</p>
         </div>
         <div id="home-sidebar">
           <h2><i class="fa fa-chart-line"></i> Lernfortschritt</h2>
-          {this.props.chapters.map(c=>(
+          {this.props.chapters.filter(c=>!c.extra).map(c=>(
             <span style={{display:"block"}}>{c.name}: {c.themes.filter(c=>c.quizComplete).length}&nbsp;/&nbsp;{c.themes.length}&nbsp;gelöst</span>
           ))}
           <button className="btn btn-default" style={{marginTop:"0.8em"}} onClick={AppActions.resetProgress}>Zurücksetzen</button>

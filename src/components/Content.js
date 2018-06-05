@@ -25,7 +25,9 @@ class Content extends React.Component {
         {this.props.chapters.map(chapter =>
           <Chapter data={chapter} />
         )}
-        <Link className="btn btn-default" style={{marginTop:"1em"}} to={this.props.location.pathname+'/quiz'}>zum Quiz</Link>
+        {!this.props.activeTheme.extra && (
+          <Link className="btn btn-default" style={{marginTop:"1em"}} to={this.props.location.pathname+'/quiz'}>zum Quiz</Link>
+        )}
       </div>)
     }
 
@@ -55,7 +57,7 @@ function Chapter(props) {
   return (
     <div>
       {props.data.themes.map(theme =>
-        <Theme data={theme}/>
+        <Theme data={theme} chapter={props.data}/>
       )}
     </div>
   )
