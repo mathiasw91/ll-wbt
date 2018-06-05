@@ -192,8 +192,9 @@ class AppStore extends EventEmitter {
   }
 
   updateLatest(theme){
-    let vorhanden = this.latest.indexOf(theme)
-    if(vorhanden != -1) this.latest.splice(vorhanden,1)
+    let vorhanden = -1
+    this.latest.forEach((i, index)=>{if(i.name == theme.name){vorhanden = index}})
+    if(vorhanden !== -1) this.latest.splice(vorhanden,1)
     this.latest.unshift(theme)
     if(this.latest.length > 3) this.latest.splice(3,1)
     this.activeTheme = theme
