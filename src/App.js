@@ -17,6 +17,7 @@ class App extends Component {
       activeTheme: AppStore.getActiveTheme(),
       chapters: AppStore.getChapters(),
       latest: AppStore.getLatest(),
+      chapterCompleteMsg: false,
     }
   }
 
@@ -26,6 +27,7 @@ class App extends Component {
         activeTheme: AppStore.getActiveTheme(),
         chapters: AppStore.getChapters(),
         latest: AppStore.getLatest(),
+        chapterCompleteMsg: AppStore.getChapterCompleteMsg(),
       })
     })
   }
@@ -47,6 +49,7 @@ class App extends Component {
           activeChapter={this.state.activeChapter}
           activeTheme={this.state.activeTheme}
           latest={this.state.latest}
+          chapterCompleteMsg={this.state.chapterCompleteMsg}
         />
       </div>
       </Router>

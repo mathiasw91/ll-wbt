@@ -172,12 +172,13 @@ class AppStore extends EventEmitter {
         ]}
       ]},
       {name:'Gängige Pflanzen', extra: true, themes: [
-        {name: 'Tomate', path: process.env.PUBLIC_URL + '/extra-tomate',component: Tomate, extra: true},
-        {name: 'Salat', path: process.env.PUBLIC_URL + '/extra-salat',component: Tomate, extra: true},
+        {name: 'Tomate', path: process.env.PUBLIC_URL + '/extra-tomate',component: Tomate, extra: true, questions: []},
+        {name: 'Salat', path: process.env.PUBLIC_URL + '/extra-salat',component: Tomate, extra: true, questions: []},
       ]}
     ]
     this.activeTheme = this.chapters[0].themes[0]
     this.latest = []
+    this.chapterCompleteMsg = false
 
     this.chapters[0].unlocks = this.chapters[2].themes[0]
     this.chapters[1].unlocks = this.chapters[2].themes[1]
@@ -214,8 +215,10 @@ class AppStore extends EventEmitter {
         if(!theme.quizComplete) chapterComplete = false
       })
       if(chapterComplete){
-        this.chapters[activeIndexes.chapter].chapterComplete = true
-        this.chapters[activeIndexes.chapter].unlocks.unlocked = true
+        let chap = this.chapters[activeIndexes.chapter]
+        chap.chapterComplete = true
+        chap.unlocks.unlocked = true
+        this.chapterCompleteMsg = 'Glückwunsch, Sie haben das Kapitel "'+chap.name+'" abgeschlossen!<br/>Damit steht Ihnen nun der Bonus-Inhalt "'+chap.unlocks.name+'" zur verfügung.'
       }
     }
     this.emit('change')
@@ -251,6 +254,10 @@ class AppStore extends EventEmitter {
     this.saveChaptersToLocalStorage()
   }
 
+  resetChapterCompleteMsg(){
+    this.chapterCompleteMsg = false
+  }
+
   //helper functions
   getActiveChapterAndThemeIndex(){
     let activeChapterIndex = false
@@ -280,6 +287,10 @@ class AppStore extends EventEmitter {
 
   getLatest(){
     return this.latest
+  }
+
+  getChapterCompleteMsg(){
+    return this.chapterCompleteMsg
   }
 
   saveChaptersToLocalStorage(){
@@ -351,6 +362,10 @@ class AppStore extends EventEmitter {
       case 'RESET_QUIZ': {
         this.resetQuiz()
         break
+      }
+      case 'RESET_CHAPTER_COMPLETE_MSG': {
+        this.resetChapterCompleteMsg();
+        break;
       }
     }
   }

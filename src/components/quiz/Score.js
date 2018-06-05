@@ -1,6 +1,7 @@
 import React from 'react'
 import {withRouter, Link} from 'react-router-dom'
 import {Circle} from 'rc-progress'
+import * as AppActions from '../../flux/AppActions'
 
   function Score(props) {
     if(props.alreadyFinished) return (
@@ -12,9 +13,17 @@ import {Circle} from 'rc-progress'
     let pctg = props.correct/props.total*100
     let circleColor = getColor(pctg/100)
 
+    if(props.chapterCompleteMsg) AppActions.resetChapterCompleteMsg()
+
     return (
       <div id="quiz-score" className="result">
         <h1>Auswertung</h1>
+        {props.chapterCompleteMsg && (
+          <div style={{display: 'flex', alignItems: 'center'}}>
+            <div style={{fontSize: '48px', color: 'rgb(6, 97, 27)'}}><i class="fa fa-exclamation"></i></div>
+            <div style={{fontSize: '24px', margin: '20px'}} dangerouslySetInnerHTML={{__html: props.chapterCompleteMsg}}></div>
+          </div>
+        )}
         <div style={{display:'flex', alignItems:'center'}}>
           <Circle percent={pctg} strokeWidth="4" strokeColor={circleColor}/>
           <div style={{fontSize: '24px', marginLeft: '20px'}}>

@@ -32,3 +32,9 @@ export function resetQuiz(){
     type: 'RESET_QUIZ',
   })
 }
+
+export function resetChapterCompleteMsg(){
+  Dispatcher.dispatch({
+    type: 'RESET_CHAPTER_COMPLETE_MSG',
+  })
+}

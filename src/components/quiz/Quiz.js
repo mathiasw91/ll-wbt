@@ -44,7 +44,8 @@ class Quiz extends React.Component {
         {this.state.currentQuestion >= this.state.questions.length && (
           <Score total={this.state.questionsTotalSession} correct={this.state.questionsAnsweredSession}
           remaining={this.state.questionsTotal-this.state.questionsAnswered}
-          alreadyFinished={(this.state.questionsAnswered == this.state.questionsTotal) && this.state.currentQuestion == 0}/>
+          alreadyFinished={(this.state.questionsAnswered == this.state.questionsTotal) && this.state.currentQuestion == 0}
+          chapterCompleteMsg={this.props.chapterCompleteMsg}/>
         )}
         {this.state.currentQuestion < this.state.questions.length && (
           <div>
