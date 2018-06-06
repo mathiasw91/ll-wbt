@@ -26,7 +26,7 @@ class Content extends React.Component {
           <Chapter data={chapter} />
         )}
         {!this.props.activeTheme.extra && (
-          <Link className="btn btn-default" style={{marginTop:"1em"}} to={this.props.location.pathname+'/quiz'}>zum Quiz</Link>
+          <Link className="btn btn-default" style={{marginTop:"1em", marginBottom: "1em"}} to={this.props.location.pathname+'/quiz'}>zum Quiz</Link>
         )}
       </div>)
     }
