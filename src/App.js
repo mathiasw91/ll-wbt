@@ -39,7 +39,7 @@ class App extends Component {
   render() {
 
     return (
-      <Router onChange={this.onRouteChange.bind(this)}>
+      <Router onChange={this.onRouteChange.bind(this)} basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Sidebar
           chapters={this.state.chapters}
