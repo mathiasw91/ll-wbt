@@ -218,7 +218,7 @@ class AppStore extends EventEmitter {
       if(chapterComplete){
         let chap = this.chapters[activeIndexes.chapter]
         chap.chapterComplete = true
-        chap.unlocks.unlocked = true
+        if(chap.unlocks) chap.unlocks.unlocked = true
         this.chapterCompleteMsg = 'Glückwunsch, Sie haben das Kapitel "'+chap.name+'" abgeschlossen!<br/>Damit steht Ihnen nun der Bonus-Inhalt "'+chap.unlocks.name+'" zur verfügung.'
       }
     }
@@ -235,7 +235,7 @@ class AppStore extends EventEmitter {
         t.quizComplete = false
       })
       c.chapterComplete = false
-      c.unlocks.unlocked = false
+      if(c.unlocks) c.unlocks.unlocked = false
     })
     this.emit('change')
     this.saveChaptersToLocalStorage()
@@ -321,7 +321,7 @@ class AppStore extends EventEmitter {
           })
           if(chapterComplete){
             this.chapters[i].chapterComplete = true
-            this.chapters[i].unlocks.unlocked = true
+            if(this.chapters[i].unlocks) this.chapters[i].unlocks.unlocked = true
           }
         })
         this.emit('change')
