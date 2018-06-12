@@ -195,11 +195,23 @@ img:not(.eckig) {
     border-color: red;
 }
 
+.quiz-page.multiple .radioCustomButton ~ .radioCustomLabel:before {
+    border-color: black;
+    border-radius: 4px;
+}
+
+.quiz-page.multiple .radioCustomButton:checked ~ .radioCustomLabel:before {
+    content: '';
+    background: white url(assets/icon-check-black.svg) no-repeat;
+    background-size: 27px;
+    border-color: black;
+    border-radius: 4px;
+}
+
 .quiz-page.multiple .radioCustomButton.answer-wrong:checked ~ .radioCustomLabel:before {
     content: '';
-    background: #8BC53F url(assets/icon-check.svg) no-repeat;
+    background: white url(assets/icon-check-black.svg) no-repeat;
     background-size: 27px;
-    border-color: #8BC53F;
 }
 
 .quiz-page.multiple .answerOption.answer-wrong {
