@@ -36,6 +36,7 @@ aside#sidebar {
   border: solid 0.5px rgba(0,0,0,0.6);
   box-sizing: border-box;
   height: 100%;
+  overflow-y: auto;
 }
 
 div#content-wrapper {
@@ -50,7 +51,7 @@ div#content-wrapper {
   height: 100%;
 }
 
-#sidebar a {
+#sidebar-navigation a {
   display: block;
   color: black;
   text-decoration: none; /* no underline */
@@ -66,7 +67,7 @@ a.sidebar-theme {
   padding-left: 1em;
 }
 
-a.sidebar-theme.active {
+a.sidebar-theme.active, a.extralink.active {
   font-weight: 700;
 }
 
@@ -77,6 +78,10 @@ a.sidebar-theme:not(.quiz-complete) .checkmark {
 a.sidebar-theme.locked {
   cursor: not-allowed;
   color: rgba(0,0,0,0.4) !important;
+}
+
+#sidebar-progress {
+  margin-top: 40px;
 }
 
 

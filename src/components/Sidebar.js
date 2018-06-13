@@ -7,12 +7,25 @@ class Sidebar extends React.Component {
 
   render() {
     return (<aside id="sidebar">
-      <h2><Link to={`${process.env.PUBLIC_URL}/home`}><i class="fa fa-angle-right"></i> Zur Übersicht</Link></h2>
     	<div id="sidebar-navigation">
     	<h2>Themen</h2>
+        <NavLink to={`${process.env.PUBLIC_URL}/home`} className="extralink" activeClassName="active" ><i class="fa fa-angle-right"></i> Einleitung</NavLink>
         {this.props.chapters.map((chapter, index) =>
           <Chapter data={chapter} index={index}/>
         )}
+      </div>
+      {(this.props.latest.length != 0) && (<div id="latest-themes">
+        <h2><i class="fa fa-list-ul"></i> Zuletzt besucht</h2>
+        {this.props.latest.map(theme=>(
+          <Link to={theme.path}>{theme.name}</Link>
+        ))}
+      </div>)}
+      <div id="sidebar-progress">
+        <h2><i class="fa fa-chart-line"></i> Lernfortschritt</h2>
+        {this.props.chapters.filter(c=>!c.extra).map(c=>(
+          <span style={{display:"block"}}>{c.name}: {c.themes.filter(c=>c.quizComplete).length}&nbsp;/&nbsp;{c.themes.length}&nbsp;gelöst</span>
+        ))}
+        <button className="btn btn-default" style={{marginTop:"0.8em"}} onClick={AppActions.resetProgress}>Zurücksetzen</button>
       </div>
     </aside>)
   }

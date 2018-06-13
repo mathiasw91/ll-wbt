@@ -14,7 +14,7 @@ class Content extends React.Component {
   render() {
     if(this.props.location.pathname.endsWith('home') || this.props.location.pathname === '/' || this.props.location.pathname === process.env.PUBLIC_URL+'/'){
       return (<div id="content-wrapper" className="home-wrapper">
-        <Home latest={this.props.latest} chapters={this.props.chapters}/>
+        <Home chapters={this.props.chapters}/>
       </div>)
     }else if(this.props.location.pathname.endsWith('quiz')){
       return (<div id="content-wrapper" className="quiz-wrapper">

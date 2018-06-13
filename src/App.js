@@ -43,12 +43,12 @@ class App extends Component {
       <div className="App">
         <Sidebar
           chapters={this.state.chapters}
+          latest={this.state.latest}
         />
         <Content
           chapters={this.state.chapters}
           activeChapter={this.state.activeChapter}
           activeTheme={this.state.activeTheme}
-          latest={this.state.latest}
           chapterCompleteMsg={this.state.chapterCompleteMsg}
         />
       </div>
