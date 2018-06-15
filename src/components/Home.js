@@ -22,6 +22,7 @@ class Home extends React.Component {
           <p>Im ersten Kapitel lernen Sie wie man ein Beet plant und vorbereitet. Dazu gehört die Analyse des Standortes und des Bodens, sowie die Wahl einer passenden Form des Beetes. Außerdem die notwendigen Maßnahmen zur Verbesserung des Bodens.<br/>
           Im zweiten Kapitel lernen Sie ihr Beet anzulegen und zu pflegen. Dazu gehört die Auswahl und Aussaat der Pflanzen, sowie Düngung, Bewässerung und Schädlings- und Unkrautbekämpfung. Außerdem noch die Pflege und Maßnahmen nach der Ernte.</p>
           <p>Jedes Thema besteht aus Lerninhalten, gefolgt von einem Quiz. Ein Thema ist dann abgeschlossen, wenn jede Aufgabe des Quizes korrekt gelöst wurde. Sind alle Themen eines Kapitels gelöst, wird ein Bonus-Thema freigeschaltet, welches nützliche Tipps zu einer gängigen Pflanze bietet.</p>
+          <p>Sind alle Themen aus beiden Kapiteln gelöst, wird das Abschlussquiz freigeschaltet. Dies dient zum Wiederholen und Festigen aller Themengebiete.</p>
 
           <h2><i class="fa fa-hourglass-start"></i> Bearbeitungszeit</h2>
           <p>Die Bearbeitungszeit für dieses WBT beträgt circa 60 Minuten.</p>
