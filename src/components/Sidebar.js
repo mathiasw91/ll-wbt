@@ -13,6 +13,7 @@ class Sidebar extends React.Component {
         {this.props.chapters.map((chapter, index) =>
           <Chapter data={chapter} index={index}/>
         )}
+        <NavLink to={`${process.env.PUBLIC_URL}/abschluss`} className="extralink" activeClassName="active" ><i class="fa fa-angle-right"></i> Abschlussquiz</NavLink>
       </div>
       {(this.props.latest.length != 0) && (<div id="latest-themes">
         <h2><i class="fa fa-list-ul"></i> Zuletzt besucht</h2>

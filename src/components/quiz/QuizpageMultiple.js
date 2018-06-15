@@ -35,7 +35,11 @@ class QuizpageMultiple extends React.Component {
   })
 
     this.setState({answered: true, answeredWrong: !correct})
-    if(correct) this.props.onCorrectAnswer()
+    if(correct){ 
+      this.props.onCorrectAnswer()
+    }else{
+      if(this.props.onWrongAnswer) this.props.onWrongAnswer()
+    }
   }
 
   render() {

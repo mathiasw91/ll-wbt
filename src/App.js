@@ -18,6 +18,7 @@ class App extends Component {
       chapters: AppStore.getChapters(),
       latest: AppStore.getLatest(),
       chapterCompleteMsg: false,
+      abschlussquestions: AppStore.getAbschlussQuestions(),
     }
   }
 
@@ -28,6 +29,7 @@ class App extends Component {
         chapters: AppStore.getChapters(),
         latest: AppStore.getLatest(),
         chapterCompleteMsg: AppStore.getChapterCompleteMsg(),
+        abschlussquestions: AppStore.getAbschlussQuestions(),
       })
     })
   }
@@ -50,6 +52,7 @@ class App extends Component {
           activeChapter={this.state.activeChapter}
           activeTheme={this.state.activeTheme}
           chapterCompleteMsg={this.state.chapterCompleteMsg}
+          abschlussquestions={this.state.abschlussquestions}
         />
       </div>
       </Router>

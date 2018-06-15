@@ -95,7 +95,11 @@ class BodenBearbeitenSort extends React.Component {
 
       this.setState({items: newSorted, finished: true, answeredWrong: !correct})
 
-      if(correct) this.props.onCorrectAnswer()
+      if(correct){
+        this.props.onCorrectAnswer()
+      }else{
+        if(this.props.onWrongAnswer) this.props.onWrongAnswer()
+      }
     }
 
     // Normally you would want to split things out into separate components.

@@ -278,6 +278,42 @@ class AppStore extends EventEmitter {
     return this.chapters[chapterId].themes[themeId].questions.filter(q=>q.id==questionId)[0]
   }
 
+  getAbschlussQuestions(){
+    let questions = []
+    this.chapters.forEach(c=>{
+      c.themes.forEach(t=>{
+        if(t.extra) return
+        let rnd = Math.floor(Math.random()*((t.questions.length-1)-0+1)+0);
+        console.log(rnd)
+        let clone = this.cloneQuestion(t.questions[rnd])
+        clone.theme = t.name
+        questions.push(clone)
+      })
+    })
+    return questions
+  }
+
+  cloneQuestion(q){
+    let clone = {}
+    if(q.component){
+      clone.component = q.component
+      return clone
+    }
+    clone.question = q.question
+    clone.feedback = q.feedback
+    clone.multiple = q.multiple
+    clone.answers = []
+    q.answers.forEach((a,i)=>{
+      clone.answers[i] = {content: a.content, correct: a.correct}
+    })
+    return clone
+  }
+
+  resetAbschlussquiz(){
+    this.emit('change')
+  }
+
+
   getChapters(){
     return this.chapters
   }
@@ -366,6 +402,10 @@ class AppStore extends EventEmitter {
       }
       case 'RESET_CHAPTER_COMPLETE_MSG': {
         this.resetChapterCompleteMsg();
+        break;
+      }
+      case 'RESET_ABSCHLUSSQUIZ' : {
+        this.resetAbschlussquiz();
         break;
       }
     }

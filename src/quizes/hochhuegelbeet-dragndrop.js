@@ -148,7 +148,11 @@ class HochHuegelBeetDragnDrop extends React.Component {
       })
       this.setState({hochbeet: newhoch, huegelbeet: newhuegel, answeredWrong: !correct})
 
-      if(correct) this.props.onCorrectAnswer()
+      if(correct){
+        this.props.onCorrectAnswer()
+      }else{
+        if(this.props.onWrongAnswer) this.props.onWrongAnswer()
+      }
     }
 
     // Normally you would want to split things out into separate components.
