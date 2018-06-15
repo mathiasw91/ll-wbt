@@ -75,7 +75,7 @@ a.sidebar-theme:not(.quiz-complete) .checkmark {
   display: none;
 }
 
-a.sidebar-theme.locked {
+a.sidebar-theme.locked, a.extralink.locked {
   cursor: not-allowed;
   color: rgba(0,0,0,0.4) !important;
 }

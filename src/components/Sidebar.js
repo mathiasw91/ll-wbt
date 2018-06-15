@@ -6,6 +6,8 @@ import * as AppActions from '../flux/AppActions'
 class Sidebar extends React.Component {
 
   render() {
+    let abschlussLocked = true
+    if(this.props.chapters[0].chapterComplete && this.props.chapters[1].chapterComplete) abschlussLocked = false
     return (<aside id="sidebar">
     	<div id="sidebar-navigation">
     	<h2>Themen</h2>
@@ -13,7 +15,9 @@ class Sidebar extends React.Component {
         {this.props.chapters.map((chapter, index) =>
           <Chapter data={chapter} index={index}/>
         )}
-        <NavLink to={`${process.env.PUBLIC_URL}/abschluss`} className="extralink" activeClassName="active" ><i class="fa fa-angle-right"></i> Abschlussquiz</NavLink>
+        <NavLink to={`${process.env.PUBLIC_URL}/abschluss`} className={"extralink "+(abschlussLocked?'locked':'')} activeClassName="active"
+        onClick={(event)=>{if(abschlussLocked)event.preventDefault()}}
+        title={abschlussLocked?'Dieser Inhalt muss erst freigeschaltet werden': 'Abschlussquiz'}><i class="fa fa-angle-right"></i> Abschlussquiz</NavLink>
       </div>
       {(this.props.latest.length != 0) && (<div id="latest-themes">
         <h2><i class="fa fa-list-ul"></i> Zuletzt besucht</h2>
