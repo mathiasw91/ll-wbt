@@ -417,6 +417,19 @@ a:hover, a:focus, a:active {
   width: 200px;
   margin: 20px 0px;
 }
+
+#quiz-score .score-icons {
+  font-size: 60px;
+}
+
+#quiz-score .score-icons .filled {
+  color: rgba(40,167,69,1)
+}
+
+#quiz-score .score-icons .unfilled {
+  color: rgba(40,167,69,0.4)
+}
+
 table {
     border-collapse: collapse;
 }

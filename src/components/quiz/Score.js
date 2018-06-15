@@ -27,7 +27,12 @@ import * as AppActions from '../../flux/AppActions'
         <div style={{display:'flex', alignItems:'center'}}>
           <Circle percent={pctg} strokeWidth="4" strokeColor={circleColor}/>
           <div style={{fontSize: '24px', marginLeft: '20px'}}>
-            <span >Sie haben {props.correct} / {props.total} Fragen richtig beantwortet!</span>
+            <span>Sie haben {props.correctSession} Fragen richtig beantwortet!<br/>Das ergibt folgenden Gesamtfortschritt:</span>
+            <div className="score-icons">
+              {Array(props.total).fill(1).map((el, i) =>
+                <Icn filled={(i+1) <= props.correct} />
+              )}
+            </div>
             {props.remaining !== 0 && (
               <div>Es verbleiben noch {props.remaining} unbeantwortete Fragen. Wiederhole das Quiz, bis alle Fragen gelöst sind.</div>
             )}
@@ -38,6 +43,12 @@ import * as AppActions from '../../flux/AppActions'
         </div>
       </div>
     )
+  }
+
+  function Icn(props){
+    let f = 'unfilled'
+    if(props.filled) f = 'filled'
+    return (<i class={"fa fa-leaf "+f}></i>)
   }
 
   function getColor(value){

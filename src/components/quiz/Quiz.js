@@ -42,8 +42,8 @@ class Quiz extends React.Component {
     return (
       <div id="quiz">
         {this.state.currentQuestion >= this.state.questions.length && (
-          <Score total={this.state.questionsTotalSession} correct={this.state.questionsAnsweredSession}
-          remaining={this.state.questionsTotal-this.state.questionsAnswered}
+          <Score total={this.state.questionsTotal} correctSession={this.state.questionsAnsweredSession}
+          remaining={this.state.questionsTotal-this.state.questionsAnswered} correct={this.state.questionsAnswered}
           alreadyFinished={(this.state.questionsAnswered == this.state.questionsTotal) && this.state.currentQuestion == 0}
           chapterCompleteMsg={this.props.chapterCompleteMsg}/>
         )}

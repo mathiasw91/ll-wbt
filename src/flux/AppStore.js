@@ -284,7 +284,6 @@ class AppStore extends EventEmitter {
       c.themes.forEach(t=>{
         if(t.extra) return
         let rnd = Math.floor(Math.random()*((t.questions.length-1)-0+1)+0);
-        console.log(rnd)
         let clone = this.cloneQuestion(t.questions[rnd])
         clone.theme = t.name
         questions.push(clone)
