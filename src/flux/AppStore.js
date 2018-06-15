@@ -290,6 +290,7 @@ class AppStore extends EventEmitter {
         questions.push(clone)
       })
     })
+    this.shuffleArray(questions)
     return questions
   }
 
@@ -307,6 +308,13 @@ class AppStore extends EventEmitter {
       clone.answers[i] = {content: a.content, correct: a.correct}
     })
     return clone
+  }
+
+  shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]]; // eslint-disable-line no-param-reassign
+      }
   }
 
   resetAbschlussquiz(){
