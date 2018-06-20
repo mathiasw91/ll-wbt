@@ -28,7 +28,7 @@ class Content extends React.Component {
       </div>)
     }else if(this.props.location.pathname.endsWith('quiz')){
       return (<div id="content-wrapper" className="quiz-wrapper">
-        <Quiz questions={this.props.activeTheme.questions.filter(q=>!q.answered)} total={this.props.activeTheme.questions.length} chapterCompleteMsg={this.props.chapterCompleteMsg}/>  
+        <Quiz questions={this.props.activeTheme.questions.filter(q=>!q.answered)} total={this.props.activeTheme.questions.length} chapterCompleteMsg={this.props.chapterCompleteMsg} navigateNext={this.props.navigateNext}/>  
       </div>)
     }else{
       return (<div id="content-wrapper">

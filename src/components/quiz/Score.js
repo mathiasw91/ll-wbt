@@ -6,7 +6,7 @@ import * as AppActions from '../../flux/AppActions'
   function Score(props) {
     if(props.alreadyFinished) return (
       <div id="quiz-score">
-        Dieses Quiz ist bereits beendet.
+        <p>Dieses Quiz ist bereits abgeschlossen.</p>
       </div>
     )
 
@@ -37,7 +37,9 @@ import * as AppActions from '../../flux/AppActions'
               <div>Es verbleiben noch {props.remaining} unbeantwortete Fragen. Wiederhole das Quiz, bis alle Fragen gelöst sind.</div>
             )}
             {props.remaining === 0 && (
-              <div>Damit wurde das Quiz erfolgreich abgeschlossen.</div>
+              <div>
+                <p>Damit wurde das Quiz erfolgreich abgeschlossen.</p>
+              </div>
             )}
           </div>
         </div>

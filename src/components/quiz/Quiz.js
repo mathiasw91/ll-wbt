@@ -36,6 +36,7 @@ class Quiz extends React.Component {
 
 
   render() {
+    var nextTheme = this.props.navigateNext()
     var q = this.state.questions[this.state.currentQuestion]
     var CustomQuiz
     if(q) CustomQuiz = q.component
@@ -45,7 +46,8 @@ class Quiz extends React.Component {
           <Score total={this.state.questionsTotal} correctSession={this.state.questionsAnsweredSession}
           remaining={this.state.questionsTotal-this.state.questionsAnswered} correct={this.state.questionsAnswered}
           alreadyFinished={(this.state.questionsAnswered == this.state.questionsTotal) && this.state.currentQuestion == 0}
-          chapterCompleteMsg={this.props.chapterCompleteMsg}/>
+          chapterCompleteMsg={this.props.chapterCompleteMsg}
+          navigateNext={this.props.navigateNext}/>
         )}
         {this.state.currentQuestion < this.state.questions.length && (
           <div>
@@ -68,6 +70,9 @@ class Quiz extends React.Component {
         <div style={{marginTop:"5em"}}>
           <Link className="btn btn-default" to={this.props.location.pathname.replace('/quiz','')}>Zurück zum Lerninhalt</Link>
           <button className="btn btn-default" style={{marginLeft:"2em"}} onClick={this.resetQuiz.bind(this)}>Dieses Quiz zurücksetzen</button>
+          {((this.state.currentQuestion >= this.state.questions.length) && (((this.state.questionsAnswered == this.state.questionsTotal) && this.state.currentQuestion == 0) || ((this.state.questionsTotal-this.state.questionsAnswered) == 0)) && nextTheme != false) && (
+            <Link className="btn btn-default" to={nextTheme} style={{marginLeft: "2em"}}>Zum nächsten Thema</Link>
+          )}
         </div>
       </div>
     )

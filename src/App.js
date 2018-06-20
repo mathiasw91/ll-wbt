@@ -53,6 +53,7 @@ class App extends Component {
           activeTheme={this.state.activeTheme}
           chapterCompleteMsg={this.state.chapterCompleteMsg}
           abschlussquestions={this.state.abschlussquestions}
+          navigateNext={AppStore.getNextThemeLink}
         />
       </div>
       </Router>

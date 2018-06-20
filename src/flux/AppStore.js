@@ -259,6 +259,20 @@ class AppStore extends EventEmitter {
     this.chapterCompleteMsg = false
   }
 
+  getNextThemeLink = () => {
+    let active = false
+    let next = false
+    this.chapters.forEach((c, ci)=>{
+      if(next || c.extra) return
+      c.themes.forEach((t, ti)=>{
+        if(next) return
+        if(active == true) next = t.path
+        if(t === this.activeTheme) active = true
+      })
+    })
+    return next
+  }
+
   //helper functions
   getActiveChapterAndThemeIndex(){
     let activeChapterIndex = false
