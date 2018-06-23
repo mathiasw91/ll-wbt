@@ -20,6 +20,7 @@ import sandigerlehmboden from '../assets/quiz/sandiger-lehm.jpg'
 import humusboden from '../assets/quiz/humus.jpg'
 import Unkrautdeutendnd from '../quizes/unkrautdeuten-dnd'
 import Tomate from '../pages/tomate'
+import Salat from '../pages/salat'
 
 
 class AppStore extends EventEmitter {
@@ -173,7 +174,7 @@ class AppStore extends EventEmitter {
       ]},
       {name:'Gängige Pflanzen', extra: true, themes: [
         {name: 'Tomate', path: process.env.PUBLIC_URL + '/extra-tomate',component: Tomate, extra: true, questions: []},
-        {name: 'Salat', path: process.env.PUBLIC_URL + '/extra-salat',component: Tomate, extra: true, questions: []},
+        {name: 'Salat', path: process.env.PUBLIC_URL + '/extra-salat',component: Salat, extra: true, questions: []},
       ]}
     ]
     this.activeTheme = this.chapters[0].themes[0]
