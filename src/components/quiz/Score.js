@@ -25,9 +25,9 @@ import * as AppActions from '../../flux/AppActions'
           </div>
         )}
         <div style={{display:'flex', alignItems:'center'}}>
-          <Circle percent={pctg} strokeWidth="4" strokeColor={circleColor}/>
           <div style={{fontSize: '24px', marginLeft: '20px'}}>
-            <span>Sie haben {props.correctSession} Fragen richtig beantwortet!<br/>Das ergibt folgenden Gesamtfortschritt:</span>
+            <p>Sie haben {props.correctSession} Fragen richtig beantwortet!</p>
+            <p>Das ergibt folgenden Gesamtfortschritt:</p>
             <div className="score-icons">
               {Array(props.total).fill(1).map((el, i) =>
                 <Icn filled={(i+1) <= props.correct} />
