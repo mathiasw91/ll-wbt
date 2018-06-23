@@ -47,7 +47,8 @@ function Chapter(props) {
 
 function Theme(props) {
   let locked = props.data.extra && !props.data.unlocked
-  return (<NavLink exact={true} onClick={(event)=>{if(locked)event.preventDefault()}} title={locked?'Dieser Inhalt muss erst freigeschaltet werden': props.data.name} to={props.data.path} activeClassName="active" className={'sidebar-theme '+(props.data.quizComplete?'quiz-complete ':'')+(locked?'locked': '')}>{props.data.name}<Checkmark/></NavLink>)
+  return (<NavLink exact={true} onClick={(event)=>{if(locked)event.preventDefault()}} title={locked?'Dieser Inhalt muss erst freigeschaltet werden': props.data.name} to={props.data.path} activeClassName="active"
+  className={'sidebar-theme '+(props.data.quizComplete?'quiz-complete ':' ')+(locked?'locked ': ' ')+(window.location.pathname.endsWith(props.data.path+'/quiz')? 'active':'')}>{props.data.name}<Checkmark/></NavLink>)
 }
 
 function Checkmark() {
