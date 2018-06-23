@@ -177,7 +177,7 @@ class AppStore extends EventEmitter {
         {name: 'Salat', path: process.env.PUBLIC_URL + '/extra-salat',component: Salat, extra: true, questions: []},
       ]}
     ]
-    this.activeTheme = this.chapters[0].themes[0]
+    this.setActiveTheme()
     this.latest = []
     this.chapterCompleteMsg = false
 
@@ -350,6 +350,25 @@ class AppStore extends EventEmitter {
 
   getChapterCompleteMsg(){
     return this.chapterCompleteMsg
+  }
+
+  setActiveTheme(){
+
+    let path = window.location.pathname
+    if(path){
+      let match = false
+      this.chapters.forEach(c=>{
+        c.themes.forEach(t=>{
+          if(path.includes(t.path)) match = t
+        })
+      })
+      if(match){
+        this.activeTheme = match
+        console.log("set active theme",this.activeTheme)
+        return
+      }
+    }
+    this.activeTheme = this.chapters[0].themes[0]
   }
 
   saveChaptersToLocalStorage(){
